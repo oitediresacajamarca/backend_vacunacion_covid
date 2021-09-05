@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
+import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { join } from 'path';
 
 
 
@@ -34,7 +36,10 @@ import { DistribucionVacunasModule } from './distribucion-vacunas/distribucion-v
 
 
     }),
-    DistribucionVacunasModule
+    DistribucionVacunasModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'tablero_vacunacion'),
+    })
     
    
   ],
