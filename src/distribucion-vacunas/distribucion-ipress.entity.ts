@@ -1,13 +1,13 @@
 import { Column, Entity, EntityRepository, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 @Entity('DISTRIBUCION_POR_IPRESS')
 export class DistribucionIpressEntity {
-@Column()
-    COD_DISTRIBUCION:number;
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn('increment')
+    id: number;
+    @Column()
     CODIGO_UNICO: string;
     @Column()
     CANTIDAD_RECIBIDA: number;
-    @PrimaryColumn()
+    @Column()
     FECHA_ENTREGA: Date;
     @Column()
     FECHA_VENCIMIENTO: Date;
