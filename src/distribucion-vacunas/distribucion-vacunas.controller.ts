@@ -117,7 +117,7 @@ export class DistribucionVacunasController {
 
     ) {
 
-        console.log(body)
+ 
 
         const guard = this.distribucion_ip.create({
             CANTIDAD_RECIBIDA: body.NUM_VIALES_CANTIDAD,
@@ -172,12 +172,12 @@ export class DistribucionVacunasController {
     ) {
 
 
-        console.log(nuevo)
+ 
 
 
         const nuevo_cont = this.conteos.create({
             PROVINCIA: nuevo.PROVINCIA.NOMBRE, CANTIDAD: nuevo.CANTIDAD, DISTRITO: nuevo.DISTRITO, FABRICANTE: nuevo.FABRICANTE.NOMBRE,
-            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO
+            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO,FECHA_REGISTRO:new Date()
         })
 
         await this.conteos.save(nuevo_cont)
@@ -197,12 +197,20 @@ export class DistribucionVacunasController {
     ) {
 
 
-
-console.log(ubigeo)
-
-
-
         const respuesta = await this.conteos.find({ where: { UBIGEO: ubigeo } })
+        return respuesta
+
+    }
+
+    @Get('conteo_rapido/detalle/eliminar/:id')
+    async eliminar_conteo_rapido(
+
+        @Param('id') id: any
+
+    ) {
+
+
+        const respuesta = await this.conteos.delete({ID:id})
         return respuesta
 
     }

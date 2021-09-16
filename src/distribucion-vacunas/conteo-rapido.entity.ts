@@ -15,4 +15,6 @@ export class ConteoRapidoEntity {
     FECHA: Date;
     @Column()
     CANTIDAD: number;
+    @Column()
+    FECHA_REGISTRO:Date;
 }

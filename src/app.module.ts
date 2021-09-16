@@ -21,9 +21,7 @@ import { DistribucionVacunasModule } from './distribucion-vacunas/distribucion-v
       port: 1433,
       username: 'sa',
       password: '.',
-      database: 'BD_VACUNACION_COVID',
-      
-     
+      database: 'BD_VACUNACION_COVID',     
       entities: [
         "dist/**/*.entity{.ts,.js}"
       ],
@@ -32,9 +30,6 @@ import { DistribucionVacunasModule } from './distribucion-vacunas/distribucion-v
         "validateConnection": false,
         "trustServerCertificate": true
       }
-
-
-
     }),
     DistribucionVacunasModule,
     ServeStaticModule.forRoot({
