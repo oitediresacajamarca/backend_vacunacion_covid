@@ -1,7 +1,7 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 @Entity('DISTRIBUCION_DOSIS_POR_PROVINICIA')
 export class DistribucionRedEntity {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id:                    number;
     @Column()
     COD_PROVINCIA:         string;
@@ -21,4 +21,6 @@ export class DistribucionRedEntity {
     TIPO_DOCUMENTO:        string;
     @Column()
     NUMERO_DOCUMENTO:      string;
+    @Column()
+    FECHA_DESCONGELAMIENTO:     Date;
 }
