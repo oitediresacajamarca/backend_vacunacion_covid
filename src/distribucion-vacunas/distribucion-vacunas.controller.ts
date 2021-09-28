@@ -1,6 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Console } from 'console';
 import { get } from 'https';
+import { Between, Repository } from 'typeorm';
 import { ConteoRapidoRepository } from './conteo-rapido.repository';
 import { DistribucionIpressRepository } from './distribucion-ipress.repository';
 import { DistribucionRedRepository } from './distribucion-red.repository';
@@ -8,6 +10,9 @@ import { DistritoRepository } from './distrito.repository';
 import { EnviosIpressRepository } from './envios-ipress.repository';
 import { EnviosRedRepository } from './envios-red.repository';
 import { EstablecimientosRepository } from './establecimientos.repository';
+import { LoteVacunaRepository } from './lote-vacuna.repository';
+import { MovimientosSismedEntity } from './movimientos-sismed.entity';
+import { MovimientosSismedRepository } from './movimientos-sismed.repository';
 import { ProvinciaRepository } from './provincia.repository';
 import { StockIpress } from './stock-ipress.interface';
 import { StockIpressRepository } from './stock-ipress.repository';
@@ -19,7 +24,8 @@ export class DistribucionVacunasController {
         private distribucion_ip: DistribucionIpressRepository, private estabecs: EstablecimientosRepository,
         private distribucion_red: DistribucionRedRepository, private conteos: ConteoRapidoRepository,
         private envios_ipress: EnviosIpressRepository, private envio_red: EnviosRedRepository,
-        private stock_ipress: StockIpressRepository
+        private stock_ipress: StockIpressRepository, @InjectRepository(MovimientosSismedEntity, 'sismed')
+        private movimientos_sis: Repository<MovimientosSismedEntity>, private lotes: LoteVacunaRepository
     ) {
 
 
@@ -246,6 +252,22 @@ export class DistribucionVacunasController {
 
     }
 
+    @Get('distribucion_red/eliminar/:id')
+    async eliminar_distribucion_a_red_id(
+        @Param('id') id: any
+    ) {
+
+
+        const respuesta: any = await this.distribucion_red.delete({ id: id })
+
+
+
+
+        return respuesta;
+
+    }
+
+
     @Post('conteo_rapido/nuevo/')
     async ingresar_nuevo_conteo(
 
@@ -408,17 +430,67 @@ export class DistribucionVacunasController {
     ) {
 
 
-        let listas = await this.envio_red.delete({id:id})
+        let listas = await this.envio_red.delete({ id: id })
 
 
         return listas;
 
+    }
 
 
+    @Get('distribucion-sismed/listar')
+    async distribucion_sismed(
 
 
+    ) {
 
 
+        let lotes = await this.lotes.find()
+
+        lotes.map(lote => {
+
+
+        })
+
+        let listas = await this.movimientos_sis.find({ where: { IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E' } 
+        , order: {
+            MOVFECHREG: 'ASC'
+
+        }})
+
+
+        return listas;
+
+    }
+
+
+    @Post('distribucion-sismed/filtro')
+    async distribucion_sismed_filtrar(
+
+        @Body() filtro: any
+    ) {
+
+
+        let lotes = await this.lotes.find()
+
+        lotes.map(lote => {
+
+
+        })
+
+
+        let listas = await this.movimientos_sis.find({
+            where: {
+                IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E', almubigeo: filtro.almacen.code
+                , MOVFECHREG: Between(filtro.desde, filtro.hasta)
+            }, order: {
+                MOVFECHREG: 'ASC'
+
+            }
+        }
+
+        )
+        return listas;
     }
 
 

@@ -10,8 +10,7 @@ export class DistribucionIpressEntity {
     @Column()
     CANTIDAD_RECIBIDA_DOSIS:number;
     @Column()
-    FECHA_DISTRIBUCION:Date;
-  
+    FECHA_DISTRIBUCION:Date;  
     @Column()
     FECHA_VENCIMIENTO: Date;
     @Column()

@@ -7,8 +7,24 @@ import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ConteoRapidoEntity } from './distribucion-vacunas/conteo-rapido.entity';
+import { CuadroAlmacenRedEntity } from './distribucion-vacunas/cuadro-almacen-red.entity';
+import { DistribucionEstrategiaRedEntity } from './distribucion-vacunas/distribucion-estrategia-red.entity';
+import { DistribucionIpressEntity } from './distribucion-vacunas/distribucion-ipress.entity';
+import { DistribucionRedEntity } from './distribucion-vacunas/distribucion-red.entity';
 
 import { DistribucionVacunasModule } from './distribucion-vacunas/distribucion-vacunas.module';
+import { DistritoEntity } from './distribucion-vacunas/distrito.entity';
+import { EnviosIpressyEntity } from './distribucion-vacunas/envios-ipressy.entity';
+import { EnviosRedEntity } from './distribucion-vacunas/envios-red.entity';
+import { EstablecimientosEntity } from './distribucion-vacunas/establecimientos.entity';
+import { LoteVacunaEntity } from './distribucion-vacunas/lote-vacuna.entity';
+import { MovimientosSismedEntity } from './distribucion-vacunas/movimientos-sismed.entity';
+import { ProvinciaEntity } from './distribucion-vacunas/provincia.entity';
+import { RecepcionAnexosEntity } from './distribucion-vacunas/recepcion-anexos/recepcion-anexos.entity';
+import { StockIpressEntity } from './distribucion-vacunas/stock-ipress.entity';
+import { UnEntity } from './distribucion-vacunas/un.entity';
+import { VacunadosCovidEntity } from './distribucion-vacunas/vacunados-covid/vacunados-covid.entity';
 
 const defaultOptions = {
   type: 'mssql',
@@ -22,6 +38,7 @@ const defaultOptions = {
 @Module({
   imports: [
     TypeOrmModule.forRoot({
+      name:'default',
       type: 'mssql',
       host: 'localhost',
       port: 1433,
@@ -30,7 +47,9 @@ const defaultOptions = {
       password: '.',
       database: 'BD_VACUNACION_COVID',
       entities: [
-        "dist/**/*.entity{.ts,.js}"
+        ConteoRapidoEntity,DistribucionIpressEntity,DistribucionRedEntity,DistritoEntity,ProvinciaEntity,EstablecimientosEntity,
+        EnviosIpressyEntity,EnviosRedEntity,StockIpressEntity,LoteVacunaEntity,
+        DistribucionEstrategiaRedEntity,CuadroAlmacenRedEntity,VacunadosCovidEntity,RecepcionAnexosEntity
       ],
       "extra": {
         "validateConnection": false,
@@ -44,14 +63,18 @@ const defaultOptions = {
       username: 'sa',
       synchronize: false,
       password: '.',
-      database: 'risc_2030',
+      database: 'MEDICAMENTOS',
       entities: [
-        "dist/**/*.entity{.ts,.js}"
+        UnEntity,MovimientosSismedEntity
       ],
-      "extra": {
+      extra: {
         "validateConnection": false,
-        "trustServerCertificate": true
-      }
+        "trustServerCertificate": true,
+        
+      },
+      options:{encrypt:false},
+      name:'sismed'
+
     }),
     DistribucionVacunasModule,
     ServeStaticModule.forRoot({
