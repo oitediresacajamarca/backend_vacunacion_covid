@@ -62,4 +62,13 @@ export class DistribucionEstrategiaRedController {
   
         return resp;
     }
+
+    async devolver_cuadro_1() {
+
+        let resp = await this.cuadror.find()
+
+  
+        return resp;
+    }
+
 }
