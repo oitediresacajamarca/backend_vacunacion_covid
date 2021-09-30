@@ -24,6 +24,7 @@ import { VacunadosCovidRepository } from './vacunados-covid/vacunados-covid.repo
 import { RecepcionAnexosController } from './recepcion-anexos/recepcion-anexos.controller';
 import { RecepcionAnexosRepository } from './recepcion-anexos/recepcion-anexos.repository';
 import { RecepcionAnexosEntity } from './recepcion-anexos/recepcion-anexos.entity';
+import { RecepcionAnexosService } from './recepcion-anexos/recepcion-anexos.service';
 
 @Module({
     imports: [TypeOrmModule.forFeature([ProvinciaRepository,DistritoRepository,DistribucionIpressRepository,
@@ -31,7 +32,7 @@ import { RecepcionAnexosEntity } from './recepcion-anexos/recepcion-anexos.entit
     StockIpressRepository,LoteVacunaRepository,DistribucionEstrategiaRedRepository,CuadroAlmacenRedRepository,VacunadosCovidRepository,
     RecepcionAnexosRepository],'default'),
 TypeOrmModule.forFeature([MovimientosSismedRepository,MovimientosSismedEntity],'sismed')],
-    providers: [],
+    providers: [RecepcionAnexosService],
     controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController]   
 })
 export class DistribucionVacunasModule {}
