@@ -14,6 +14,12 @@ export class EstablecimientoController {
         const resp = await this.establecimientor.find({ where: { UBIGEO:Like( ubigeo+'%') ,Institución:Not( 'PRIVADO')} })
         return resp;
     }
+    @Get('ubigeo_distrito_np/:ubigeo')
+    async establecimiento_por_distrito(@Param('ubigeo') ubigeo: string) {
+        
+        const resp = await this.establecimientor.find({ where: { UBIGEO:Like( ubigeo+'%') ,Institución:Not( 'PRIVADO')} })
+        return resp;
+    }
 
 
 }
