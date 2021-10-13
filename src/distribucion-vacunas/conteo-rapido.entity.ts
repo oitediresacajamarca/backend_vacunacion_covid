@@ -17,4 +17,6 @@ export class ConteoRapidoEntity {
     CANTIDAD: number;
     @Column()
     FECHA_REGISTRO:Date;
+    @Column()
+    DOSIS_APLICADA:string;
 }

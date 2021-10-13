@@ -274,9 +274,10 @@ export class DistribucionVacunasController {
         @Body() nuevo: any
 
     ) {
+        console.log(nuevo)
         const nuevo_cont = this.conteos.create({
             PROVINCIA: nuevo.PROVINCIA.NOMBRE, CANTIDAD: nuevo.CANTIDAD, DISTRITO: nuevo.DISTRITO, FABRICANTE: nuevo.FABRICANTE.NOMBRE,
-            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date()
+            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date(),DOSIS_APLICADA:nuevo.DOSIS_APLICADA.name
         })
 
         await this.conteos.save(nuevo_cont)
