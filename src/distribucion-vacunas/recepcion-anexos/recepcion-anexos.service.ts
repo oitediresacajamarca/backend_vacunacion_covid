@@ -37,5 +37,10 @@ export class RecepcionAnexosService {
         return resp;
     }
 
+    async eliminar(ID){
+        const resp=   await    this.anexos_rep.delete({ID:ID})
+        return resp
+    }
+
 
 }

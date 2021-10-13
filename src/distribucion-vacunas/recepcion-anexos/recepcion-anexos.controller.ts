@@ -24,7 +24,15 @@ export class RecepcionAnexosController {
         const respuesta = this.recepionService.nuevo_listado(body)
         return respuesta
     }
+    @Post('eliminar')
+    async eliminar_registro(@Body() body :any)  {
+        console.log(body)
+       
+        const respuesta =await this.recepionService.eliminar(body)
+        return respuesta
+    }
 
+   
     @Post('upload/anexo1')
     @UseInterceptors(FileInterceptor('file10', { dest: './upload/anexo1' }))
     uploadFile1(@UploadedFile() file: Express.Multer.File, @Req() request: Request) {

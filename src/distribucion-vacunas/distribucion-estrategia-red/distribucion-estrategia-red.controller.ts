@@ -34,8 +34,8 @@ export class DistribucionEstrategiaRedController {
         resp.CANTIDAD_VIALES = nuevo.CANTIDAD_VIALES
         resp.CANTIDAD_DOSIS = nuevo.CANTIDAD_DOSIS
         resp.FECHA = nuevo.FECHA
-        resp.TIPO_DOCUMENTO = nuevo.TIPO_DOCUMENTO.name
-        resp.NUMERO_DOCUMENTO = nuevo.NUMERO_DOCUMENTO
+     //   resp.TIPO_DOCUMENTO = nuevo.TIPO_DOCUMENTO.name
+     //   resp.NUMERO_DOCUMENTO = nuevo.NUMERO_DOCUMENTO
         resp.FABRICANTE = nuevo.FABRICANTE.NOMBRE
 
 
