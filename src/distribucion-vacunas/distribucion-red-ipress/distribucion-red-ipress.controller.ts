@@ -9,8 +9,7 @@ export class DistribucionRedIpressController {
     @Get('eliminar/:id')
     async eliminar_distribucion(
         @Param('id')
-        id: any) {
-       
+        id: any) {       
         let respuesta = await this.DitribucionIpressRepository.delete({ id: id })
         return respuesta
 

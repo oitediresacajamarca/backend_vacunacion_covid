@@ -16,5 +16,7 @@ export class CuadroAlmacenRedEntity {
     CANTIDAD_DOSIS_ENVIADAS: number;
     @Column()
     CANTIDAD_VIALES_ENVIADAS: number;
+    @Column()
+    FABRICANTE:string;
 
 }

@@ -83,6 +83,8 @@ export class MovimientosSismedEntity {
     CANTIDAD_DOSIS: number;
     @Column()
     FABRICANTE: string;
+    @Column()
+    almubigeo_origen:string
 
 
 }

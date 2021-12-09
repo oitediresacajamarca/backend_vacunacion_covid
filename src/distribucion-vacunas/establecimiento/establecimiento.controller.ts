@@ -21,5 +21,19 @@ export class EstablecimientoController {
         return resp;
     }
 
+    @Get('microred/:ubigeo')
+    async establecimiento_microred_por_ubigeo(@Param('ubigeo') ubigeo: string) {
+        
+        const resp = await this.establecimientor.find({ where: { UBIGEO:Like( ubigeo+'%') ,Institución:Not( 'PRIVADO')} })
+        return resp;
+    }
+
+    @Get('codigo_microred/:codigo_microred')
+    async establecimiento_por_microred(@Param('codigo_microred') codigo_microred: string) {
+        
+        const resp = await this.establecimientor.find({ where: { Codigo_Microrred:codigo_microred ,Institución:Not( 'PRIVADO')} })
+        return resp;
+    }
+
 
 }

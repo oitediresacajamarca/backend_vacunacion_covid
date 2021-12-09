@@ -25,14 +25,26 @@ import { RecepcionAnexosController } from './recepcion-anexos/recepcion-anexos.c
 import { RecepcionAnexosRepository } from './recepcion-anexos/recepcion-anexos.repository';
 import { RecepcionAnexosEntity } from './recepcion-anexos/recepcion-anexos.entity';
 import { RecepcionAnexosService } from './recepcion-anexos/recepcion-anexos.service';
+import { RegistroCentroVacunacionController } from './registro-centro-vacunacion/registro-centro-vacunacion.controller';
+import { RegistroCentroVacunacionService } from './registro-centro-vacunacion/registro-centro-vacunacion.service';
+import { RegistroCentroVacunacionEntity } from './registro-centro-vacunacion/registro-centro-vacunacion.entity';
+import { CentroVacunacionService } from './centro-vacunacion/centro-vacunacion.service';
+import { CentroVacunacionEntity } from './centro-vacunacion/centro-vacunacion.entity';
+import { CentroVacunacionController } from './centro-vacunacion/centro-vacunacion.controller';
+import { MovimientoVacunasComplController } from './movimiento-vacunas-compl/movimiento-vacunas-compl.controller';
+import { MovimientoVacunasComplService } from './movimiento-vacunas-compl/movimiento-vacunas-compl.service';
+import { MovimientoVacunasComplEntity } from './movimiento-vacunas-compl/movimiento-vacunas-compl.entity';
+import { MovimientosVacunasSismedController } from './movimientos-vacunas-sismed/movimientos-vacunas-sismed.controller';
+import { VacunadosCovidFastEntity } from './vacunados-covid/vacunados-covid-fast.entity';
+
 
 @Module({
     imports: [TypeOrmModule.forFeature([ProvinciaRepository,DistritoRepository,DistribucionIpressRepository,
         EstablecimientosRepository,DistribucionRedRepository,ConteoRapidoRepository,EnviosIpressRepository,EnviosRedRepository,
     StockIpressRepository,LoteVacunaRepository,DistribucionEstrategiaRedRepository,CuadroAlmacenRedRepository,VacunadosCovidRepository,
-    RecepcionAnexosRepository],'default'),
+    RecepcionAnexosRepository,RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,VacunadosCovidFastEntity],'default'),
 TypeOrmModule.forFeature([MovimientosSismedRepository,MovimientosSismedEntity],'sismed')],
-    providers: [RecepcionAnexosService],
-    controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController]   
+    providers: [RecepcionAnexosService, RegistroCentroVacunacionService, CentroVacunacionService, MovimientoVacunasComplService],
+    controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController, RegistroCentroVacunacionController, CentroVacunacionController, MovimientoVacunasComplController, MovimientosVacunasSismedController]   
 })
 export class DistribucionVacunasModule {}

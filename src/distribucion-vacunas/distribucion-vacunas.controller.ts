@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Console } from 'console';
 import { get } from 'https';
-import { Between, Repository } from 'typeorm';
+import { Between, Like, Repository } from 'typeorm';
 import { ConteoRapidoRepository } from './conteo-rapido.repository';
 import { DistribucionIpressRepository } from './distribucion-ipress.repository';
 import { DistribucionRedRepository } from './distribucion-red.repository';
@@ -274,10 +274,10 @@ export class DistribucionVacunasController {
         @Body() nuevo: any
 
     ) {
-        console.log(nuevo)
+
         const nuevo_cont = this.conteos.create({
             PROVINCIA: nuevo.PROVINCIA.NOMBRE, CANTIDAD: nuevo.CANTIDAD, DISTRITO: nuevo.DISTRITO, FABRICANTE: nuevo.FABRICANTE.NOMBRE,
-            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date(),DOSIS_APLICADA:nuevo.DOSIS_APLICADA.name
+            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date(), DOSIS_APLICADA: nuevo.DOSIS_APLICADA.name
         })
 
         await this.conteos.save(nuevo_cont)
@@ -453,11 +453,13 @@ export class DistribucionVacunasController {
 
         })
 
-        let listas = await this.movimientos_sis.find({ where: { IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E' } 
-        , order: {
-            MOVFECHREG: 'ASC'
+        let listas = await this.movimientos_sis.find({
+            where: { IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E' }
+            , order: {
+                MOVFECHREG: 'ASC'
 
-        }})
+            }
+        })
 
 
         return listas;
@@ -492,6 +494,21 @@ export class DistribucionVacunasController {
 
         )
         return listas;
+    }
+
+
+    @Get('movimientos/RED/:COD_RED')
+    async cargar_movimientos_red(@Param('COD_RED') COD_RED: string) {
+
+        console.log(COD_RED)
+        const resp = await this.movimientos_sis.find({
+            where: { provdes:Like( COD_RED+'%') }
+        })
+
+    
+        return resp
+
+
     }
 
 
