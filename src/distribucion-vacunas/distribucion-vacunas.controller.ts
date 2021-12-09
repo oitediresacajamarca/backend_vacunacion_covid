@@ -139,6 +139,38 @@ export class DistribucionVacunasController {
         return resp
     }
 
+    @Post('distribucion_ipress_desde_mic/nuevo/')
+    async registrar_ingreso_desde_mic(
+
+        @Body() body: any
+
+    ) {
+
+        console.log(body)
+
+        const guard = this.distribucion_ip.create(
+            {
+                CANTIDAD_RECIBIDA_DOSIS: body.CANTIDAD_DOSIS,
+                CANTIDAD_RECIBIDA_VIALES: body.CANTIDAD_VIALES,
+                CODIGO_UNICO: body.IPRESS.Codigo_Unico,
+                FABRICANTE: body.fabricante.NOMBRE,
+                TIPO_DOCUMENTO: body.TIPO_DOCUMENTO.code,
+                NUMERO_DOCUMENTO: body.NUMERO_DOCUMENTO,
+                FECHA_DISTRIBUCION: body.FECHA_DISTRIBUCION,
+                FECHA_VENCIMIENTO: body.FECHA_VENCIMIENTO,
+                DESDE: body.provincia.NOMBRE
+            }
+        )
+
+        await this.distribucion_ip.save(guard)
+
+        const resp = await this.distribucion_ip.find({ where: { CODIGO_UNICO: body.CODIGO_UNICO + '' } })
+
+        return resp
+    }
+
+
+
     @Post('conteo-rapido/nuevo/')
     async registrar_conteo(
 
@@ -502,10 +534,10 @@ export class DistribucionVacunasController {
 
         console.log(COD_RED)
         const resp = await this.movimientos_sis.find({
-            where: { provdes:Like( COD_RED+'%') }
+            where: { provdes: Like(COD_RED + '%') }
         })
 
-    
+
         return resp
 
 

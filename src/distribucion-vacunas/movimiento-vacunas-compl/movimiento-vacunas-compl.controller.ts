@@ -15,5 +15,6 @@ export class MovimientoVacunasComplController {
         const resp = await this.movserv.asignar(body.NUMERO_MOVIMIENTO_SIMED, body)
         return resp;
     }
+    
 
 }

@@ -8,5 +8,7 @@ export class MicroredEntity {
     ID_RED:number;
     @Column()
     NOMBRE:number;
+    @Column()
+    CABECERA:string;
 
 }

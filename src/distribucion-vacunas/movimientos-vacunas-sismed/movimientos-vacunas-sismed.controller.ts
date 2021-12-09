@@ -197,6 +197,14 @@ export class MovimientosVacunasSismedController {
 
     }
 
+    @Get('distribuciones_mircored_ipress/:renipress_microred')
+    async distribuciones_mircored_ipress(@Param('renipress_microred') renipress_microred: string) {
+        const resp = await this.movimientos_sis.find({ where: { almubigeo_origen: Like('%'+renipress_microred ), MOVCODITIP: 'S' } })
+        return resp;
+
+    }
+
+
 
 
 }
