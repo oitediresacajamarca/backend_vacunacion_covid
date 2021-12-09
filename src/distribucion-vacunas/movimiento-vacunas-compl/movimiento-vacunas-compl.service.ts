@@ -13,20 +13,16 @@ export class MovimientoVacunasComplService {
 
     async asignar(NUMERO_MOVIMIENTO: number, data: any) {
 
-        let mov = await this.movimientorepo.findOne({ where: { NUMERO_MOVIMIENTO_SIMED: NUMERO_MOVIMIENTO } })
+     
 
+        let mov: any = await this.movimientorepo.findOne({ where: { NUMERO_MOVIMIENTO_SIMED: NUMERO_MOVIMIENTO } })
 
-        if (mov == undefined) {
-            mov = this.movimientorepo.create()
-        }
-
-
-        Object.assign(mov, data)
+        await this.movimientorepo.delete(NUMERO_MOVIMIENTO)
+    
+        mov = this.movimientorepo.create(data)
 
         const resp = await this.movimientorepo.save(mov)
-
-
-        return mov;
+        return resp;
 
 
 
