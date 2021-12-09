@@ -30,6 +30,7 @@ export class EstablecimientoController {
 
     @Get('codigo_microred/:codigo_microred')
     async establecimiento_por_microred(@Param('codigo_microred') codigo_microred: string) {
+        console.log(codigo_microred)
         
         const resp = await this.establecimientor.find({ where: { Codigo_Microrred:codigo_microred ,Institución:Not( 'PRIVADO')} })
         return resp;
