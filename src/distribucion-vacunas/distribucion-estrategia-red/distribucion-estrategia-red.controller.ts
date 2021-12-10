@@ -40,7 +40,7 @@ export class DistribucionEstrategiaRedController {
             fabricante = ''
         }
 
-        let resp = await this.distribucion.find({ where: { COD_PROVINCIA: Like(red + '%'), FABRICANTE: Like(fabricante + '%') } })
+        let resp = await this.distribucion.find({ where: { COD_PROVINCIA: Like(red + '%'), FABRICANTE: Like(fabricante + '%') },order:{FECHA:'DESC'} })
 
         let datos
 

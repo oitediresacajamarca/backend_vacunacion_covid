@@ -488,7 +488,7 @@ export class DistribucionVacunasController {
         let listas = await this.movimientos_sis.find({
             where: { IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E' }
             , order: {
-                MOVFECHREG: 'ASC'
+                MOVFECHREG: 'DESC'
 
             }
         })
@@ -519,7 +519,7 @@ export class DistribucionVacunasController {
                 IPRESS_DESTINO: 'ALMACEN ESPECIALIZADO', MOVCODITIP: 'E', almubigeo: filtro.almacen.code
                 , MOVFECHREG: Between(filtro.desde, filtro.hasta)
             }, order: {
-                MOVFECHREG: 'ASC'
+                MOVFECHREG: 'DESC'
 
             }
         }
@@ -532,9 +532,9 @@ export class DistribucionVacunasController {
     @Get('movimientos/RED/:COD_RED')
     async cargar_movimientos_red(@Param('COD_RED') COD_RED: string) {
 
-        console.log(COD_RED)
+        
         const resp = await this.movimientos_sis.find({
-            where: { provdes: Like(COD_RED + '%'),MOVCODITIP:'S',ALMCODIORG:'007A01'}
+            where: { provdes: Like(COD_RED + '%'),MOVCODITIP:'S',ALMCODIORG:'007A01'},order:{MOVFECHREG:'DESC'}
         })
 
 
