@@ -309,7 +309,7 @@ export class DistribucionVacunasController {
 
         const nuevo_cont = this.conteos.create({
             PROVINCIA: nuevo.PROVINCIA.NOMBRE, CANTIDAD: nuevo.CANTIDAD, DISTRITO: nuevo.DISTRITO, FABRICANTE: nuevo.FABRICANTE.NOMBRE,
-            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date(), DOSIS_APLICADA: nuevo.DOSIS_APLICADA.name
+            FECHA: nuevo.FECHA, UBIGEO: nuevo.DISTRITO, FECHA_REGISTRO: new Date(), DOSIS_APLICADA: ''
         })
 
         await this.conteos.save(nuevo_cont)
@@ -534,7 +534,7 @@ export class DistribucionVacunasController {
 
         console.log(COD_RED)
         const resp = await this.movimientos_sis.find({
-            where: { provdes: Like(COD_RED + '%') }
+            where: { provdes: Like(COD_RED + '%'),MOVCODITIP:'S',ALMCODIORG:'007A01'}
         })
 
 
