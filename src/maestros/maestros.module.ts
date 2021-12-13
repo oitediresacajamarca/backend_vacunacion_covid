@@ -8,11 +8,16 @@ import { MicroredRepository } from './microred/microred.repository';
 import { MicroredEntity } from './microred/microred.entity';
 import { IpressController } from './ipress/ipress.controller';
 import { IpressEntity } from './ipress/ipress.entity';
+import { AmbitoController } from './ambito/ambito.controller';
+import { CentroVacunacionEntity } from 'src/distribucion-vacunas/centro-vacunacion/centro-vacunacion.entity';
 
 
 
 @Module({
-  controllers: [RedController, MicroredController, IpressController],
-  imports:[TypeOrmModule.forFeature([RedRepository,RedEntity,MicroredRepository,MicroredEntity,IpressEntity],'MAESTROS')]
+  controllers: [RedController, MicroredController, IpressController, AmbitoController],
+  imports:[TypeOrmModule.forFeature([RedRepository,RedEntity,MicroredRepository,MicroredEntity,IpressEntity],'MAESTROS'),
+  TypeOrmModule.forFeature([CentroVacunacionEntity],'default')],
+  
+
 })
 export class MaestrosModule {}

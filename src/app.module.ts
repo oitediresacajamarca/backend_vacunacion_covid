@@ -30,6 +30,7 @@ import { IpressEntity } from './maestros/ipress/ipress.entity';
 import { MaestrosModule } from './maestros/maestros.module';
 import { MicroredEntity } from './maestros/microred/microred.entity';
 import { RedEntity } from './maestros/red/red.entity';
+import { UsuarioRolEntity } from './usuario/usuario-rol.entity';
 import { UsuarioEntity } from './usuario/usuario.entity';
 import { UsuarioModule } from './usuario/usuario.module';
 
@@ -115,7 +116,7 @@ const defaultOptions = {
       password: '.',
       database: 'BD_USUARIOS',
       entities: [
-        UsuarioEntity
+        UsuarioEntity,UsuarioRolEntity
       ],
       extra: {
         "validateConnection": false,

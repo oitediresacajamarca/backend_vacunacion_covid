@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('CENTRO_VACUNACION')
+@Entity('CENTRO_VACUNACION_VIEW')
 export class CentroVacunacionEntity {
     @PrimaryGeneratedColumn()
     ID:number;
@@ -12,4 +12,6 @@ export class CentroVacunacionEntity {
     UBIGEO:string;
     @Column()
     TIPO:string;
+    @Column()
+    CODIGO_BUSQUEDA:string
 }

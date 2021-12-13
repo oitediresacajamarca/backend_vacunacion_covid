@@ -16,4 +16,14 @@ export class UsuarioEntity {
     EMAIL: string;
     @Column()
     UBIGEO:string
+    @Column()
+    COD_AMBITO:string;
+    @Column()
+    NUMERO_DOCUMENTO:string;
+    @Column()
+    NOMBRES:string;
+    @Column()
+    APELLIDO_PATERNO:string;
+    @Column()
+    APELLIDO_MATERNO:string;
 }

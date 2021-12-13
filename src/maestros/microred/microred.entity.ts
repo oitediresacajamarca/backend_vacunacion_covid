@@ -10,5 +10,7 @@ export class MicroredEntity {
     NOMBRE:number;
     @Column()
     CABECERA:string;
+    @Column()
+    CODIGO_BUSQUEDA:string;
 
 }

@@ -20,6 +20,8 @@ export class IpressEntity {
     CATEGORIA:        Categoria;
     @Column()
     ID_PUNTO_DIG_HIS: number;
+    @Column()
+    CODIGO_BUSQUEDA:string;
    
 }
 
