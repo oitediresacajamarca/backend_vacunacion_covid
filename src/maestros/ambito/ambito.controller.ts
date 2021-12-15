@@ -20,11 +20,9 @@ export class AmbitoController {
     @Get(':nivel/:raiz')
     async devolver_ambito(@Param('nivel') nivel: string, @Param('raiz') raiz: string) {
         let resp: any[]
+        let COD_AMBITO
         if (nivel == 'RED') {
             resp = await this.red_rep.find({ where: { ID_RED: Like('%') } })
-
-
-
         }
 
 
@@ -40,21 +38,51 @@ export class AmbitoController {
 
         }
         if (nivel == 'CENTRO_VACUNACION') {
-            resp = await this.centrorep.find({ where: { CODIGO_BUSQUEDA: Like(raiz + '%') } })
+            resp = await this.centrorep.find({ where: { CODIGO_BUSQUEDA: Like(raiz + '%') } })          
 
        }
 
+
         let resp1 = resp.map(resp => {
 
-            if (nivel == 'CENTRO_VACUNACION') { return { NOMBRE: resp.CENTRO_VACUNACION } }
-            else {
-
-                return { NOMBRE: resp.NOMBRE }
+            if (nivel == 'CENTRO_VACUNACION') { 
+                return { NOMBRE: resp.CENTRO_VACUNACION,COD_AMBITO:resp.CODIGO_BUSQUEDA,UBIGEO:resp.UBIGEO }
+             }
+            else {               
+                return { NOMBRE: resp.NOMBRE,COD_AMBITO:resp.ID_RED }
             }
 
         })
  
+      
 
-        return resp1;
+        return {LISTADO_AMBITOS:resp1,TIPO_AMBITO:nivel};
+    }
+
+    @Get('por_ubigeo/:nivel/:ubigeo')
+    async devolver_ambito_por_ubigeo(@Param('nivel') nivel: string, @Param('ubigeo') ubigeo: string) {
+        let resp: any[]
+        let COD_AMBITO
+     
+        if (nivel == 'CENTRO_VACUNACION') {
+            resp = await this.centrorep.find({ where: { UBIGEO: Like(ubigeo + '%') } })          
+
+       }
+
+
+        let resp1 = resp.map(resp => {
+
+            if (nivel == 'CENTRO_VACUNACION') { 
+                return { NOMBRE: resp.CENTRO_VACUNACION,COD_AMBITO:resp.CODIGO_BUSQUEDA,UBIGEO:resp.UBIGEO }
+             }
+            else {               
+                return { NOMBRE: resp.NOMBRE,COD_AMBITO:resp.ID_RED }
+            }
+
+        })
+ 
+      
+
+        return {LISTADO_AMBITOS:resp1,TIPO_AMBITO:nivel};
     }
 }

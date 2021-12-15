@@ -120,8 +120,7 @@ const defaultOptions = {
       ],
       extra: {
         "validateConnection": false,
-        "trustServerCertificate": true,
-        
+        "trustServerCertificate": true,        
       },
       options:{encrypt:false},
       name:'USUARIOS'

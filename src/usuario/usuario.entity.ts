@@ -26,4 +26,6 @@ export class UsuarioEntity {
     APELLIDO_PATERNO:string;
     @Column()
     APELLIDO_MATERNO:string;
+    @Column()
+    FECHA_CREACION:Date;
 }

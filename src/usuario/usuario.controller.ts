@@ -24,6 +24,14 @@ export class UsuarioController {
 
     }
 
+    @Get('listar_por_ubigeo/:ubigeo')
+    async listar_por_ubigeo(@Param('ubigeo') ubigeo:string) {
+
+        const resp = await this.usuario_rep.listar_por_ubigeo(ubigeo);
+        return resp
+
+    }
+
     
     @Get('listar_roles/')
     async listar_roles() {

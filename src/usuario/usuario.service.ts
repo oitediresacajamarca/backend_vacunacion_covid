@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Console } from 'console';
 import { Like, Repository, SimpleConsoleLogger } from 'typeorm';
 import { UsuarioRolEntity } from './usuario-rol.entity';
 import { UsuarioEntity } from './usuario.entity';
@@ -20,7 +21,13 @@ export class UsuarioService {
 
 
     async listar_por_ambito(ambito: string) {
-        const r = await this.usuariorep.find({ where: { AMBITO: Like(ambito + '%') } })
+
+        const r = await this.usuariorep.find({ where: { COD_AMBITO: Like(ambito + '%') } })
+        return r
+    }
+
+    async listar_por_ubigeo(ubigeo: string) {
+        const r = await this.usuariorep.find({ where: { UBIGEO: Like(ubigeo + '%') } })
         return r
     }
 
@@ -46,11 +53,13 @@ export class UsuarioService {
 
     async nuevo_usuario(nuevo: any) {
 
-
+       
         let rep = this.usuariorep.create({
             NUMERO_DOCUMENTO: nuevo.NUMERO_DOCUMENTO, NOMBRES: nuevo.NOMBRES,
             APELLIDO_PATERNO: nuevo.APELLIDO_PATERNO, APELLIDO_MATERNO: nuevo.APELLIDO_MATERNO,
-            COD_AMBITO: nuevo.COD_AMBITO, EMAIL: nuevo.EMAIL, LOGIN: nuevo.NUMERO_DOCUMENTO, CLAVE: nuevo.NUMERO_DOCUMENTO
+            COD_AMBITO: nuevo.COD_AMBITO, EMAIL: nuevo.EMAIL,
+            LOGIN: nuevo.NUMERO_DOCUMENTO, CLAVE: nuevo.NUMERO_DOCUMENTO, AMBITO: nuevo.AMBITO, TIPO_AMBITO: nuevo.TIPO_AMBITO,
+            FECHA_CREACION: new Date(),UBIGEO:nuevo.UBIGEO
         })
         const resp = await this.usuariorep.save(rep)
         return resp;
