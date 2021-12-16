@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { RegistroCentroVacunacionEntity } from '../registro-centro-vacunacion/registro-centro-vacunacion.entity';
 import { CentroVacunacionEntity } from './centro-vacunacion.entity';
 
@@ -17,7 +17,7 @@ export class CentroVacunacionService {
     async devolver_centro_por_ubigeo_tipo_centro(ubigeo: string,tipo_centro:string) {
         console.log(ubigeo)
         console.log(tipo_centro)
-        const resp = await this.centrorep.find({ where: { UBIGEO:ubigeo , TIPO:tipo_centro} })
+        const resp = await this.centrorep.find({ where: { UBIGEO:Like(ubigeo+'%') , TIPO:tipo_centro} })
         console.log(resp)
         return resp;
     }
