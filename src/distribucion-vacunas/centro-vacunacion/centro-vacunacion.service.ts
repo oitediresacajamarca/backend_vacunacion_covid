@@ -17,7 +17,7 @@ export class CentroVacunacionService {
     async devolver_centro_por_ubigeo_tipo_centro(ubigeo: string,tipo_centro:string) {
         console.log(ubigeo)
         console.log(tipo_centro)
-        const resp = await this.centrorep.find({ where: { UBIGEO:'060101' , TIPO:tipo_centro} })
+        const resp = await this.centrorep.find({ where: { UBIGEO:ubigeo , TIPO:tipo_centro} })
         console.log(resp)
         return resp;
     }
