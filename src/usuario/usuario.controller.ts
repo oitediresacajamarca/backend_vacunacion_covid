@@ -46,7 +46,7 @@ export class UsuarioController {
 
 
         const resp = await this.usuario_rep.login(login);
-        console.log(resp)
+    
 
         return resp
 
