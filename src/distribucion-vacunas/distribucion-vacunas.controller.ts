@@ -146,7 +146,7 @@ export class DistribucionVacunasController {
 
     ) {
 
-        console.log(body)
+  
 
         const guard = this.distribucion_ip.create(
             {
@@ -412,7 +412,7 @@ export class DistribucionVacunasController {
 
 
 
-        console.log(body)
+  
         nuevo_stock.CODIGO_UNICO = body.CODIGO_UNICO.Codigo_Unico
         nuevo_stock.FECHA = body.FECHA
         nuevo_stock.FECHA_DESCONGELAMIENTO = body.FECHA_DESCONGELAMIENTO

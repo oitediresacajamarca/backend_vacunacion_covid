@@ -26,7 +26,7 @@ export class RecepcionAnexosController {
     }
     @Post('eliminar')
     async eliminar_registro(@Body() body :any)  {
-        console.log(body)
+       
        
         const respuesta =await this.recepionService.eliminar(body)
         return respuesta

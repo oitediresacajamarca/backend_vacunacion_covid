@@ -25,7 +25,7 @@ export class RegistroCentroVacunacionService {
             MERMA_DOSIS_INCIDENTE_ADVERSO: datos.MERMA_DOSIS_INCIDENTE_ADVERSO, FACTOR_PERDIDA_CALCULADO: datos.FACTOR_PERDIDA_CALCULADO, STOCK_DOSIS: datos.STOCK_DOSIS, CENTRO_DE_VACUNACION: centro, IPRESS: datos.IPRESS,
             STOCK_INICIAL: nuevo.STOCK_INICIAL, DOSIS_DISTRIBUIDAS_A_CENTRO_VACUNACION: nuevo.DOSIS_DISTRIBUIDAS_A_CENTRO_VACUNACION, TIPO: nuevo.TIPO
         }
-        console.log(nuevo)
+
 
         const resp = await this.centrorep.save(nuevo)
 
