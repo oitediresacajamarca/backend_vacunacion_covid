@@ -67,9 +67,6 @@ export class UsuarioService {
     }
 
     async eliminar(ID: any) {
-    
-    
-
         const r = await this.usuariorep.delete({ID:ID.ID})
         return r
     }
