@@ -36,6 +36,12 @@ export class RegistroCentroVacunacionEntity {
     DOSIS_DISTRIBUIDAS_A_CENTRO_VACUNACION: number;
     @Column()
     TIPO:string;
+    @Column()
+    ESTRATEGIA:string;
+    @Column()
+    FECHA_REGISTRO:Date;
+
+
 
 
 }
