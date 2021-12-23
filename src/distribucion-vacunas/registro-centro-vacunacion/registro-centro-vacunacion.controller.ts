@@ -30,5 +30,13 @@ export class RegistroCentroVacunacionController {
         return resp;
 
     }
+    @Post('ubigeofecha/:ubigeo')
+    async ubigeofecha(@Body() fecha: any, @Param('ubigeo') ubigeo: any) {
+ 
+        let resp = await this.regis.devolver_registrado_ubigeofecha(ubigeo, fecha.fecha)
+
+        return resp;
+
+    }
 
 }

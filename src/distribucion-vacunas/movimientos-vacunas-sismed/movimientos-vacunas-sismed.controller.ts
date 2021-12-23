@@ -4,7 +4,7 @@ import { get } from 'superagent';
 import { Like, Repository } from 'typeorm';
 import { MovimientosSismedEntity } from '../movimientos-sismed.entity';
 import { VacunadosCovidFastEntity } from '../vacunados-covid/vacunados-covid-fast.entity';
-import { VacunadosCovidRepository } from '../vacunados-covid/vacunados-covid.repository';
+
 
 @Controller('movimientos-vacunas-sismed')
 export class MovimientosVacunasSismedController {
@@ -205,8 +205,8 @@ export class MovimientosVacunasSismedController {
     }
 
     @Post('movimientos_sismed_almacen_especializado/:amlcod')
-    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string,@Body() filtro:any) {
-        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES:amlcod ,MOVCODITIP:'E'} ,order:{MOVFECHREG:'DESC'}})
+    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) {
+        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES: amlcod, MOVCODITIP: 'E' }, order: { MOVFECHREG: 'DESC' } })
         return resp;
     }
 }
