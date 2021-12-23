@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { get } from 'superagent';
 import { Like, Repository } from 'typeorm';
@@ -199,12 +199,14 @@ export class MovimientosVacunasSismedController {
 
     @Get('distribuciones_mircored_ipress/:renipress_microred')
     async distribuciones_mircored_ipress(@Param('renipress_microred') renipress_microred: string) {
-        const resp = await this.movimientos_sis.find({ where: { almubigeo_origen: Like('%'+renipress_microred ), MOVCODITIP: 'S' } })
+        const resp = await this.movimientos_sis.find({ where: { almubigeo_origen: Like('%' + renipress_microred), MOVCODITIP: 'S' } })
         return resp;
 
     }
 
-
-
-
+    @Post('movimientos_sismed_almacen_especializado/:amlcod')
+    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string,@Body() filtro:any) {
+        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES:amlcod ,MOVCODITIP:'E'} ,order:{MOVFECHREG:'DESC'}})
+        return resp;
+    }
 }

@@ -16,7 +16,7 @@ export class RegistroCentroVacunacionService {
     }
 
     async nuevo_registros_por_centro(centro: number, datos: any) {
-        console.log(datos)
+  
 
         let nuevo = this.centrorep.create()
 

@@ -84,7 +84,9 @@ export class MovimientosSismedEntity {
     @Column()
     FABRICANTE: string;
     @Column()
-    almubigeo_origen:string
+    almubigeo_origen:string;
+    @Column()
+    COD_RENIPRES:string
 
 
 }
