@@ -20,6 +20,12 @@ export class CentroVacunacionController {
         const resp = await this.centros.devolver_centro_por_ubigeo_tipo_centro(ubigeo,tipo_centro)
         return resp;
     }
+    @Get('devolver_por_id/:id')
+    async devolver_por_id(@Param('id') id: string) {
+
+        const resp = await this.centros.devolver_por_id(id)
+        return resp;
+    }
 
 
 

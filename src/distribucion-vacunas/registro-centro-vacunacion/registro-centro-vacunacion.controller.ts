@@ -32,8 +32,25 @@ export class RegistroCentroVacunacionController {
     }
     @Post('ubigeofecha/:ubigeo')
     async ubigeofecha(@Body() fecha: any, @Param('ubigeo') ubigeo: any) {
- 
+
         let resp = await this.regis.devolver_registrado_ubigeofecha(ubigeo, fecha.fecha)
+
+        return resp;
+
+    }
+
+    @Post('actualizar/:id')
+    async antualizar(@Body() data: any, @Param('id') id: any) {
+
+
+
+        delete data.ID
+
+
+        data.ESTRATEGIA = data.ESTRATEGIA.NOMBRE
+
+
+        let resp = await this.regis.modificar_registro(id, data)
 
         return resp;
 

@@ -20,4 +20,11 @@ export class CentroVacunacionService {
       
         return resp;
     }
+
+    async devolver_por_id(id:string) {
+
+        const resp = await this.centrorep.findOne({where:{ID:id}})
+      
+        return resp;
+    }
 }

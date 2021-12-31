@@ -44,24 +44,33 @@ export class RegistroCentroVacunacionService {
     }
 
     async devolver_registrado_ubigeofecha(ubigeo, fecha) {
-      
+
         let respuesta: any[] = []
         const centros: any[] = await this.centrovacrep.find({ where: { UBIGEO: Like(ubigeo + '%') } })
 
 
         await Promise.all(centros.map(async centro => {
 
-            let registros_por_centro: any[] = await this.centrorep.find({ where: { CENTRO_DE_VACUNACION: centro.ID ,FECHA:fecha} })
+            let registros_por_centro: any[] = await this.centrorep.find({ where: { CENTRO_DE_VACUNACION: centro.ID, FECHA: fecha } })
             respuesta.push(...registros_por_centro.map(registro => {
-                return { ...registro, ...centro,ESTADO:true }
+                return { ...registro, ...centro, ESTADO: true }
             }))
 
         }))
 
-   
+    
+
+
         return respuesta
 
 
     }
 
+    async modificar_registro(id: any, data: any) {
+       
+
+     const resp=   await this.centrorep.update({ ID: id }, data)
+     return resp
+
+    }
 }
