@@ -22,6 +22,8 @@ import { MovimientosSismedEntity } from './distribucion-vacunas/movimientos-sism
 import { ProvinciaEntity } from './distribucion-vacunas/provincia.entity';
 import { RecepcionAnexosEntity } from './distribucion-vacunas/recepcion-anexos/recepcion-anexos.entity';
 import { RegistroCentroVacunacionEntity } from './distribucion-vacunas/registro-centro-vacunacion/registro-centro-vacunacion.entity';
+import { RegistrosConProblemasDigitacionEntity } from './distribucion-vacunas/registros-con-problemas-digitacion/registros-con-problemas-digitacion.entity';
+import { RegistrosConProblemasDigitacionService } from './distribucion-vacunas/registros-con-problemas-digitacion/registros-con-problemas-digitacion/registros-con-problemas-digitacion.service';
 import { StockIpressEntity } from './distribucion-vacunas/stock-ipress.entity';
 import { UnEntity } from './distribucion-vacunas/un.entity';
 import { VacunadosCovidFastEntity } from './distribucion-vacunas/vacunados-covid/vacunados-covid-fast.entity';
@@ -58,7 +60,7 @@ const defaultOptions = {
         ConteoRapidoEntity,DistribucionIpressEntity,DistribucionRedEntity,DistritoEntity,ProvinciaEntity,EstablecimientosEntity,
         EnviosIpressyEntity,EnviosRedEntity,StockIpressEntity,LoteVacunaEntity,
         DistribucionEstrategiaRedEntity,CuadroAlmacenRedEntity,VacunadosCovidEntity,RecepcionAnexosEntity,
-        RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,VacunadosCovidFastEntity
+        RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity
       ],
       "extra": {
         "validateConnection": false,

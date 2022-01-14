@@ -42,11 +42,8 @@ export class RegistroCentroVacunacionController {
     @Post('actualizar/:id')
     async antualizar(@Body() data: any, @Param('id') id: any) {
 
-
-
         delete data.ID
-
-
+        
         data.ESTRATEGIA = data.ESTRATEGIA.NOMBRE
 
 

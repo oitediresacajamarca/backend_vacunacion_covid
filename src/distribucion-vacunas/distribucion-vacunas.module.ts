@@ -36,15 +36,19 @@ import { MovimientoVacunasComplService } from './movimiento-vacunas-compl/movimi
 import { MovimientoVacunasComplEntity } from './movimiento-vacunas-compl/movimiento-vacunas-compl.entity';
 import { MovimientosVacunasSismedController } from './movimientos-vacunas-sismed/movimientos-vacunas-sismed.controller';
 import { VacunadosCovidFastEntity } from './vacunados-covid/vacunados-covid-fast.entity';
+import { RegistrosConProblemasDigitacionController } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion/registros-con-problemas-digitacion.controller';
+import { RegistrosConProblemasDigitacionService } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion/registros-con-problemas-digitacion.service';
+import { RegistrosConProblemasDigitacionEntity } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion.entity';
 
 
 @Module({
     imports: [TypeOrmModule.forFeature([ProvinciaRepository,DistritoRepository,DistribucionIpressRepository,
         EstablecimientosRepository,DistribucionRedRepository,ConteoRapidoRepository,EnviosIpressRepository,EnviosRedRepository,
     StockIpressRepository,LoteVacunaRepository,DistribucionEstrategiaRedRepository,CuadroAlmacenRedRepository,VacunadosCovidRepository,
-    RecepcionAnexosRepository,RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,VacunadosCovidFastEntity],'default'),
+    RecepcionAnexosRepository,RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity
+    ,VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity],'default'),
 TypeOrmModule.forFeature([MovimientosSismedRepository,MovimientosSismedEntity],'sismed')],
-    providers: [RecepcionAnexosService, RegistroCentroVacunacionService, CentroVacunacionService, MovimientoVacunasComplService],
-    controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController, RegistroCentroVacunacionController, CentroVacunacionController, MovimientoVacunasComplController, MovimientosVacunasSismedController]   
+    providers: [RecepcionAnexosService, RegistroCentroVacunacionService, CentroVacunacionService, MovimientoVacunasComplService, RegistrosConProblemasDigitacionService],
+    controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController, RegistroCentroVacunacionController, CentroVacunacionController, MovimientoVacunasComplController, MovimientosVacunasSismedController, RegistrosConProblemasDigitacionController]   
 })
 export class DistribucionVacunasModule {}
