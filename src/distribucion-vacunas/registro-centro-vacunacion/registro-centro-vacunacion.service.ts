@@ -12,7 +12,7 @@ export class RegistroCentroVacunacionService {
 
     }
     async devolver_registros_por_centro(centro: string) {
-        const resp = await this.centrorep.find({ where: { CENTRO_DE_VACUNACION: centro } })
+        const resp = await this.centrorep.find({ where: { CENTRO_DE_VACUNACION: centro },order:{FECHA:'DESC'} })
         return resp;
 
     }
