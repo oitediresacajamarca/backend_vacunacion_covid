@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { get } from 'superagent';
-import { Like, Repository } from 'typeorm';
+import { Between, Like, Repository } from 'typeorm';
 import { MovimientosSismedEntity } from '../movimientos-sismed.entity';
 import { VacunadosCovidFastEntity } from '../vacunados-covid/vacunados-covid-fast.entity';
 
@@ -206,7 +206,9 @@ export class MovimientosVacunasSismedController {
 
     @Post('movimientos_sismed_almacen_especializado/:amlcod')
     async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) {
-        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES: amlcod, MOVCODITIP: 'E' }, order: { MOVFECHREG: 'DESC' } })
+        console.log(filtro)
+        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES: amlcod, MOVCODITIP: 'E'
+    ,MOVFECHREG:Between( filtro.desde,filtro.hasta) }, order: { MOVFECHREG: 'DESC' } })
         return resp;
     }
 }
