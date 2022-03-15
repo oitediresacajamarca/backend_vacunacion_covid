@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Console } from 'console';
 import { get } from 'https';
@@ -557,6 +557,24 @@ ALMACENES_RED=[{NOMBRE_RED:'CAJAMARCA',COD_ALMACEN:'007S03',COD_ALM_ORG:'007A01'
 
         const resp = await this.movimientos_sis.find(
            { where: { ALMCODIORG:g.COD_ALM_ORG,ALMCODIDST:g.COD_ALMACEN},order:{MOVFECHREG:'DESC'}}
+        )
+
+
+        return resp
+
+
+    }
+
+    @Put('movimientos/RED/:COD_RED')
+    async cargar_movimientos_red_filtro(@Param('COD_RED') COD_RED: string,@Body()filtro:any) { 
+  
+       let g= this.ALMACENES_RED.find((r)=>{return r.NOMBRE_RED==COD_RED})
+
+
+
+
+        const resp = await this.movimientos_sis.find(
+           { where: { ALMCODIORG:g.COD_ALM_ORG,ALMCODIDST:g.COD_ALMACEN,FABRICANTE:filtro.FABRICANTE},order:{MOVFECHREG:'DESC'}}
         )
 
 
