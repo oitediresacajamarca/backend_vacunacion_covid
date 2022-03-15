@@ -70,9 +70,9 @@ const defaultOptions = {
     //j;K%}7er6iVqTrDP
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'localhost',
+      host: '172.18.20.21',
       port: 1433,
-      username: 'sa',
+      username: 'cargas',
       synchronize: false,
       password: '.',
       
