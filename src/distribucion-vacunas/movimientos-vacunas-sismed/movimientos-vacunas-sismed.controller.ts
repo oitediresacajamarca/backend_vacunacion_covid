@@ -205,10 +205,14 @@ export class MovimientosVacunasSismedController {
     }
 
     @Post('movimientos_sismed_almacen_especializado/:amlcod')
-    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) {
-        console.log(filtro)
-        const resp = await this.movimientos_sis.find({ where: { COD_RENIPRES: amlcod, MOVCODITIP: 'E'
-    ,MOVFECHREG:Between( filtro.desde,filtro.hasta) }, order: { MOVFECHREG: 'DESC' } })
+    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) { 
+        console.log(filtro)      
+        const resp = await this.movimientos_sis.find({
+            where: {
+                ALMCODIDST: amlcod, MOVCODITIP: 'E', FABRICANTE: filtro.fabricante.NOMBRE
+                , MOVFECHREG: Between(filtro.desde, filtro.hasta)
+            }, order: { MOVFECHREG: 'DESC' }
+        })
         return resp;
     }
 }

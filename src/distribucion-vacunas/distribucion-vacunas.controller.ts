@@ -528,13 +528,26 @@ export class DistribucionVacunasController {
         return listas;
     }
 
+ALMACENES_RED=[{NOMBRE_RED:'CAJAMARCA',COD_ALMACEN:'007S03'},
+{NOMBRE_RED:'CAJABAMBA',COD_ALMACEN:'007S06'},
+{NOMBRE_RED:'CAJABAMBA',COD_ALMACEN:'007S06'},
+{NOMBRE_RED:'SAN PABLO',COD_ALMACEN:'007S08'},
+{NOMBRE_RED:'SAN MIGUEL',COD_ALMACEN:'007S07'},
+{NOMBRE_RED:'CONTUMAZA',COD_ALMACEN:'007S14'},
+{NOMBRE_RED:'CELENDIN',COD_ALMACEN:'007S04'}
+
+]
+
 
     @Get('movimientos/RED/:COD_RED')
-    async cargar_movimientos_red(@Param('COD_RED') COD_RED: string) {
+    async cargar_movimientos_red(@Param('COD_RED') COD_RED: string) { 
+  
+       let g= this.ALMACENES_RED.find((r)=>{return r.NOMBRE_RED==COD_RED})
 
-        
+   
+
         const resp = await this.movimientos_sis.find({
-            where: { provdes: Like(COD_RED + '%'),MOVCODITIP:'S',ALMCODIORG:'007A01'},order:{MOVFECHREG:'DESC'}
+            where: { ALMCODIDST:g.COD_ALMACEN,MOVCODITIP:'S',ALMCODIORG:'007A01'},order:{MOVFECHREG:'DESC'}
         })
 
 
