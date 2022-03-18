@@ -50,11 +50,11 @@ const defaultOptions = {
     TypeOrmModule.forRoot({
       name:'default',
       type: 'mssql',
-      host: 'localhost',
+      host: '172.18.20.27',
       port: 1433,
       username: 'sa',
       synchronize: false,
-      password: '.',
+      password: 'Intercambio1080',
       database: 'BD_VACUNACION_COVID',
       entities: [
         ConteoRapidoEntity,DistribucionIpressEntity,DistribucionRedEntity,DistritoEntity,ProvinciaEntity,EstablecimientosEntity,
@@ -65,7 +65,8 @@ const defaultOptions = {
       "extra": {
         "validateConnection": false,
         "trustServerCertificate": true
-      }
+      },
+      options:{encrypt:false},
     }),
     //j;K%}7er6iVqTrDP
     TypeOrmModule.forRoot({

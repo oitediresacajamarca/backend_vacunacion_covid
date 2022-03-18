@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { get } from 'superagent';
-import { Between, Like, Repository } from 'typeorm';
+import { Any, Between, In, Like, Repository } from 'typeorm';
 import { MovimientosSismedEntity } from '../movimientos-sismed.entity';
 import { VacunadosCovidFastEntity } from '../vacunados-covid/vacunados-covid-fast.entity';
 
@@ -13,8 +13,33 @@ export class MovimientosVacunasSismedController {
         private vacunados_r: Repository<VacunadosCovidFastEntity>) {
 
     }
+    ALMACENES_RED = [{ NOMBRE_RED: 'CAJAMARCA', COD_ALMACEN: '007S03', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'CAJABAMBA', COD_ALMACEN: '007S06', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'SAN PABLO', COD_ALMACEN: '007S08', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'SAN MIGUEL', COD_ALMACEN: '007S07', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'CONTUMAZA', COD_ALMACEN: '007S14', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'CELENDIN', COD_ALMACEN: '007S04', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'SAN MARCOS', COD_ALMACEN: '007S05', COD_ALM_ORG: '007A01' },
+    { NOMBRE_RED: 'CHOTA', COD_ALMACEN: '010S05', COD_ALM_ORG: '010A01' },
+    { NOMBRE_RED: 'HUALGAYOC', COD_ALMACEN: '010S02', COD_ALM_ORG: '010A01' },
+    { NOMBRE_RED: 'SANTA CRUZ', COD_ALMACEN: '010S01', COD_ALM_ORG: '010A01' },
+    { NOMBRE_RED: 'CUTERVO', COD_ALMACEN: '', COD_ALM_ORG: '012A01' },
+    { NOMBRE_RED: 'JAEN', COD_ALMACEN: '016S02', COD_ALM_ORG: '016A01' },
+    { NOMBRE_RED: 'SAN IGNACIO', COD_ALMACEN: '016S01', COD_ALM_ORG: '016A01' },
 
-    PROVINICIAS: any[] = [{ "ID_PROVINCIA": "0601", "ID_DEPARTAMENTO": "06", "NOMBRE": "CAJAMARCA" }, { "ID_PROVINCIA": "0602", "ID_DEPARTAMENTO": "06", "NOMBRE": "CAJABAMBA" }, { "ID_PROVINCIA": "0603", "ID_DEPARTAMENTO": "06", "NOMBRE": "CELENDIN" }, { "ID_PROVINCIA": "0604", "ID_DEPARTAMENTO": "06", "NOMBRE": "CHOTA" }, { "ID_PROVINCIA": "0605", "ID_DEPARTAMENTO": "06", "NOMBRE": "CONTUMAZA" }, { "ID_PROVINCIA": "0606", "ID_DEPARTAMENTO": "06", "NOMBRE": "CUTERVO" }, { "ID_PROVINCIA": "0607", "ID_DEPARTAMENTO": "06", "NOMBRE": "HUALGAYOC" }, { "ID_PROVINCIA": "0608", "ID_DEPARTAMENTO": "06", "NOMBRE": "JAEN" }, { "ID_PROVINCIA": "0609", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN IGNACIO" }, { "ID_PROVINCIA": "0610", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN MARCOS" }, { "ID_PROVINCIA": "0611", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN MIGUEL" }, { "ID_PROVINCIA": "0612", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN PABLO" }, { "ID_PROVINCIA": "0613", "ID_DEPARTAMENTO": "06", "NOMBRE": "SANTA CRUZ" }]
+
+
+    ]
+
+    PROVINICIAS: any[] = [{ "ID_PROVINCIA": "0601", "ID_DEPARTAMENTO": "06", "NOMBRE": "CAJAMARCA" },
+     { "ID_PROVINCIA": "0602", "ID_DEPARTAMENTO": "06", "NOMBRE": "CAJABAMBA" },
+      { "ID_PROVINCIA": "0603", "ID_DEPARTAMENTO": "06", "NOMBRE": "CELENDIN" }, 
+      { "ID_PROVINCIA": "0604", "ID_DEPARTAMENTO": "06", "NOMBRE": "CHOTA" }, 
+      { "ID_PROVINCIA": "0605", "ID_DEPARTAMENTO": "06", "NOMBRE": "CONTUMAZA" },
+       { "ID_PROVINCIA": "0606", "ID_DEPARTAMENTO": "06", "NOMBRE": "CUTERVO" }, 
+       { "ID_PROVINCIA": "0607", "ID_DEPARTAMENTO": "06", "NOMBRE": "HUALGAYOC" },
+        { "ID_PROVINCIA": "0608", "ID_DEPARTAMENTO": "06", "NOMBRE": "JAEN" },
+         { "ID_PROVINCIA": "0609", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN IGNACIO" }, { "ID_PROVINCIA": "0610", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN MARCOS" }, { "ID_PROVINCIA": "0611", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN MIGUEL" }, { "ID_PROVINCIA": "0612", "ID_DEPARTAMENTO": "06", "NOMBRE": "SAN PABLO" }, { "ID_PROVINCIA": "0613", "ID_DEPARTAMENTO": "06", "NOMBRE": "SANTA CRUZ" }]
 
     @Get('dosis_distribuidas_cenares')
     async devolver_dosis_distribuidas_por_cenares() {
@@ -34,7 +59,7 @@ export class MovimientosVacunasSismedController {
             })
 
 
-            let movimientos_salidas: any[] = await this.movimientos_sis.find({ where: { MOVCODITIP: 'S', FABRICANTE: fabricante } })
+            let movimientos_salidas: any[] = await this.movimientos_sis.find({ where: { MOVCODITIP: 'S', FABRICANTE: fabricante,ALMCODIORG:Any(['016A01','007A01','010A01','012A01']) } })
 
 
             movimientos_salidas.map(movimiento => {
@@ -61,8 +86,11 @@ export class MovimientosVacunasSismedController {
             let cantidad_asignada_sinopharm = 0
             let cantidad_asignada_astrazeneca = 0
 
+            let g = this.ALMACENES_RED.find((r) => { return r.NOMBRE_RED == PROVINICIA.NOMBRE })
 
-            let distribuciones_pfizer_salidas: any[] = await this.movimientos_sis.find({ where: { almubigeo: Like(PROVINICIA.ID_PROVINCIA + '%'), FABRICANTE: 'PFIZER', MOVCODITIP: 'S' } })
+            console.log(g)
+
+            let distribuciones_pfizer_salidas: any[] = await this.movimientos_sis.find({ where: { ALMCODIORG: g.COD_ALM_ORG, ALMCODIDST: g.COD_ALMACEN, FABRICANTE: 'PFIZER', MOVCODITIP: 'S' } })
 
             distribuciones_pfizer_salidas.map(mov => {
 
@@ -70,7 +98,7 @@ export class MovimientosVacunasSismedController {
 
             })
 
-            let distribuciones_sibopharam_salidas: any[] = await this.movimientos_sis.find({ where: { almubigeo: Like(PROVINICIA.ID_PROVINCIA + '%'), FABRICANTE: 'SINOPHARM', MOVCODITIP: 'S' } })
+            let distribuciones_sibopharam_salidas: any[] = await this.movimientos_sis.find({ where: { ALMCODIORG: g.COD_ALM_ORG, ALMCODIDST: g.COD_ALMACEN, FABRICANTE: 'SINOPHARM', MOVCODITIP: 'S' } })
 
             distribuciones_sibopharam_salidas.map(mov => {
 
@@ -79,7 +107,7 @@ export class MovimientosVacunasSismedController {
             })
 
 
-            let distribuciones_astraxeneca_salidas: any[] = await this.movimientos_sis.find({ where: { almubigeo: Like(PROVINICIA.ID_PROVINCIA + '%'), FABRICANTE: 'ASTRAZENECA', MOVCODITIP: 'S' } })
+            let distribuciones_astraxeneca_salidas: any[] = await this.movimientos_sis.find({ where: { ALMCODIORG: g.COD_ALM_ORG, ALMCODIDST: g.COD_ALMACEN, FABRICANTE: 'ASTRAZENECA', MOVCODITIP: 'S' } })
 
             distribuciones_astraxeneca_salidas.map(mov => {
 
@@ -205,8 +233,8 @@ export class MovimientosVacunasSismedController {
     }
 
     @Post('movimientos_sismed_almacen_especializado/:amlcod')
-    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) { 
-        console.log(filtro)      
+    async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) {
+        console.log(filtro)
         const resp = await this.movimientos_sis.find({
             where: {
                 ALMCODIDST: amlcod, MOVCODITIP: 'E', FABRICANTE: filtro.fabricante.NOMBRE
