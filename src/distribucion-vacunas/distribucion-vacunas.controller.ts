@@ -554,7 +554,6 @@ ALMACENES_RED=[{NOMBRE_RED:'CAJAMARCA',COD_ALMACEN:'007S03',COD_ALM_ORG:'007A01'
 
 
 
-
         const resp = await this.movimientos_sis.find(
            { where: { ALMCODIORG:g.COD_ALM_ORG,ALMCODIDST:g.COD_ALMACEN},order:{MOVFECHREG:'DESC'}}
         )
@@ -570,7 +569,8 @@ ALMACENES_RED=[{NOMBRE_RED:'CAJAMARCA',COD_ALMACEN:'007S03',COD_ALM_ORG:'007A01'
   
        let g= this.ALMACENES_RED.find((r)=>{return r.NOMBRE_RED==COD_RED})
 
-
+       console.log(COD_RED)
+       console.log(filtro)
 
 
         const resp = await this.movimientos_sis.find(
