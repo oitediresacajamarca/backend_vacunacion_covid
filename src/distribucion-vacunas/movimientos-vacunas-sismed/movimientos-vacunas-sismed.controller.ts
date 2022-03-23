@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { get } from 'superagent';
+
 import { Any, Between, In, Like, Repository } from 'typeorm';
 import { MovimientosSismedEntity } from '../movimientos-sismed.entity';
 import { VacunadosCovidFastEntity } from '../vacunados-covid/vacunados-covid-fast.entity';
@@ -88,7 +88,6 @@ export class MovimientosVacunasSismedController {
 
             let g = this.ALMACENES_RED.find((r) => { return r.NOMBRE_RED == PROVINICIA.NOMBRE })
 
-            console.log(g)
 
             let distribuciones_pfizer_salidas: any[] = await this.movimientos_sis.find({ where: { ALMCODIORG: g.COD_ALM_ORG, ALMCODIDST: g.COD_ALMACEN, FABRICANTE: 'PFIZER', MOVCODITIP: 'S' } })
 
@@ -234,11 +233,14 @@ export class MovimientosVacunasSismedController {
 
     @Post('movimientos_sismed_almacen_especializado/:amlcod')
     async movimientos_sismed_almacenes_especilisados(@Param('amlcod') amlcod: string, @Body() filtro: any) {
-        console.log(filtro)
+    
+    
         const resp = await this.movimientos_sis.find({
             where: {
-                ALMCODIDST: amlcod, MOVCODITIP: 'E', FABRICANTE: filtro.fabricante.NOMBRE
-                , MOVFECHREG: Between(filtro.desde, filtro.hasta)
+                ALMCODIDST: amlcod, MOVCODITIP: 'E',
+            ALMCODIORG:In(['99662','99715','99715','016A00','010A00','012A00','007A00']),
+                 FABRICANTE: filtro.fabricante.NOMBRE
+          , MOVFECHREG: Between(filtro.desde, filtro.hasta)
             }, order: { MOVFECHREG: 'DESC' }
         })
         return resp;
