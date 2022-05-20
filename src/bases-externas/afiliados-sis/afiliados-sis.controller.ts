@@ -36,7 +36,7 @@ export class AfiliadosSisController {
 
     @Get('actualizar')
     async actualizar_renipress_padron() {
-        let resp: PadronReniec[] = await this.padronrep.find({ })
+        let resp: PadronReniec[] = await this.padronrep.find({Edad:41 })
 let count=0
   resp.forEach(async res => {
       try{
