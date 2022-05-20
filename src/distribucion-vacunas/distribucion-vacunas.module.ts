@@ -39,6 +39,7 @@ import { VacunadosCovidFastEntity } from './vacunados-covid/vacunados-covid-fast
 import { RegistrosConProblemasDigitacionController } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion/registros-con-problemas-digitacion.controller';
 import { RegistrosConProblemasDigitacionService } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion/registros-con-problemas-digitacion.service';
 import { RegistrosConProblemasDigitacionEntity } from './registros-con-problemas-digitacion/registros-con-problemas-digitacion.entity';
+import { PadronReniecEntity } from './padron-reniec/padron-reniec.entity';
 
 
 @Module({
@@ -46,7 +47,7 @@ import { RegistrosConProblemasDigitacionEntity } from './registros-con-problemas
         EstablecimientosRepository,DistribucionRedRepository,ConteoRapidoRepository,EnviosIpressRepository,EnviosRedRepository,
     StockIpressRepository,LoteVacunaRepository,DistribucionEstrategiaRedRepository,CuadroAlmacenRedRepository,VacunadosCovidRepository,
     RecepcionAnexosRepository,RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity
-    ,VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity],'default'),
+    ,VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity,PadronReniecEntity],'default'),
 TypeOrmModule.forFeature([MovimientosSismedRepository,MovimientosSismedEntity],'sismed')],
     providers: [RecepcionAnexosService, RegistroCentroVacunacionService, CentroVacunacionService, MovimientoVacunasComplService, RegistrosConProblemasDigitacionService],
     controllers: [DistribucionVacunasController, DistribucionEstrategiaRedController, DistribucionRedIpressController, EstablecimientoController, VacunadosCovidController, RecepcionAnexosController, RegistroCentroVacunacionController, CentroVacunacionController, MovimientoVacunasComplController, MovimientosVacunasSismedController, RegistrosConProblemasDigitacionController]   

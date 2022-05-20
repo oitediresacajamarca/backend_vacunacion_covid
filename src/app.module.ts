@@ -35,6 +35,13 @@ import { RedEntity } from './maestros/red/red.entity';
 import { UsuarioRolEntity } from './usuario/usuario-rol.entity';
 import { UsuarioEntity } from './usuario/usuario.entity';
 import { UsuarioModule } from './usuario/usuario.module';
+import { AfiliadosSisModule } from './bases-externas/afiliados-sis/afiliados-sis.module';
+import { AfiliadosSisEntity } from './bases-externas/afiliados-sis.entity';
+import { RenaesEntity } from './bases-externas/renaes.entity';
+import { PadronReniecEntity } from './distribucion-vacunas/padron-reniec/padron-reniec.entity';
+import { PadronReniecService } from './bases-externas/actualizaciones/padron-reniec/padron-reniec.service';
+import { AfiliadosSisRepository } from './bases-externas/afiliados-sis.repository';
+import { ActualizacionesModule } from './bases-externas/actualizaciones/actualizaciones.module';
 
 const defaultOptions = {
   type: 'mssql',
@@ -57,14 +64,19 @@ const defaultOptions = {
       password: 'Intercambio1080',
       database: 'BD_VACUNACION_COVID',
       entities: [
-        ConteoRapidoEntity,DistribucionIpressEntity,DistribucionRedEntity,DistritoEntity,ProvinciaEntity,EstablecimientosEntity,
+        ConteoRapidoEntity,DistribucionIpressEntity,DistribucionRedEntity,DistritoEntity,
+        ProvinciaEntity,EstablecimientosEntity,
         EnviosIpressyEntity,EnviosRedEntity,StockIpressEntity,LoteVacunaEntity,
         DistribucionEstrategiaRedEntity,CuadroAlmacenRedEntity,VacunadosCovidEntity,RecepcionAnexosEntity,
-        RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity
+        RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,
+        VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity,PadronReniecEntity
       ],
       "extra": {
         "validateConnection": false,
         "trustServerCertificate": true
+      }, pool: {
+        max: 100000, min: 1,
+      
       },
       options:{encrypt:false},
     }),
@@ -129,16 +141,43 @@ const defaultOptions = {
       name:'USUARIOS'
 
     }),
+    TypeOrmModule.forRoot({
+      type: 'mssql',
+      host: '172.18.20.22',
+      port: 1433,
+      username: 'sa',
+      synchronize: false,
+      password: 'P4ssw0rd',
+      database: 'BDODSIS_AFI_2022_04',
+      entities: [
+        AfiliadosSisEntity,RenaesEntity
+      ],
+      extra: {
+        "validateConnection": false,
+        "trustServerCertificate": true,        
+      },
+      options:{encrypt:false},
+      
+      pool: {
+      
+
+      
+      },
+      name:'AFILIADOS_SIS'
+
+    }),
     DistribucionVacunasModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'tablero_vacunacion'),
     }),
     MaestrosModule,
-    UsuarioModule
+    UsuarioModule,
+    AfiliadosSisModule,
+    ActualizacionesModule
 
 
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PadronReniecService],
 })
 export class AppModule { }

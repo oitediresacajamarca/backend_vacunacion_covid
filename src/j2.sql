@@ -3,6 +3,1111 @@ alter PROCEDURE [dbo].[REPORTE_NIÑO_2022]
     @anio integer       
 AS   
 BEGIN    
+
+	--=====================================================================================================================
+	------- CREACIÓN DE TABLA FINAL PARA EL REPORTE DE NIÑO ---------------------------------------------------------------
+	--=====================================================================================================================
+
+		IF OBJECT_ID('dbo.tmp_nino_2022','U') IS NULL             
+		
+    begin
+        	CREATE TABLE tmp_nino_2022(            
+				mes integer,            
+				anio integer,            
+				ubigeo integer,            
+				cod_2000 character varying(150),            
+				categoria character varying(10),            
+				region character varying(150),            
+				provincia character varying(150),            
+				distrito character varying(150),
+				unidad_ejecutora character varying(150),
+				disa character varying(150),            
+				red character varying(150),            
+				microred character varying(150),
+				clas character varying(150),           
+				establecimiento character varying(150),            
+				var1 integer,
+var2 integer,
+var3 integer,
+var4 integer,
+var5 integer,
+var6 integer,
+var7 integer,
+var8 integer,
+var9 integer,
+var10 integer,
+var11 integer,
+var12 integer,
+var13 integer,
+var14 integer,
+var15 integer,
+var16 integer,
+var17 integer,
+var18 integer,
+var19 integer,
+var20 integer,
+var21 integer,
+var22 integer,
+var23 integer,
+var24 integer,
+var25 integer,
+var26 integer,
+var27 integer,
+var28 integer,
+var29 integer,
+var30 integer,
+var31 integer,
+var32 integer,
+var33 integer,
+var34 integer,
+var35 integer,
+var36 integer,
+var37 integer,
+var38 integer,
+var39 integer,
+var40 integer,
+var41 integer,
+var42 integer,
+var43 integer,
+var44 integer,
+var45 integer,
+var46 integer,
+var47 integer,
+var48 integer,
+var49 integer,
+var50 integer,
+var51 integer,
+var52 integer,
+var53 integer,
+var54 integer,
+var55 integer,
+var56 integer,
+var57 integer,
+var58 integer,
+var59 integer,
+var60 integer,
+var61 integer,
+var62 integer,
+var63 integer,
+var64 integer,
+var65 integer,
+var66 integer,
+var67 integer,
+var68 integer,
+var69 integer,
+var70 integer,
+var71 integer,
+var72 integer,
+var73 integer,
+var74 integer,
+var75 integer,
+var76 integer,
+var77 integer,
+var78 integer,
+var79 integer,
+var80 integer,
+var81 integer,
+var82 integer,
+var83 integer,
+var84 integer,
+var85 integer,
+var86 integer,
+var87 integer,
+var88 integer,
+var89 integer,
+var90 integer,
+var91 integer,
+var92 integer,
+var93 integer,
+var94 integer,
+var95 integer,
+var96 integer,
+var97 integer,
+var98 integer,
+var99 integer,
+var100 integer,
+var101 integer,
+var102 integer,
+var103 integer,
+var104 integer,
+var105 integer,
+var106 integer,
+var107 integer,
+var108 integer,
+var109 integer,
+var110 integer,
+var111 integer,
+var112 integer,
+var113 integer,
+var114 integer,
+var115 integer,
+var116 integer,
+var117 integer,
+var118 integer,
+var119 integer,
+var120 integer,
+var121 integer,
+var122 integer,
+var123 integer,
+var124 integer,
+var125 integer,
+var126 integer,
+var127 integer,
+var128 integer,
+var129 integer,
+var130 integer,
+var131 integer,
+var132 integer,
+var133 integer,
+var134 integer,
+var135 integer,
+var136 integer,
+var137 integer,
+var138 integer,
+var139 integer,
+var140 integer,
+var141 integer,
+var142 integer,
+var143 integer,
+var144 integer,
+var145 integer,
+var146 integer,
+var147 integer,
+var148 integer,
+var149 integer,
+var150 integer,
+var151 integer,
+var152 integer,
+var153 integer,
+var154 integer,
+var155 integer,
+var156 integer,
+var157 integer,
+var158 integer,
+var159 integer,
+var160 integer,
+var161 integer,
+var162 integer,
+var163 integer,
+var164 integer,
+var165 integer,
+var166 integer,
+var167 integer,
+var168 integer,
+var169 integer,
+var170 integer,
+var171 integer,
+var172 integer,
+var173 integer,
+var174 integer,
+var175 integer,
+var176 integer,
+var177 integer,
+var178 integer,
+var179 integer,
+var180 integer,
+var181 integer,
+var182 integer,
+var183 integer,
+var184 integer,
+var185 integer,
+var186 integer,
+var187 integer,
+var188 integer,
+var189 integer,
+var190 integer,
+var191 integer,
+var192 integer,
+var193 integer,
+var194 integer,
+var195 integer,
+var196 integer,
+var197 integer,
+var198 integer,
+var199 integer,
+var200 integer,
+var201 integer,
+var202 integer,
+var203 integer,
+var204 integer,
+var205 integer,
+var206 integer,
+var207 integer,
+var208 integer,
+var209 integer,
+var210 integer,
+var211 integer,
+var212 integer,
+var213 integer,
+var214 integer,
+var215 integer,
+var216 integer,
+var217 integer,
+var218 integer,
+var219 integer,
+var220 integer,
+var221 integer,
+var222 integer,
+var223 integer,
+var224 integer,
+var225 integer,
+var226 integer,
+var227 integer,
+var228 integer,
+var229 integer,
+var230 integer,
+var231 integer,
+var232 integer,
+var233 integer,
+var234 integer,
+var235 integer,
+var236 integer,
+var237 integer,
+var238 integer,
+var239 integer,
+var240 integer,
+var241 integer,
+var242 integer,
+var243 integer,
+var244 integer,
+var245 integer,
+var246 integer,
+var247 integer,
+var248 integer,
+var249 integer,
+var250 integer,
+var251 integer,
+var252 integer,
+var253 integer,
+var254 integer,
+var255 integer,
+var256 integer,
+var257 integer,
+var258 integer,
+var259 integer,
+var260 integer,
+var261 integer,
+var262 integer,
+var263 integer,
+var264 integer,
+var265 integer,
+var266 integer,
+var267 integer,
+var268 integer,
+var269 integer,
+var270 integer,
+var271 integer,
+var272 integer,
+var273 integer,
+var274 integer,
+var275 integer,
+var276 integer,
+var277 integer,
+var278 integer,
+var279 integer,
+var280 integer,
+var281 integer,
+var282 integer,
+var283 integer,
+var284 integer,
+var285 integer,
+var286 integer,
+var287 integer,
+var288 integer,
+var289 integer,
+var290 integer,
+var291 integer,
+var292 integer,
+var293 integer,
+var294 integer,
+var295 integer,
+var296 integer,
+var297 integer,
+var298 integer,
+var299 integer,
+var300 integer,
+var301 integer,
+var302 integer,
+var303 integer,
+var304 integer,
+var305 integer,
+var306 integer,
+var307 integer,
+var308 integer,
+var309 integer,
+var310 integer,
+var311 integer,
+var312 integer,
+var313 integer,
+var314 integer,
+var315 integer,
+var316 integer,
+var317 integer,
+var318 integer,
+var319 integer,
+var320 integer,
+var321 integer,
+var322 integer,
+var323 integer,
+var324 integer,
+var325 integer,
+var326 integer,
+var327 integer,
+var328 integer,
+var329 integer,
+var330 integer,
+var331 integer,
+var332 integer,
+var333 integer,
+var334 integer,
+var335 integer,
+var336 integer,
+var337 integer,
+var338 integer,
+var339 integer,
+var340 integer,
+var341 integer,
+var342 integer,
+var343 integer,
+var344 integer,
+var345 integer,
+var346 integer,
+var347 integer,
+var348 integer,
+var349 integer,
+var350 integer,
+var351 integer,
+var352 integer,
+var353 integer,
+var354 integer,
+var355 integer,
+var356 integer,
+var357 integer,
+var358 integer,
+var359 integer,
+var360 integer,
+var361 integer,
+var362 integer,
+var363 integer,
+var364 integer,
+var365 integer,
+var366 integer,
+var367 integer,
+var368 integer,
+var369 integer,
+var370 integer,
+var371 integer,
+var372 integer,
+var373 integer,
+var374 integer,
+var375 integer,
+var376 integer,
+var377 integer,
+var378 integer,
+var379 integer,
+var380 integer,
+var381 integer,
+var382 integer,
+var383 integer,
+var384 integer,
+var385 integer,
+var386 integer,
+var387 integer,
+var388 integer,
+var389 integer,
+var390 integer,
+var391 integer,
+var392 integer,
+var393 integer,
+var394 integer,
+var395 integer,
+var396 integer,
+var397 integer,
+var398 integer,
+var399 integer,
+var400 integer,
+var401 integer,
+var402 integer,
+var403 integer,
+var404 integer,
+var405 integer,
+var406 integer,
+var407 integer,
+var408 integer,
+var409 integer,
+var410 integer,
+var411 integer,
+var412 integer,
+var413 integer,
+var414 integer,
+var415 integer,
+var416 integer,
+var417 integer,
+var418 integer,
+var419 integer,
+var420 integer,
+var421 integer,
+var422 integer,
+var423 integer,
+var424 integer,
+var425 integer,
+var426 integer,
+var427 integer,
+var428 integer,
+var429 integer,
+var430 integer,
+var431 integer,
+var432 integer,
+var433 integer,
+var434 integer,
+var435 integer,
+var436 integer,
+var437 integer,
+var438 integer,
+var439 integer,
+var440 integer,
+var441 integer,
+var442 integer,
+var443 integer,
+var444 integer,
+var445 integer,
+var446 integer,
+var447 integer,
+var448 integer,
+var449 integer,
+var450 integer,
+var451 integer,
+var452 integer,
+var453 integer,
+var454 integer,
+var455 integer,
+var456 integer,
+var457 integer,
+var458 integer,
+var459 integer,
+var460 integer,
+var461 integer,
+var462 integer,
+var463 integer,
+var464 integer,
+var465 integer,
+var466 integer,
+var467 integer,
+var468 integer,
+var469 integer,
+var470 integer,
+var471 integer,
+var472 integer,
+var473 integer,
+var474 integer,
+var475 integer,
+var476 integer,
+var477 integer,
+var478 integer,
+var479 integer,
+var480 integer,
+var481 integer,
+var482 integer,
+var483 integer,
+var484 integer,
+var485 integer,
+var486 integer,
+var487 integer,
+var488 integer,
+var489 integer,
+var490 integer,
+var491 integer,
+var492 integer,
+var493 integer,
+var494 integer,
+var495 integer,
+var496 integer,
+var497 integer,
+var498 integer,
+var499 integer,
+var500 integer,
+var501 integer,
+var502 integer,
+var503 integer,
+var504 integer,
+var505 integer,
+var506 integer,
+var507 integer,
+var508 integer,
+var509 integer,
+var510 integer,
+var511 integer,
+var512 integer,
+var513 integer,
+var514 integer,
+var515 integer,
+var516 integer,
+var517 integer,
+var518 integer,
+var519 integer,
+var520 integer,
+var521 integer,
+var522 integer,
+var523 integer,
+var524 integer,
+var525 integer,
+var526 integer,
+var527 integer,
+var528 integer,
+var529 integer,
+var530 integer,
+var531 integer,
+var532 integer,
+var533 integer,
+var534 integer,
+var535 integer,
+var536 integer,
+var537 integer,
+var538 integer,
+var539 integer,
+var540 integer,
+var541 integer,
+var542 integer,
+var543 integer,
+var544 integer,
+var545 integer,
+var546 integer,
+var547 integer,
+var548 integer,
+var549 integer,
+var550 integer,
+var551 integer,
+var552 integer,
+var553 integer,
+var554 integer,
+var555 integer,
+var556 integer,
+var557 integer,
+var558 integer,
+var559 integer,
+var560 integer,
+var561 integer,
+var562 integer,
+var563 integer,
+var564 integer,
+var565 integer,
+var566 integer,
+var567 integer,
+var568 integer,
+var569 integer,
+var570 integer,
+var571 integer,
+var572 integer,
+var573 integer,
+var574 integer,
+var575 integer,
+var576 integer,
+var577 integer,
+var578 integer,
+var579 integer,
+var580 integer,
+var581 integer,
+var582 integer,
+var583 integer,
+var584 integer,
+var585 integer,
+var586 integer,
+var587 integer,
+var588 integer,
+var589 integer,
+var590 integer,
+var591 integer,
+var592 integer,
+var593 integer,
+var594 integer,
+var595 integer,
+var596 integer,
+var597 integer,
+var598 integer,
+var599 integer,
+var600 integer,
+var601 integer,
+var602 integer,
+var603 integer,
+var604 integer,
+var605 integer,
+var606 integer,
+var607 integer,
+var608 integer,
+var609 integer,
+var610 integer,
+var611 integer,
+var612 integer,
+var613 integer,
+var614 integer,
+var615 integer,
+var616 integer,
+var617 integer,
+var618 integer,
+var619 integer,
+var620 integer,
+var621 integer,
+var622 integer,
+var623 integer,
+var624 integer,
+var625 integer,
+var626 integer,
+var627 integer,
+var628 integer,
+var629 integer,
+var630 integer,
+var631 integer,
+var632 integer,
+var633 integer,
+var634 integer,
+var635 integer,
+var636 integer,
+var637 integer,
+var638 integer,
+var639 integer,
+var640 integer,
+var641 integer,
+var642 integer,
+var643 integer,
+var644 integer,
+var645 integer,
+var646 integer,
+var647 integer,
+var648 integer,
+var649 integer,
+var650 integer,
+var651 integer,
+var652 integer,
+var653 integer,
+var654 integer,
+var655 integer,
+var656 integer,
+var657 integer,
+var658 integer,
+var659 integer,
+var660 integer,
+var661 integer,
+var662 integer,
+var663 integer,
+var664 integer,
+var665 integer,
+var666 integer,
+var667 integer,
+var668 integer,
+var669 integer,
+var670 integer,
+var671 integer,
+var672 integer,
+var673 integer,
+var674 integer,
+var675 integer,
+var676 integer,
+var677 integer,
+var678 integer,
+var679 integer,
+var680 integer,
+var681 integer,
+var682 integer,
+var683 integer,
+var684 integer,
+var685 integer,
+var686 integer,
+var687 integer,
+var688 integer,
+var689 integer,
+var690 integer,
+var691 integer,
+var692 integer,
+var693 integer,
+var694 integer,
+var695 integer,
+var696 integer,
+var697 integer,
+var698 integer,
+var699 integer,
+var700 integer,
+var701 integer,
+var702 integer,
+var703 integer,
+var704 integer,
+var705 integer,
+var706 integer,
+var707 integer,
+var708 integer,
+var709 integer,
+var710 integer,
+var711 integer,
+var712 integer,
+var713 integer,
+var714 integer,
+var715 integer,
+var716 integer,
+var717 integer,
+var718 integer,
+var719 integer,
+var720 integer,
+var721 integer,
+var722 integer,
+var723 integer,
+var724 integer,
+var725 integer,
+var726 integer,
+var727 integer,
+var728 integer,
+var729 integer,
+var730 integer,
+var731 integer,
+var732 integer,
+var733 integer,
+var734 integer,
+var735 integer,
+var736 integer,
+var737 integer,
+var738 integer,
+var739 integer,
+var740 integer,
+var741 integer,
+var742 integer,
+var743 integer,
+var744 integer,
+var745 integer,
+var746 integer,
+var747 integer,
+var748 integer,
+var749 integer,
+var750 integer,
+var751 integer,
+var752 integer,
+var753 integer,
+var754 integer,
+var755 integer,
+var756 integer,
+var757 integer,
+var758 integer,
+var759 integer,
+var760 integer,
+var761 integer,
+var762 integer,
+var763 integer,
+var764 integer,
+var765 integer,
+var766 integer,
+var767 integer,
+var768 integer,
+var769 integer,
+var770 integer,
+var771 integer,
+var772 integer,
+var773 integer,
+var774 integer,
+var775 integer,
+var776 integer,
+var777 integer,
+var778 integer,
+var779 integer,
+var780 integer,
+var781 integer,
+var782 integer,
+var783 integer,
+var784 integer,
+var785 integer,
+var786 integer,
+var787 integer,
+var788 integer,
+var789 integer,
+var790 integer,
+var791 integer,
+var792 integer,
+var793 integer,
+var794 integer,
+var795 integer,
+var796 integer,
+var797 integer,
+var798 integer,
+var799 integer,
+var800 integer,
+var801 integer,
+var802 integer,
+var803 integer,
+var804 integer,
+var805 integer,
+var806 integer,
+var807 integer,
+var808 integer,
+var809 integer,
+var810 integer,
+var811 integer,
+var812 integer,
+var813 integer,
+var814 integer,
+var815 integer,
+var816 integer,
+var817 integer,
+var818 integer,
+var819 integer,
+var820 integer,
+var821 integer,
+var822 integer,
+var823 integer,
+var824 integer,
+var825 integer,
+var826 integer,
+var827 integer,
+var828 integer,
+var829 integer,
+var830 integer,
+var831 integer,
+var832 integer,
+var833 integer,
+var834 integer,
+var835 integer,
+var836 integer,
+var837 integer,
+var838 integer,
+var839 integer,
+var840 integer,
+var841 integer,
+var842 integer,
+var843 integer,
+var844 integer,
+var845 integer,
+var846 integer,
+var847 integer,
+var848 integer,
+var849 integer,
+var850 integer,
+var851 integer,
+var852 integer,
+var853 integer,
+var854 integer,
+var855 integer,
+var856 integer,
+var857 integer,
+var858 integer,
+var859 integer,
+var860 integer,
+var861 integer,
+var862 integer,
+var863 integer,
+var864 integer,
+var865 integer,
+var866 integer,
+var867 integer,
+var868 integer,
+var869 integer,
+var870 integer,
+var871 integer,
+var872 integer,
+var873 integer,
+var874 integer,
+var875 integer,
+var876 integer,
+var877 integer,
+var878 integer,
+var879 integer,
+var880 integer,
+var881 integer,
+var882 integer,
+var883 integer,
+var884 integer,
+var885 integer,
+var886 integer,
+var887 integer,
+var888 integer,
+var889 integer,
+var890 integer,
+var891 integer,
+var892 integer,
+var893 integer,
+var894 integer,
+var895 integer,
+var896 integer,
+var897 integer,
+var898 integer,
+var899 integer,
+var900 integer,
+var901 integer,
+var902 integer,
+var903 integer,
+var904 integer,
+var905 integer,
+var906 integer,
+var907 integer,
+var908 integer,
+var909 integer,
+var910 integer,
+var911 integer,
+var912 integer,
+var913 integer,
+var914 integer,
+var915 integer,
+var916 integer,
+var917 integer,
+var918 integer,
+var919 integer,
+var920 integer,
+var921 integer,
+var922 integer,
+var923 integer,
+var924 integer,
+var925 integer,
+var926 integer,
+var927 integer,
+var928 integer,
+var929 integer,
+var930 integer,
+var931 integer,
+var932 integer,
+var933 integer,
+var934 integer,
+var935 integer,
+var936 integer,
+var937 integer,
+var938 integer,
+var939 integer,
+var940 integer,
+var941 integer,
+var942 integer,
+var943 integer,
+var944 integer,
+var945 integer,
+var946 integer,
+var947 integer,
+var948 integer,
+var949 integer,
+var950 integer,
+var951 integer,
+var952 integer,
+var953 integer,
+var954 integer,
+var955 integer,
+var956 integer,
+var957 integer,
+var958 integer,
+var959 integer,
+var960 integer,
+var961 integer,
+var962 integer,
+var963 integer,
+var964 integer,
+var965 integer,
+var966 integer,
+var967 integer,
+var968 integer,
+var969 integer,
+var970 integer,
+var971 integer,
+var972 integer,
+var973 integer,
+var974 integer,
+var975 integer,
+var976 integer,
+var977 integer,
+var978 integer,
+var979 integer,
+var980 integer,
+var981 integer,
+var982 integer,
+var983 integer,
+var984 integer,
+var985 integer,
+var986 integer,
+var987 integer,
+var988 integer,
+var989 integer,
+var990 integer,
+var991 integer,
+var992 integer,
+var993 integer,
+var994 integer,
+var995 integer,
+var996 integer,
+var997 integer,
+var998 integer,
+var999 integer,
+var1000 integer
+
+			) ON [PRIMARY];            
+
+
+    
+    --=====================================================================================================================
+	------- INSERCIÓN DE ESTABLECIMIENTOS EN TABLA FINAL DEL REPORTE DE NIÑO ----------------------------------------------
+	--=====================================================================================================================
+
+		DELETE FROM tmp_nino_2022 where mes=@mes and anio=@anio;                 
+		DELETE FROM tmp_nino_2022 where mes=@mes and anio=@anio;             
+		DELETE FROM tmp_nino_2022 where mes=@mes and anio=@anio;             
+		--------------------------------------------------------------------------------------------------------------------------------------------------------------------		                 
+		insert into tmp_nino_2022                
+		SELECT @mes,@anio,                 
+			d.UBIGEO_ESTABLECIMIENTO,
+			d.RENIPRESS,
+			d.CATEGORIA,                 
+			d.DEPARTAMENTO,                 
+			d.PROVINCIA,                 
+			d.DISTRITO,
+			d.UNIDAD_EJECUTORA,                 
+			d.SUB_REGION,                  
+			d.RED,                  
+			d.MICRORED,
+			d.CLAS,
+			d.IPRESS,                 
+			0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0      
+		FROM DISTRIBUCION_IPRESS AS d  
+		ORDER BY d.SUB_REGION, d.RED, d.MICRORED, d.RENIPRESS;												
+end							
+
+
 		IF OBJECT_ID ( 'dbo.nino_tmp','U' ) IS NULL             
 		CREATE TABLE nino_tmp(                 
 			[actividad] [nvarchar](500) NOT NULL,
@@ -4168,1592 +5273,204 @@ select '088. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de
 		group by h.codigo_unico,              
 		h.nombre_establecimiento;          
     	
-	--=====================================================================================================================
-	------- CREACIÓN DE TABLA FINAL PARA EL REPORTE DE NIÑO ---------------------------------------------------------------
-	--=====================================================================================================================
+									
 
-		IF OBJECT_ID('dbo.tmp_nino_2016','U') IS NULL             
-			CREATE TABLE tmp_nino_2016(            
-				mes integer,            
-				anio integer,            
-				ubigeo integer,            
-				cod_2000 character varying(150),            
-				categoria character varying(10),            
-				region character varying(150),            
-				provincia character varying(150),            
-				distrito character varying(150),
-				unidad_ejecutora character varying(150),
-				disa character varying(150),            
-				red character varying(150),            
-				microred character varying(150),
-				clas character varying(150),           
-				establecimiento character varying(150),            
-				var1 integer,          
-				var2 integer,          
-				var3 integer,          
-				var4 integer,          
-				var5 integer,          
-				var6 integer,          
-				var7 integer,          
-				var8 integer,          
-				var9 integer,          
-				var10 integer,          
-				var11 integer,          
-				var12 integer,          
-				var13 integer,          
-				var14 integer,          
-				var15 integer,          
-				var16 integer,          
-				var17 integer,          
-				var18 integer,          
-				var19 integer,          
-				var20 integer,          
-				var21 integer,          
-				var22 integer,          
-				var23 integer,          
-				var24 integer,          
-				var25 integer,          
-				var26 integer,          
-				var27 integer,          
-				var28 integer,          
-				var29 integer,          
-				var30 integer,          
-				var31 integer,          
-				var32 integer,          
-				var33 integer,          
-				var34 integer,          
-				var35 integer,          
-				var36 integer,          
-				var37 integer,          
-				var38 integer,          
-				var39 integer,          
-				var40 integer,          
-				var41 integer,          
-				var42 integer,          
-				var43 integer,          
-				var44 integer,          
-				var45 integer,          
-				var46 integer,          
-				var47 integer,          
-				var48 integer,          
-				var49 integer,          
-				var50 integer,          
-				var51 integer,          
-				var52 integer,          
-				var53 integer,          
-				var54 integer,          
-				var55 integer,          
-				var56 integer,          
-				var57 integer,          
-				var58 integer,          
-				var59 integer,          
-				var60 integer,          
-				var61 integer,          
-				var62 integer,          
-				var63 integer,          
-				var64 integer,          
-				var65 integer,          
-				var66 integer,          
-				var67 integer,          
-				var68 integer,          
-				var69 integer,          
-				var70 integer,          
-				var71 integer,          
-				var72 integer,          
-				var73 integer,          
-				var74 integer,          
-				var75 integer,          
-				var76 integer,          
-				var77 integer,          
-				var78 integer,          
-				var79 integer,          
-				var80 integer,          
-				var81 integer,          
-				var82 integer,          
-				var83 integer,          
-				var84 integer,          
-				var85 integer,          
-				var86 integer,          
-				var87 integer,          
-				var88 integer,          
-				var89 integer,          
-				var90 integer,          
-				var91 integer,          
-				var92 integer,          
-				var93 integer,          
-				var94 integer,          
-				var95 integer,          
-				var96 integer,          
-				var97 integer,          
-				var98 integer,          
-				var99 integer,          
-				var100 integer,          
-				var101 integer,          
-				var102 integer,          
-				var103 integer,          
-				var104 integer,          
-				var105 integer,          
-				var106 integer,          
-				var107 integer,          
-				var108 integer,          
-				var109 integer,          
-				var110 integer,          
-				var111 integer,          
-				var112 integer,          
-				var113 integer,          
-				var114 integer,          
-				var115 integer,          
-				var116 integer,          
-				var117 integer,          
-				var118 integer,          
-				var119 integer,          
-				var120 integer,          
-				var121 integer,          
-				var122 integer,          
-				var123 integer,          
-				var124 integer,          
-				var125 integer,          
-				var126 integer,          
-				var127 integer,          
-				var128 integer,          
-				var129 integer,          
-				var130 integer,          
-				var131 integer,          
-				var132 integer,          
-				var133 integer,          
-				var134 integer,          
-				var135 integer,          
-				var136 integer,          
-				var137 integer,          
-				var138 integer,          
-				var139 integer,          
-				var140 integer,          
-				var141 integer,          
-				var142 integer,          
-				var143 integer,          
-				var144 integer,          
-				var145 integer,          
-				var146 integer,          
-				var147 integer,          
-				var148 integer,          
-				var149 integer,          
-				var150 integer,          
-				var151 integer,          
-				var152 integer,          
-				var153 integer,          
-				var154 integer,          
-				var155 integer,          
-				var156 integer,          
-				var157 integer,          
-				var158 integer,          
-				var159 integer,          
-				var160 integer,          
-				var161 integer,          
-				var162 integer,          
-				var163 integer,          
-				var164 integer,          
-				var165 integer,          
-				var166 integer,          
-				var167 integer,          
-				var168 integer,          
-				var169 integer,          
-				var170 integer,          
-				var171 integer,          
-				var172 integer,          
-				var173 integer,          
-				var174 integer,          
-				var175 integer,          
-				var176 integer,          
-				var177 integer,          
-				var178 integer,          
-				var179 integer,          
-				var180 integer,          
-				var181 integer,          
-				var182 integer,          
-				var183 integer,          
-				var184 integer,          
-				var185 integer,          
-				var186 integer,          
-				var187 integer,          
-				var188 integer,          
-				var189 integer,          
-				var190 integer,          
-				var191 integer,          
-				var192 integer,          
-				var193 integer,          
-				var194 integer,          
-				var195 integer,          
-				var196 integer,          
-				var197 integer,          
-				var198 integer,          
-				var199 integer,          
-				var200 integer,          
-				var201 integer,          
-				var202 integer,          
-				var203 integer,          
-				var204 integer,          
-				var205 integer,          
-				var206 integer,          
-				var207 integer,          
-				var208 integer,          
-				var209 integer,          
-				var210 integer,          
-				var211 integer,          
-				var212 integer,          
-				var213 integer,          
-				var214 integer,          
-				var215 integer,          
-				var216 integer,          
-				var217 integer,          
-				var218 integer,          
-				var219 integer,          
-				var220 integer,          
-				var221 integer,          
-				var222 integer,          
-				var223 integer,          
-				var224 integer,          
-				var225 integer,          
-				var226 integer,          
-				var227 integer,          
-				var228 integer,          
-				var229 integer,          
-				var230 integer,          
-				var231 integer,          
-				var232 integer,          
-				var233 integer,          
-				var234 integer,          
-				var235 integer,          
-				var236 integer,          
-				var237 integer,          
-				var238 integer,          
-				var239 integer,          
-				var240 integer,          
-				var241 integer,          
-				var242 integer,          
-				var243 integer,          
-				var244 integer,          
-				var245 integer,          
-				var246 integer,          
-				var247 integer,          
-				var248 integer,          
-				var249 integer,          
-				var250 integer,          
-				var251 integer,          
-				var252 integer,          
-				var253 integer,          
-				var254 integer,          
-				var255 integer,          
-				var256 integer,          
-				var257 integer,          
-				var258 integer,          
-				var259 integer,          
-				var260 integer,          
-				var261 integer,          
-				var262 integer,          
-				var263 integer,          
-				var264 integer,          
-				var265 integer,          
-				var266 integer,          
-				var267 integer,          
-				var268 integer,          
-				var269 integer,          
-				var270 integer,          
-				var271 integer,          
-				var272 integer,          
-				var273 integer,          
-				var274 integer,          
-				var275 integer,          
-				var276 integer,          
-				var277 integer,          
-				var278 integer,          
-				var279 integer,          
-				var280 integer,          
-				var281 integer,          
-				var282 integer,          
-				var283 integer,          
-				var284 integer,          
-				var285 integer,          
-				var286 integer,          
-				var287 integer,          
-				var288 integer,          
-				var289 integer,          
-				var290 integer,          
-				var291 integer,          
-				var292 integer,          
-				var293 integer,          
-				var294 integer,          
-				var295 integer,          
-				var296 integer,          
-				var297 integer,          
-				var298 integer,          
-				var299 integer,          
-				var300 integer          
-			) ON [PRIMARY];            
-          
-		IF OBJECT_ID('dbo.tmp_nino_2016_1','U') IS NULL              
-			CREATE TABLE tmp_nino_2016_1(            
-				mes integer,            
-				anio integer,            
-				ubigeo integer,            
-				cod_2000 character varying(150),            
-				categoria character varying(10),            
-				region character varying(150),            
-				provincia character varying(150),            
-				distrito character varying(150),
-				unidad_ejecutora character varying(150),          
-				disa character varying(150),            
-				red character varying(150),            
-				microred character varying(150),
-				clas character varying(150),           
-				establecimiento character varying(150),            
-				var301 integer,          
-				var302 integer,          
-				var303 integer,          
-				var304 integer,          
-				var305 integer,          
-				var306 integer,          
-				var307 integer,          
-				var308 integer,          
-				var309 integer,          
-				var310 integer,          
-				var311 integer,          
-				var312 integer,          
-				var313 integer,          
-				var314 integer,          
-				var315 integer,          
-				var316 integer,          
-				var317 integer,          
-				var318 integer,          
-				var319 integer,          
-				var320 integer,          
-				var321 integer,          
-				var322 integer,          
-				var323 integer,          
-				var324 integer,          
-				var325 integer,          
-				var326 integer,          
-				var327 integer,          
-				var328 integer,          
-				var329 integer,          
-				var330 integer,          
-				var331 integer,          
-				var332 integer,          
-				var333 integer,          
-				var334 integer,          
-				var335 integer,          
-				var336 integer,          
-				var337 integer,          
-				var338 integer,          
-				var339 integer,          
-				var340 integer,          
-				var341 integer,          
-				var342 integer,          
-				var343 integer,          
-				var344 integer,          
-				var345 integer,          
-				var346 integer,          
-				var347 integer,          
-				var348 integer,          
-				var349 integer,          
-				var350 integer,          
-				var351 integer,          
-				var352 integer,          
-				var353 integer,          
-				var354 integer,          
-				var355 integer,          
-				var356 integer,          
-				var357 integer,          
-				var358 integer,          
-				var359 integer,          
-				var360 integer,          
-				var361 integer,          
-				var362 integer,          
-				var363 integer,          
-				var364 integer,          
-				var365 integer,          
-				var366 integer,          
-				var367 integer,          
-				var368 integer,          
-				var369 integer,          
-				var370 integer,          
-				var371 integer,          
-				var372 integer,          
-				var373 integer,          
-				var374 integer,          
-				var375 integer,          
-				var376 integer,          
-				var377 integer,          
-				var378 integer,          
-				var379 integer,          
-				var380 integer,          
-				var381 integer,          
-				var382 integer,          
-				var383 integer,          
-				var384 integer,          
-				var385 integer,          
-				var386 integer,          
-				var387 integer,          
-				var388 integer,          
-				var389 integer,          
-				var390 integer,          
-				var391 integer,          
-				var392 integer,          
-				var393 integer,          
-				var394 integer,          
-				var395 integer,          
-				var396 integer,          
-				var397 integer,          
-				var398 integer,          
-				var399 integer,          
-				var400 integer,          
-				var401 integer,          
-				var402 integer,          
-				var403 integer,          
-				var404 integer,          
-				var405 integer,          
-				var406 integer,          
-				var407 integer,          
-				var408 integer,          
-				var409 integer,          
-				var410 integer,          
-				var411 integer,          
-				var412 integer,          
-				var413 integer,          
-				var414 integer,          
-				var415 integer,          
-				var416 integer,          
-				var417 integer,          
-				var418 integer,          
-				var419 integer,          
-				var420 integer,          
-				var421 integer,          
-				var422 integer,          
-				var423 integer,          
-				var424 integer,          
-				var425 integer,          
-				var426 integer,          
-				var427 integer,          
-				var428 integer,          
-				var429 integer,          
-				var430 integer,          
-				var431 integer,          
-				var432 integer,          
-				var433 integer,          
-				var434 integer,          
-				var435 integer,          
-				var436 integer,          
-				var437 integer,          
-				var438 integer,          
-				var439 integer,          
-				var440 integer,          
-				var441 integer,          
-				var442 integer,          
-				var443 integer,          
-				var444 integer,          
-				var445 integer,          
-				var446 integer,          
-				var447 integer,          
-				var448 integer,          
-				var449 integer,          
-				var450 integer,          
-				var451 integer,          
-				var452 integer,          
-				var453 integer,          
-				var454 integer,          
-				var455 integer,          
-				var456 integer,          
-				var457 integer,          
-				var458 integer,          
-				var459 integer,          
-				var460 integer,          
-				var461 integer,          
-				var462 integer,          
-				var463 integer,          
-				var464 integer,          
-				var465 integer,          
-				var466 integer,          
-				var467 integer,          
-				var468 integer,          
-				var469 integer,          
-				var470 integer,          
-				var471 integer,          
-				var472 integer,          
-				var473 integer,          
-				var474 integer,          
-				var475 integer,          
-				var476 integer,          
-				var477 integer,          
-				var478 integer,          
-				var479 integer,          
-				var480 integer,          
-				var481 integer,          
-				var482 integer,          
-				var483 integer,          
-				var484 integer,          
-				var485 integer,          
-				var486 integer,          
-				var487 integer,          
-				var488 integer,          
-				var489 integer,          
-				var490 integer,          
-				var491 integer,          
-				var492 integer,          
-				var493 integer,          
-				var494 integer,          
-				var495 integer,          
-				var496 integer,          
-				var497 integer,          
-				var498 integer,          
-				var499 integer,          
-				var500 integer,          
-				var501 integer,          
-				var502 integer,          
-				var503 integer,          
-				var504 integer,          
-				var505 integer,          
-				var506 integer,          
-				var507 integer,          
-				var508 integer,          
-				var509 integer,          
-				var510 integer,          
-				var511 integer,          
-				var512 integer,          
-				var513 integer,          
-				var514 integer,          
-				var515 integer,          
-				var516 integer,          
-				var517 integer,          
-				var518 integer,          
-				var519 integer,          
-				var520 integer,          
-				var521 integer,          
-				var522 integer,          
-				var523 integer,          
-				var524 integer,          
-				var525 integer,          
-				var526 integer,          
-				var527 integer,          
-				var528 integer,          
-				var529 integer,          
-				var530 integer,          
-				var531 integer,          
-				var532 integer,          
-				var533 integer,          
-				var534 integer,          
-				var535 integer,          
-				var536 integer,          
-				var537 integer,          
-				var538 integer,          
-				var539 integer,          
-				var540 integer,          
-				var541 integer,          
-				var542 integer,          
-				var543 integer,          
-				var544 integer,          
-				var545 integer,          
-				var546 integer,          
-				var547 integer,          
-				var548 integer,          
-				var549 integer,          
-				var550 integer,          
-				var551 integer,          
-				var552 integer,          
-				var553 integer,          
-				var554 integer,          
-				var555 integer,          
-				var556 integer,          
-				var557 integer,          
-				var558 integer,          
-				var559 integer,          
-				var560 integer,          
-				var561 integer,          
-				var562 integer,          
-				var563 integer,          
-				var564 integer,          
-				var565 integer,          
-				var566 integer,          
-				var567 integer,          
-				var568 integer,          
-				var569 integer,          
-				var570 integer,          
-				var571 integer,          
-				var572 integer,          
-				var573 integer,          
-				var574 integer,          
-				var575 integer,          
-				var576 integer,          
-				var577 integer,          
-				var578 integer,          
-				var579 integer,          
-				var580 integer,          
-				var581 integer,          
-				var582 integer,          
-				var583 integer,          
-				var584 integer,          
-				var585 integer,          
-				var586 integer,          
-				var587 integer,          
-				var588 integer,          
-				var589 integer,          
-				var590 integer,          
-				var591 integer,          
-				var592 integer,          
-				var593 integer,          
-				var594 integer,          
-				var595 integer,          
-				var596 integer,          
-				var597 integer,          
-				var598 integer,          
-				var599 integer,          
-				var600 integer          
-			) ON [PRIMARY];            
-          
-        IF OBJECT_ID('dbo.tmp_nino_2016_2','U') IS NULL             
-			CREATE TABLE tmp_nino_2016_2(            
-				mes integer,            
-				anio integer,            
-				ubigeo integer,            
-				cod_2000 character varying(150),            
-				categoria character varying(150),            
-				region character varying(150),            
-				provincia character varying(150),            
-				distrito character varying(150),
-				unidad_ejecutora character varying(150),    
-				disa character varying(150),            
-				red character varying(150),            
-				microred character varying(150),
-				clas character varying(150),
-				establecimiento character varying(150),            
-				var601 integer,          
-				var602 integer,          
-				var603 integer,          
-				var604 integer,          
-				var605 integer,          
-				var606 integer,          
-				var607 integer,          
-				var608 integer,          
-				var609 integer,          
-				var610 integer,          
-				var611 integer,          
-				var612 integer,          
-				var613 integer,          
-				var614 integer,          
-				var615 integer,          
-				var616 integer,          
-				var617 integer,          
-				var618 integer,          
-				var619 integer,          
-				var620 integer,          
-				var621 integer,          
-				var622 integer,          
-				var623 integer,          
-				var624 integer,          
-				var625 integer,          
-				var626 integer,          
-				var627 integer,          
-				var628 integer,          
-				var629 integer,          
-				var630 integer,          
-				var631 integer,          
-				var632 integer,          
-				var633 integer,          
-				var634 integer,          
-				var635 integer,          
-				var636 integer,          
-				var637 integer,          
-				var638 integer,          
-				var639 integer,          
-				var640 integer,          
-				var641 integer,          
-				var642 integer,          
-				var643 integer,          
-				var644 integer,          
-				var645 integer,          
-				var646 integer,          
-				var647 integer,          
-				var648 integer,          
-				var649 integer,          
-				var650 integer,          
-				var651 integer,          
-				var652 integer,          
-				var653 integer,          
-				var654 integer,          
-				var655 integer,          
-				var656 integer,          
-				var657 integer,          
-				var658 integer,          
-				var659 integer,          
-				var660 integer,          
-				var661 integer,          
-				var662 integer,          
-				var663 integer,          
-				var664 integer,          
-				var665 integer,          
-				var666 integer,          
-				var667 integer,          
-				var668 integer,          
-				var669 integer,          
-				var670 integer,          
-				var671 integer,          
-				var672 integer,          
-				var673 integer,          
-				var674 integer,          
-				var675 integer,          
-				var676 integer,          
-				var677 integer,          
-				var678 integer,          
-				var679 integer,          
-				var680 integer,          
-				var681 integer,          
-				var682 integer,          
-				var683 integer,          
-				var684 integer,          
-				var685 integer,          
-				var686 integer,          
-				var687 integer,          
-				var688 integer,          
-				var689 integer,          
-				var690 integer,          
-				var691 integer,          
-				var692 integer,          
-				var693 integer,          
-				var694 integer,          
-				var695 integer,          
-				var696 integer,          
-				var697 integer,          
-				var698 integer,          
-				var699 integer,          
-				var700 integer,          
-				var701 integer,          
-				var702 integer,          
-				var703 integer,          
-				var704 integer,          
-				var705 integer,          
-				var706 integer,          
-				var707 integer,          
-				var708 integer,          
-				var709 integer,          
-				var710 integer,          
-				var711 integer,          
-				var712 integer,          
-				var713 integer,          
-				var714 integer,          
-				var715 integer,          
-				var716 integer,          
-				var717 integer,          
-				var718 integer,          
-				var719 integer,          
-				var720 integer,          
-				var721 integer,          
-				var722 integer,          
-				var723 integer,          
-				var724 integer,          
-				var725 integer,          
-				var726 integer,          
-				var727 integer,          
-				var728 integer,          
-				var729 integer,          
-				var730 integer,          
-				var731 integer,          
-				var732 integer,          
-				var733 integer,          
-				var734 integer,          
-				var735 integer,          
-				var736 integer,          
-				var737 integer,          
-				var738 integer,          
-				var739 integer,          
-				var740 integer,          
-				var741 integer,          
-				var742 integer,          
-				var743 integer,          
-				var744 integer,          
-				var745 integer,          
-				var746 integer,          
-				var747 integer,          
-				var748 integer,          
-				var749 integer,          
-				var750 integer,          
-				var751 integer,
-				var752 integer,          
-				var753 integer,          
-				var754 integer,          
-				var755 integer,          
-				var756 integer,          
-				var757 integer,          
-				var758 integer,          
-				var759 integer,          
-				var760 integer,          
-				var761 integer,
-				var762 integer,
-				var763 integer,
-				var764 integer
-			) ON [PRIMARY];            
-
-	--=====================================================================================================================
-	------- INSERCIÓN DE ESTABLECIMIENTOS EN TABLA FINAL DEL REPORTE DE NIÑO ----------------------------------------------
-	--=====================================================================================================================
-
-		DELETE FROM tmp_nino_2016 where mes=@mes and anio=@anio;                 
-		DELETE FROM tmp_nino_2016_1 where mes=@mes and anio=@anio;             
-		DELETE FROM tmp_nino_2016_2 where mes=@mes and anio=@anio;             
-		--------------------------------------------------------------------------------------------------------------------------------------------------------------------		                 
-		insert into tmp_nino_2016                
-		SELECT @mes,@anio,                 
-			d.UBIGEO_ESTABLECIMIENTO,
-			d.RENIPRESS,
-			d.CATEGORIA,                 
-			d.DEPARTAMENTO,                 
-			d.PROVINCIA,                 
-			d.DISTRITO,
-			d.UNIDAD_EJECUTORA,                 
-			d.SUB_REGION,                  
-			d.RED,                  
-			d.MICRORED,
-			d.CLAS,
-			d.IPRESS,                 
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0        
-		FROM DISTRIBUCION_IPRESS AS d  
-		ORDER BY d.SUB_REGION, d.RED, d.MICRORED, d.RENIPRESS;            
-          
-		insert into tmp_nino_2016_1           
-		SELECT @mes,@anio,                 
-			d.UBIGEO_ESTABLECIMIENTO,
-			d.RENIPRESS,
-			d.CATEGORIA,                  
-			d.DEPARTAMENTO,                 
-			d.PROVINCIA,                 
-			d.DISTRITO,
-			d.UNIDAD_EJECUTORA,                 
-			d.SUB_REGION,                  
-			d.RED,                  
-			d.MICRORED,
-			d.CLAS,
-			d.IPRESS,                 
-			0 var301,
-0 var302,
-0 var303,
-0 var304,
-0 var305,
-0 var306,
-0 var307,
-0 var308,
-0 var309,
-0 var310,
-0 var311,
-0 var312,
-0 var313,
-0 var314,
-0 var315,
-0 var316,
-0 var317,
-0 var318,
-0 var319,
-0 var320,
-0 var321,
-0 var322,
-0 var323,
-0 var324,
-0 var325,
-0 var326,
-0 var327,
-0 var328,
-0 var329,
-0 var330,
-0 var331,
-0 var332,
-0 var333,
-0 var334,
-0 var335,
-0 var336,
-0 var337,
-0 var338,
-0 var339,
-0 var340,
-0 var341,
-0 var342,
-0 var343,
-0 var344,
-0 var345,
-0 var346,
-0 var347,
-0 var348,
-0 var349,
-0 var350,
-0 var351,
-0 var352,
-0 var353,
-0 var354,
-0 var355,
-0 var356,
-0 var357,
-0 var358,
-0 var359,
-0 var360,
-0 var361,
-0 var362,
-0 var363,
-0 var364,
-0 var365,
-0 var366,
-0 var367,
-0 var368,
-0 var369,
-0 var370,
-0 var371,
-0 var372,
-0 var373,
-0 var374,
-0 var375,
-0 var376,
-0 var377,
-0 var378,
-0 var379,
-0 var380,
-0 var381,
-0 var382,
-0 var383,
-0 var384,
-0 var385,
-0 var386,
-0 var387,
-0 var388,
-0 var389,
-0 var390,
-0 var391,
-0 var392,
-0 var393,
-0 var394,
-0 var395,
-0 var396,
-0 var397,
-0 var398,
-0 var399,
-0 var400,
-0 var401,
-0 var402,
-0 var403,
-0 var404,
-0 var405,
-0 var406,
-0 var407,
-0 var408,
-0 var409,
-0 var410,
-0 var411,
-0 var412,
-0 var413,
-0 var414,
-0 var415,
-0 var416,
-0 var417,
-0 var418,
-0 var419,
-0 var420,
-0 var421,
-0 var422,
-0 var423,
-0 var424,
-0 var425,
-0 var426,
-0 var427,
-0 var428,
-0 var429,
-0 var430,
-0 var431,
-0 var432,
-0 var433,
-0 var434,
-0 var435,
-0 var436,
-0 var437,
-0 var438,
-0 var439,
-0 var440,
-0 var441,
-0 var442,
-0 var443,
-0 var444,
-0 var445,
-0 var446,
-0 var447,
-0 var448,
-0 var449,
-0 var450,
-0 var451,
-0 var452,
-0 var453,
-0 var454,
-0 var455,
-0 var456,
-0 var457,
-0 var458,
-0 var459,
-0 var460,
-0 var461,
-0 var462,
-0 var463,
-0 var464,
-0 var465,
-0 var466,
-0 var467,
-0 var468,
-0 var469,
-0 var470,
-0 var471,
-0 var472,
-0 var473,
-0 var474,
-0 var475,
-0 var476,
-0 var477,
-0 var478,
-0 var479,
-0 var480,
-0 var481,
-0 var482,
-0 var483,
-0 var484,
-0 var485,
-0 var486,
-0 var487,
-0 var488,
-0 var489,
-0 var490,
-0 var491,
-0 var492,
-0 var493,
-0 var494,
-0 var495,
-0 var496,
-0 var497,
-0 var498,
-0 var499,
-0 var500,
-0 var501,
-0 var502,
-0 var503,
-0 var504,
-0 var505,
-0 var506,
-0 var507,
-0 var508,
-0 var509,
-0 var510,
-0 var511,
-0 var512,
-0 var513,
-0 var514,
-0 var515,
-0 var516,
-0 var517,
-0 var518,
-0 var519,
-0 var520,
-0 var521,
-0 var522,
-0 var523,
-0 var524,
-0 var525,
-0 var526,
-0 var527,
-0 var528,
-0 var529,
-0 var530,
-0 var531,
-0 var532,
-0 var533,
-0 var534,
-0 var535,
-0 var536,
-0 var537,
-0 var538,
-0 var539,
-0 var540,
-0 var541,
-0 var542,
-0 var543,
-0 var544,
-0 var545,
-0 var546,
-0 var547,
-0 var548,
-0 var549,
-0 var550,
-0 var551,
-0 var552,
-0 var553,
-0 var554,
-0 var555,
-0 var556,
-0 var557,
-0 var558,
-0 var559,
-0 var560,
-0 var561,
-0 var562,
-0 var563,
-0 var564,
-0 var565,
-0 var566,
-0 var567,
-0 var568,
-0 var569,
-0 var570,
-0 var571,
-0 var572,
-0 var573,
-0 var574,
-0 var575,
-0 var576,
-0 var577,
-0 var578,
-0 var579,
-0 var580,
-0 var581,
-0 var582,
-0 var583,
-0 var584,
-0 var585,
-0 var586,
-0 var587,
-0 var588,
-0 var589,
-0 var590,
-0 var591,
-0 var592,
-0 var593,
-0 var594,
-0 var595,
-0 var596,
-0 var597,
-0 var598,
-0 var599,
-0 var600
-	
-			FROM DISTRIBUCION_IPRESS AS d  
-		ORDER BY d.SUB_REGION, d.RED, d.MICRORED, d.RENIPRESS;             
-          
-          
-		insert into tmp_nino_2016_2             
-		SELECT @mes,@anio,                 
-			d.UBIGEO_ESTABLECIMIENTO,
-			d.RENIPRESS,
-			d.CATEGORIA,                  
-			d.DEPARTAMENTO,                 
-			d.PROVINCIA,                 
-			d.DISTRITO,
-			d.UNIDAD_EJECUTORA,                 
-			d.SUB_REGION,                  
-			d.RED,                  
-			d.MICRORED,
-			d.CLAS,
-			d.IPRESS,                 
-		0 var601,
-0 var602,
-0 var603,
-0 var604,
-0 var605,
-0 var606,
-0 var607,
-0 var608,
-0 var609,
-0 var610,
-0 var611,
-0 var612,
-0 var613,
-0 var614,
-0 var615,
-0 var616,
-0 var617,
-0 var618,
-0 var619,
-0 var620,
-0 var621,
-0 var622,
-0 var623,
-0 var624,
-0 var625,
-0 var626,
-0 var627,
-0 var628,
-0 var629,
-0 var630,
-0 var631,
-0 var632,
-0 var633,
-0 var634,
-0 var635,
-0 var636,
-0 var637,
-0 var638,
-0 var639,
-0 var640,
-0 var641,
-0 var642,
-0 var643,
-0 var644,
-0 var645,
-0 var646,
-0 var647,
-0 var648,
-0 var649,
-0 var650,
-0 var651,
-0 var652,
-0 var653,
-0 var654,
-0 var655,
-0 var656,
-0 var657,
-0 var658,
-0 var659,
-0 var660,
-0 var661,
-0 var662,
-0 var663,
-0 var664,
-0 var665,
-0 var666,
-0 var667,
-0 var668,
-0 var669,
-0 var670,
-0 var671,
-0 var672,
-0 var673,
-0 var674,
-0 var675,
-0 var676,
-0 var677,
-0 var678,
-0 var679,
-0 var680,
-0 var681,
-0 var682,
-0 var683,
-0 var684,
-0 var685,
-0 var686,
-0 var687,
-0 var688,
-0 var689,
-0 var690,
-0 var691,
-0 var692,
-0 var693,
-0 var694,
-0 var695,
-0 var696,
-0 var697,
-0 var698,
-0 var699,
-0 var700,
-0 var701,
-0 var702,
-0 var703,
-0 var704,
-0 var705,
-0 var706,
-0 var707,
-0 var708,
-0 var709,
-0 var710,
-0 var711,
-0 var712,
-0 var713,
-0 var714,
-0 var715,
-0 var716,
-0 var717,
-0 var718,
-0 var719,
-0 var720,
-0 var721,
-0 var722,
-0 var723,
-0 var724,
-0 var725,
-0 var726,
-0 var727,
-0 var728,
-0 var729,
-0 var730,
-0 var731,
-0 var732,
-0 var733,
-0 var734,
-0 var735,
-0 var736,
-0 var737,
-0 var738,
-0 var739,
-0 var740,
-0 var741,
-0 var742,
-0 var743,
-0 var744,
-0 var745,
-0 var746,
-0 var747,
-0 var748,
-0 var749,
-0 var750,
-0 var751,
-0 var752,
-0 var753,
-0 var754,
-0 var755,
-0 var756,
-0 var757,
-0 var758,
-0 var759,
-0 var760,
-0 var761,
-0 var762,
-0 var763,
-0 var764,
-0 var765,
-0 var766,
-0 var767,
-0 var768,
-0 var769,
-0 var770,
-0 var771,
-0 var772,
-0 var773,
-0 var774,
-0 var775,
-0 var776,
-0 var777,
-0 var778,
-0 var779,
-0 var780,
-0 var781,
-0 var782,
-0 var783,
-0 var784,
-0 var785,
-0 var786,
-0 var787,
-0 var788,
-0 var789,
-0 var790,
-0 var791,
-0 var792,
-0 var793,
-0 var794,
-0 var795,
-0 var796,
-0 var797,
-0 var798,
-0 var799,
-0 var800
-													
-															
-
-		FROM DISTRIBUCION_IPRESS AS d  
-		ORDER BY d.SUB_REGION, d.RED, d.MICRORED, d.RENIPRESS;            
+		        
         
 	--=====================================================================================================================
 	------- ACTUALIZACION DE DATOS EN TABLA FINAL DE NIÑO -----------------------------------------------------------------
 	--=====================================================================================================================
 		
-		update tmp_nino_2016 set var1 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='001. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Atencion Inmediata' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var2 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='002. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Tamizaje Neonatal (Enfermed. Metab?licas)' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var3 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='003. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Tamizaje Visual y Auditivo' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var4 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='004. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Contacto Piel a Piel con la madre' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var5 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='005. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Alojamiento Conjunto' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var6 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='006. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Lactancia Materna en la 1ra Hora' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var7 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='007. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Clampaje tard?o 2 a 3 min' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var8 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='008. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hipotiroidismo Congenito' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var9 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='009. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fenilcetonuria' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var10 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='010. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Galactosemia' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var11 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='011. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hiperplasia Suprarrenal Congenita' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var12 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='012. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fibrosis Quistica' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var13 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='013. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fibrosis Quistica' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var14 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='014. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hipoacusia (todas las clasificaciones)' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var15 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='015. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Normal - Lugar de Nacimiento - EESS' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var16 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='016. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Deprimido - Lugar de Nacimiento - EESS' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var17 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='017. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - Prematuro - Lugar de Nacimiento - EESS' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var18 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='018. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Normal - Lugar de Nacimiento - Domicilio' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var19 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='019. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Deprimido - Lugar de Nacimiento - Domicilio' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var20 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='020. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - Prematuro - Lugar de Nacimiento - Domicilio' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var21 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='021. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sindrome de Dristres Respiratorio - Sindrome de Dristres Respiratorio' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var22 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='022. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sindromes de Aspiracion Neonatal - Sindromes de Aspiracion Neonatal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var23 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='023. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Asfixia Neonatal - Asfixia Neonatal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var24 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='024. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sepsis Neonatal - Sepsis Neonatal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var25 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='025. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Ictericia - Ictericia' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var26 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='026. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Hipoglucemia - Hipoglucemia' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var27 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='027. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sifilis Congenita - Sifilis Congenita' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var28 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='028. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - VIH Expuesto - VIH Expuesto' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var29 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='029. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Retinopatia de la Prematuridad - Retinopatia de la Prematuridad' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var30 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='030. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - < 1,000 gr. - < 1,000 gr.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var31 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='031. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 1,000 a 1,499 gr. - 1,000 a 1,499 gr.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var32 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='032. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 1,500 a 2,499 gr. - 1,500 a 2,499 gr.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var33 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='033. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 2,500 a 4,000 gr. - 2,500 a 4,000 gr.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var34 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='034. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - > 4,000 y m?s gr. - > 4,000 y m?s gr.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var35 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='035. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - No especificado - No especificado' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var36 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='036. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Obito fetal - Obito fetal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var37 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='037. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - < 24 horas - < 24 horas' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var38 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='038. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - 01 a 07 dias - 01 a 07 dias' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var39 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='039. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - 08 a 28 dias - 08 a 28 dias' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var40 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='040. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - Asfixia - Asfixia' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var41 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='041. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - SDR - SDR' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var42 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='042. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA -  Sepsis -  Sepsis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var43 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='043. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Malformaciones Congenitas - Malformaciones Congenitas' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var44 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='044. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Otras - Otras' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var45 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='045. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Fuentes Externas - Libro de Atenciones y Reporte de Egresos' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var46 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='046. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Fuentes Externas - Certificado de Defuncion' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var47 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='047. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 1d a 7d - De 1d a 7d - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var48 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='048. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 8d a 14d - De 8d a 14d - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var49 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='049. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 8d a 14d - De 8d a 14d - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var50 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='050. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var51 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='051. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var52 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='052. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var53 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='053. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var54 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='054. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var55 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='055. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var56 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='056. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var57 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='057. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var58 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='058. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var59 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='059. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var60 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='060. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var61 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='061. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var62 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='062. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var63 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='063. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var64 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='064. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var65 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='065. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var66 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='066. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var67 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='067. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var68 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='068. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var69 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='069. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var70 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='070. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var71 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='071. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var72 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='072. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var73 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='073. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var74 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='074. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var75 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='075. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var76 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='076. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var77 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='077. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var78 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='078. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var79 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='079. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var80 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='080. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var81 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='081. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var82 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='082. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var83 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='083. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var84 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='084. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var85 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='085. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var86 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='086. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 05 a 11 anos  - 05 a 11 anos  - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var87 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='087. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 01m' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var88 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='088. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 06m' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var89 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='089. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 01 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var90 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='090. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 02 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var91 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='091. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 03 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var92 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='092. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 04 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var93 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='093. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 05 -11 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var94 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='094. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 01m' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var95 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='095. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 06m' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var96 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='096. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 01 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var97 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='097. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 02 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var98 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='098. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 03 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var99 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='099. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 04 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var100 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='100. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 05 -11 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var101 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='101. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 01 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var102 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='102. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 02 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var103 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='103. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 03 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var104 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='104. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 04 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var105 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='105. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 05 -11 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var106 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='106. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 01 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var107 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='107. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 02 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var108 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='108. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 03 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var109 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='109. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 04 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var110 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='110. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 05 -11 a' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var111 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='111. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 02 ano - 1ra. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var112 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='112. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 02 ano - 2da. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var113 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='113. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 03 ano - 1ra. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var114 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='114. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 03 ano - 2da. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var115 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='115. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 04 ano - 1ra. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var116 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='116. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 04 ano - 2da. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var117 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='117. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 05 - 11 anos - 1ra. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var118 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='118. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 05 - 11 anos - 2da. dosis' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var119 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='119. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var120 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='120. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var121 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='121. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var122 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='122. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var123 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='123. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var124 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='124. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var125 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='125. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var126 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='126. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var127 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='127. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var128 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='128. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var129 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='129. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var130 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='130. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var131 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='131. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var132 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='132. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 y 5 meses - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
+		update tmp_nino_2022 set var1 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='001. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Atencion Inmediata' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var2 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='002. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Tamizaje Neonatal (Enfermed. Metab?licas)' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var3 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='003. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Tamizaje Visual y Auditivo' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var4 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='004. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Contacto Piel a Piel con la madre' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var5 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='005. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Alojamiento Conjunto' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var6 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='006. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Lactancia Materna en la 1ra Hora' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var7 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='007. I. ATENCION DEL RECIEN NACIDO - A) Atencion Inmediata - ACTIVIDADES - Clampaje tard?o 2 a 3 min' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var8 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='008. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hipotiroidismo Congenito' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var9 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='009. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fenilcetonuria' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var10 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='010. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Galactosemia' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var11 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='011. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hiperplasia Suprarrenal Congenita' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var12 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='012. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fibrosis Quistica' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var13 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='013. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Fibrosis Quistica' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var14 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='014. I. ATENCION DEL RECIEN NACIDO - B) Resultados del Tamizaje Neonatal - ACTIVIDADES - Hipoacusia (todas las clasificaciones)' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var15 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='015. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Normal - Lugar de Nacimiento - EESS' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var16 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='016. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Deprimido - Lugar de Nacimiento - EESS' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var17 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='017. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - Prematuro - Lugar de Nacimiento - EESS' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var18 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='018. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Normal - Lugar de Nacimiento - Domicilio' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var19 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='019. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - RN Deprimido - Lugar de Nacimiento - Domicilio' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var20 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='020. I. ATENCION DEL RECIEN NACIDO - C) Condici?n al Nacimiento - CONDICION - Prematuro - Lugar de Nacimiento - Domicilio' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var21 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='021. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sindrome de Dristres Respiratorio - Sindrome de Dristres Respiratorio' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var22 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='022. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sindromes de Aspiracion Neonatal - Sindromes de Aspiracion Neonatal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var23 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='023. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Asfixia Neonatal - Asfixia Neonatal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var24 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='024. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sepsis Neonatal - Sepsis Neonatal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var25 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='025. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Ictericia - Ictericia' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var26 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='026. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Hipoglucemia - Hipoglucemia' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var27 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='027. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Sifilis Congenita - Sifilis Congenita' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var28 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='028. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - VIH Expuesto - VIH Expuesto' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var29 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='029. I. ATENCION DEL RECIEN NACIDO - D) Morbilidad Neonatal - CAUSAS DE MORBILIDAD - Retinopatia de la Prematuridad - Retinopatia de la Prematuridad' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var30 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='030. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - < 1,000 gr. - < 1,000 gr.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var31 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='031. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 1,000 a 1,499 gr. - 1,000 a 1,499 gr.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var32 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='032. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 1,500 a 2,499 gr. - 1,500 a 2,499 gr.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var33 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='033. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - 2,500 a 4,000 gr. - 2,500 a 4,000 gr.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var34 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='034. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - > 4,000 y m?s gr. - > 4,000 y m?s gr.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var35 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='035. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - No especificado - No especificado' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var36 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='036. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Obito fetal - Obito fetal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var37 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='037. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - < 24 horas - < 24 horas' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var38 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='038. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - 01 a 07 dias - 01 a 07 dias' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var39 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='039. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - 08 a 28 dias - 08 a 28 dias' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var40 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='040. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - PESO AL NACER - Asfixia - Asfixia' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var41 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='041. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - SDR - SDR' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var42 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='042. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA -  Sepsis -  Sepsis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var43 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='043. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Malformaciones Congenitas - Malformaciones Congenitas' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var44 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='044. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Otras - Otras' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var45 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='045. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Fuentes Externas - Libro de Atenciones y Reporte de Egresos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var46 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='046. I. ATENCION DEL RECIEN NACIDO - E) Mortalidad Neonatal - TIEMPO DE VIDA - Fuentes Externas - Certificado de Defuncion' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var47 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='047. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 1d a 7d - De 1d a 7d - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var48 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='048. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 8d a 14d - De 8d a 14d - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var49 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='049. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 8d a 14d - De 8d a 14d - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var50 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='050. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var51 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='051. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var52 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='052. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 15d a 21d - De 15d a 21d - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var53 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='053. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var54 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='054. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var55 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='055. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var56 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='056. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - De 22d a +d - De 22d a +d - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var57 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='057. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var58 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='058. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var59 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='059. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var60 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='060. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var61 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='061. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var62 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='062. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var63 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='063. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var64 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='064. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var65 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='065. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var66 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='066. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var67 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='067. II. CONTROL DE CRECIMIENTO Y DESARROLLO - Numero de Controles  - 29 dias - 11 meses - 29 dias - 11 meses - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var68 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='068. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var69 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='069. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var70 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='070. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var71 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='071. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var72 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='072. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var73 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='073. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 01 ano - 01 ano - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var74 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='074. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var75 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='075. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var76 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='076. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var77 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='077. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 02 anos - 02 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var78 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='078. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var79 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='079. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var80 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='080. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var81 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='081. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 03 anos - 03 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var82 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='082. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var83 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='083. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var84 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='084. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var85 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='085. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 04 anos - 04 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var86 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='086. II. CONTROL DE CRECIMIENTO Y DESARROLLO - CONTROLES - Numero de Controles - 05 a 11 anos  - 05 a 11 anos  - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var87 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='087. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 01m' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var88 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='088. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 06m' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var89 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='089. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 01 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var90 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='090. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 02 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var91 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='091. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 03 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var92 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='092. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 04 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var93 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='093. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 05 -11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var94 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='094. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 01m' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var95 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='095. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 06m' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var96 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='096. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 01 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var97 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='097. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 02 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var98 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='098. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 03 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var99 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='099. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 04 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var100 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='100. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 05 -11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var101 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='101. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 01 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var102 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='102. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 02 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var103 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='103. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 03 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var104 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='104. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 04 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var105 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='105. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Solicitud de Dosaje de Hb - 05 -11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var106 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='106. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 01 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var107 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='107. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 02 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var108 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='108. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 03 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var109 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='109. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 04 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var110 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='110. III. TAMIZAJE - ACTIVIDADES - 2. Descarte de Parasitosis - Resultados Evaluados - 05 -11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var111 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='111. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 02 ano - 1ra. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var112 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='112. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 02 ano - 2da. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var113 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='113. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 03 ano - 1ra. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var114 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='114. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 03 ano - 2da. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var115 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='115. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 04 ano - 1ra. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var116 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='116. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 04 ano - 2da. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var117 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='117. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 05 - 11 anos - 1ra. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var118 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='118. IV. ADMINISTRACIoN DE PROFILAXIS ANTIPARASITARIA - ACTIVIDADES - Administracion de Profilaxis Antiparasitaria - 05 - 11 anos - 2da. dosis' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var119 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='119. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var120 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='120. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var121 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='121. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var122 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='122. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var123 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='123. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var124 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='124. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var125 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='125. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var126 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='126. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var127 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='127. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var128 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='128. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var129 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='129. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var130 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='130. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var131 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='131. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - < 06 meses (BPN y Prematuros (SF)) - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var132 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='132. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 y 5 meses - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
 
 
-		update tmp_nino_2016 set var145 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='145. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var146 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='146. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var147 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='147. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var148 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='148. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var149 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='149. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var150 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='150. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var151 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='151. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var152 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='152. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var153 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='153. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var154 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='154. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var155 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='155. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var156 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='156. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var157 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='157. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var158 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='158. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var159 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='159. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var160 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='160. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var161 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='161. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var162 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='162. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var163 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='163. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var164 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='164. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var165 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='165. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var166 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='166. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var167 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='167. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var168 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='168. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var169 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='169. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var170 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='170. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var171 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='171. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var172 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='172. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var173 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='173. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var174 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='174. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var175 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='175. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var176 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='176. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var177 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='177. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var178 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='178. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var179 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='179. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var180 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='180. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var181 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='181. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var182 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='182. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var183 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='183. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var184 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='184. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var185 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='185. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var186 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='186. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var187 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='187. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var188 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='188. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var189 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='189. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var190 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='190. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var191 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='191. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var192 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='192. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var193 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='193. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var194 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='194. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var195 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='195. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var196 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='196. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var197 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='197. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var198 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='198. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var199 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='199. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 3ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var200 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='200. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 4ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
+		update tmp_nino_2022 set var145 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='145. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var146 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='146. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var147 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='147. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var148 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='148. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var149 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='149. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var150 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='150. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var151 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='151. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var152 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='152. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var153 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='153. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var154 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='154. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var155 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='155. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var156 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='156. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var157 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='157. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 6 a 11 meses - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var158 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='158. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var159 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='159. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var160 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='160. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var161 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='161. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var162 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='162. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var163 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='163. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var164 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='164. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var165 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='165. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var166 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='166. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var167 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='167. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var168 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='168. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var169 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='169. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var170 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='170. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 1 ano - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var171 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='171. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var172 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='172. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var173 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='173. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var174 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='174. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var175 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='175. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var176 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='176. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var177 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='177. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var178 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='178. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var179 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='179. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var180 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='180. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var181 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='181. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var182 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='182. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var183 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='183. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 2 anos - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var184 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='184. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var185 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='185. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var186 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='186. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var187 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='187. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var188 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='188. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var189 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='189. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var190 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='190. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var191 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='191. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var192 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='192. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var193 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='193. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var194 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='194. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var195 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='195. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var196 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='196. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 3 anos - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var197 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='197. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var198 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='198. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var199 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='199. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 3ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var200 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='200. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 4ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
 
 		delete  from nino_tmp;     
      
@@ -10083,206 +9800,206 @@ select '088. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de
      
      ------------------------------------    
 			     
-		update tmp_nino_2016 set var201 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='201. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 5ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var202 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='202. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 6ta.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var203 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='203. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 7ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var204 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='204. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 8va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var205 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='205. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 9na.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var206 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='206. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 10ma.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var207 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='207. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 11va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var208 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='208. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 12va.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var209 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='209. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - TA' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var210 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='210. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 06 meses - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var211 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='211. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 06 meses - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var212 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='212. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 01 ano - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var213 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='213. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 01 ano - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var214 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='214. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 02 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var215 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='215. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 02 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var216 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='216. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 03 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var217 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='217. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 03 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var218 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='218. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 04 anos - 1ra.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var219 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='219. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 04 anos - 2da.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var220 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='220. VI. LACTANCIA MATERNA EXCLUSIVA - CONDICION - Ninos con LME - Ninos con LME - De 06 meses' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var221 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='221. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria antes de los 06 meses - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var222 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='222. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria despues de los 06 meses - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var223 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='223. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria Adecuada - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var224 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='224. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria Inadecuada - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var225 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='225. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Extremadamente bajo - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var226 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='226. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Muy bajo peso al nacer - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var227 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='227. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Bajo peso al nacer - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var228 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='228. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Normal - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var229 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='229. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Macrosomico - Nro.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var230 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='230. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var231 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='231. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var232 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='232. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var233 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='233. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var234 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='234. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var235 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='235. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var236 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='236. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var237 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='237. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var238 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='238. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var239 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='239. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var240 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='240. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var241 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='241. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var242 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='242. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var243 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='243. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 4 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var244 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='244. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var245 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='245. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var246 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='246. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var247 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='247. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var248 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='248. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var249 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='249. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var250 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='250. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var251 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='251. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var252 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='252. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var253 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='253. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 4 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var254 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='254. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var255 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='255. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var256 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='256. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var257 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='257. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var258 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='258. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var259 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='259. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - RN Bajo Peso Recuperados - RN Bajo Peso Recuperados' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var260 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='260. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var261 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='261. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var262 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='262. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var263 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='263. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var264 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='264. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var265 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='265. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var266 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='266. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var267 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='267. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var268 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='268. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var269 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='269. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 4 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var270 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='270. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var271 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='271. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var272 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='272. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var273 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='273. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var274 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='274. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var275 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='275. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var276 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='276. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var277 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='277. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var278 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='278. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var279 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='279. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 4 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var280 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='280. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var281 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='281. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var282 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='282. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var283 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='283. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var284 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='284. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var285 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='285. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var286 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='286. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var287 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='287. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var288 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='288. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var289 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='289. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var290 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='290. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var291 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='291. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var292 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='292. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 2 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var293 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='293. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 3 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var294 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='294. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 4 anos - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var295 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='295. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - < 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var296 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='296. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 1 ano - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var297 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='297. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 2 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var298 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='298. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 3 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var299 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='299. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 4 anos - Recup.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var300 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad='300. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - < 1 ano - Dx.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016_1 set var301 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='301. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var302 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='302. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var303 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='303. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 3 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var304 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='304. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var305 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='305. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var306 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='306. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var307 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='307. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var308 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='308. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 3 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var309 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='309. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var310 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='310. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var311 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='311. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var312 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='312. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var313 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='313. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 3 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var314 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='314. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var315 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='315. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var316 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='316. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var317 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='317. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var318 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='318. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 3 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var319 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='319. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var320 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='320. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var321 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='321. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var322 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='322. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var323 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='323. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 3 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var324 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='324. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var325 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='325. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var326 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='326. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var327 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='327. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var328 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='328. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 3 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var329 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='329. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var330 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='330. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var331 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='331. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var332 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='332. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var333 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='333. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 3 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var334 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='334. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var335 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='335. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var336 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='336. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var337 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='337. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var338 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='338. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 3 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var339 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='339. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var340 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='340. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var341 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='341. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var342 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='342. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var343 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='343. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 3 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var344 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='344. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var345 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='345. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var346 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='346. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var347 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='347. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var348 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='348. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 3 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var349 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='349. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var350 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='350. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Obesidad - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var351 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='351. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Obesidad - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var352 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='352. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Sobrepeso - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var353 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='353. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Sobrepeso - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var354 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='354. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Delgadez - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var355 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='355. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Delgadez - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var356 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='356. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var357 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='357. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var358 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='358. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Alto - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var359 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='359. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Alto - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var360 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='360. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var361 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='361. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var362 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='362. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja Severa - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var363 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='363. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja Severa - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var364 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='364. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var365 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='365. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var366 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='366. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var367 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='367. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var368 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='368. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var369 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='369. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var370 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='370. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var371 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='371. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var372 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='372. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var373 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='373. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var374 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='374. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var375 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='375. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var376 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='376. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var377 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='377. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var378 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='378. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var379 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='379. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var380 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='380. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var381 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='381. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var382 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='382. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var383 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='383. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var384 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='384. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var385 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='385. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var386 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='386. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var387 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='387. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var388 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='388. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var389 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='389. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var390 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='390. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var391 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='391. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var392 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='392. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var393 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='393. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var394 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='394. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var395 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='395. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var396 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='396. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 1 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var397 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='397. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var398 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='398. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - < 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var399 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='399. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 1 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var400 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='400. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 2 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
+		update tmp_nino_2022 set var201 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='201. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 5ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var202 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='202. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 6ta.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var203 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='203. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 7ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var204 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='204. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 8va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var205 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='205. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 9na.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var206 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='206. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 10ma.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var207 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='207. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 11va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var208 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='208. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - 12va.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var209 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='209. V. ADMINISTRACION DE MICRONUTRIENTES - A) Sulfato Ferroso y Multimicronutriente (en polvo) - De 4 anos - TA' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var210 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='210. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 06 meses - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var211 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='211. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 06 meses - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var212 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='212. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 01 ano - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var213 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='213. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 01 ano - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var214 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='214. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 02 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var215 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='215. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 02 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var216 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='216. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 03 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var217 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='217. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 03 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var218 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='218. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 04 anos - 1ra.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var219 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='219. V. ADMINISTRACION DE MICRONUTRIENTES - B) Vitamina "A" - ACTIVIDADES - 04 anos - 2da.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var220 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='220. VI. LACTANCIA MATERNA EXCLUSIVA - CONDICION - Ninos con LME - Ninos con LME - De 06 meses' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var221 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='221. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria antes de los 06 meses - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var222 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='222. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria despues de los 06 meses - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var223 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='223. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria Adecuada - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var224 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='224. VII. ALIMENTACIoN COMPLEMENTARIA - CONDICIoN - CONDICIoN - Ninos con Inicio de Alimentacion Complementaria Inadecuada - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var225 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='225. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Extremadamente bajo - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var226 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='226. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Muy bajo peso al nacer - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var227 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='227. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Bajo peso al nacer - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var228 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='228. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Normal - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var229 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='229. VIII. EVALUACION DEL ESTADO NUTRICIONAL - A) En el Recien Nacido de 01 dia a 28 dias - Clasificacion: Peso al Nacer - Macrosomico - Nro.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var230 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='230. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var231 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='231. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var232 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='232. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var233 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='233. V. EVALUACION DEL ESTADO NUTRICIONAL - Clasificacion: Ganancia de Peso / Talla - Ganancia Inadecuada de Peso - Ganancia Inadecuada de Peso - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var234 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='234. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var235 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='235. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var236 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='236. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var237 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='237. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var238 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='238. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var239 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='239. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var240 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='240. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var241 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='241. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var242 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='242. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var243 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='243. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Peso - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var244 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='244. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var245 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='245. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var246 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='246. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var247 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='247. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var248 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='248. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var249 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='249. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var250 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='250. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var251 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='251. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var252 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='252. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var253 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='253. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Ganancia Inadecuada de Peso o Talla - Talla - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var254 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='254. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var255 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='255. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var256 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='256. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var257 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='257. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var258 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='258. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Normal - Normal - < 1 ano - Normal' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var259 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='259. V. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - RN Bajo Peso Recuperados - RN Bajo Peso Recuperados' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var260 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='260. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var261 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='261. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var262 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='262. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var263 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='263. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var264 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='264. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var265 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='265. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var266 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='266. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var267 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='267. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var268 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='268. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var269 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='269. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Sobrepeso - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var270 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='270. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var271 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='271. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var272 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='272. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var273 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='273. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var274 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='274. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var275 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='275. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var276 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='276. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var277 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='277. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var278 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='278. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var279 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='279. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (PE) - Desnutricion - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var280 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='280. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var281 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='281. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var282 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='282. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var283 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='283. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var284 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='284. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var285 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='285. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var286 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='286. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var287 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='287. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var288 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='288. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var289 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='289. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var290 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='290. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var291 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='291. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var292 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='292. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var293 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='293. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var294 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='294. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var295 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='295. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var296 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='296. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var297 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='297. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var298 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='298. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var299 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='299. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Sobrepeso - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var300 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='300. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var301 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='301. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var302 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='302. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var303 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='303. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var304 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='304. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var305 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='305. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var306 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='306. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var307 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='307. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var308 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='308. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var309 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='309. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Aguda - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var310 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='310. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var311 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='311. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var312 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='312. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var313 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='313. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var314 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='314. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var315 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='315. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var316 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='316. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var317 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='317. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var318 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='318. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var319 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='319. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Peso para la Edad (TP) - Desnutricion Severa - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var320 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='320. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var321 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='321. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var322 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='322. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var323 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='323. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var324 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='324. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var325 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='325. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var326 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='326. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var327 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='327. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var328 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='328. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var329 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='329. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Alto - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var330 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='330. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var331 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='331. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var332 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='332. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var333 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='333. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var334 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='334. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var335 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='335. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var336 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='336. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var337 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='337. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var338 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='338. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var339 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='339. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Talla Baja - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var340 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='340. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var341 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='341. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var342 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='342. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var343 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='343. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 3 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var344 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='344. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var345 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='345. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var346 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='346. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var347 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='347. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var348 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='348. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 3 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var349 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='349. VIII. EVALUACION DEL ESTADO NUTRICIONAL - B) En los Ninos y Ninas de 29 dias a < 05 anos - Talla para la Edad (TE) - Normal - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var350 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='350. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Obesidad - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var351 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='351. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Obesidad - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var352 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='352. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Sobrepeso - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var353 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='353. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Sobrepeso - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var354 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='354. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Delgadez - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var355 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='355. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Delgadez - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var356 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='356. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var357 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='357. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var358 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='358. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Alto - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var359 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='359. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Alto - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var360 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='360. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var361 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='361. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var362 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='362. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja Severa - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var363 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='363. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Talla Baja Severa - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var364 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='364. VIII. EVALUACION DEL ESTADO NUTRICIONAL - C) En los Ninos y Ninas de 05 a 11 anos - Indice de Masa Corporal (IMC) - Normal - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var365 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='365. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var366 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='366. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var367 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='367. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var368 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='368. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var369 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='369. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var370 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='370. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Lenguaje - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var371 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='371. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var372 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='372. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var373 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='373. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var374 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='374. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var375 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='375. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var376 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='376. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Motora - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var377 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='377. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var378 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='378. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var379 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='379. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var380 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='380. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var381 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='381. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var382 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='382. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Social - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var383 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='383. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var384 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='384. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var385 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='385. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var386 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='386. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var387 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='387. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var388 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='388. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var389 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='389. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var390 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='390. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var391 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='391. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var392 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='392. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var393 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='393. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var394 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='394. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Cognitiva - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var395 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='395. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Coordinacion - < 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var396 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='396. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 1 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var397 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='397. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var398 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='398. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - < 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var399 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='399. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 1 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var400 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='400. IX. EVALUACION DEL DESARROLLO - Trastorno del Desarrollo - Con + de 1 Trastorno - 2 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
      
      
 		DELETE FROM nino_tmp;     
@@ -14955,208 +14672,208 @@ edad_reg between 5 and 11 and tipo_edad='A'
 		h.nombre_establecimiento;
 -------------------------------------------         
      
-		update tmp_nino_2016_1 set var401 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='401. IX. EVALUACION DEL DESARROLLO - Coordinacion - < 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var402 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='402. IX. EVALUACION DEL DESARROLLO - Normal - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var403 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='403. IX. EVALUACION DEL DESARROLLO - Normal - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var404 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='404. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var405 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='405. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 4 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var406 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='406. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var407 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='407. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 4 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var408 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='408. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var409 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='409. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var410 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='410. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var411 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='411. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var412 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='412. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var413 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='413. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var414 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='414. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var415 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='415. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 4 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var416 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='416. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var417 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='417. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 2 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var418 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='418. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var419 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='419. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 2 anos - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var420 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='420. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var421 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='421. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var422 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='422. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var423 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='423. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 4 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var424 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='424. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 3 ano - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var425 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='425. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 4 anos - Dx.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var426 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='426. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 3 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var427 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='427. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 4 ano - Recup.' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var428 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='428. IX. EVALUACION DEL DESARROLLO - Normal - 3 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var429 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='429. IX. EVALUACION DEL DESARROLLO - Normal - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var430 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='430. X. PLAN DE ATENCION INTEGRAL - Elaborado - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var431 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='431. X. PLAN DE ATENCION INTEGRAL - Elaborado - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var432 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='432. X. PLAN DE ATENCION INTEGRAL - Elaborado - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var433 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='433. X. PLAN DE ATENCION INTEGRAL - Elaborado - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var434 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='434. X. PLAN DE ATENCION INTEGRAL - Elaborado - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var435 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='435. X. PLAN DE ATENCION INTEGRAL - Elaborado - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var436 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='436. X. PLAN DE ATENCION INTEGRAL - Elaborado - 5 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var437 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='437. X. PLAN DE ATENCION INTEGRAL - Elaborado - 6 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var438 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='438. X. PLAN DE ATENCION INTEGRAL - Elaborado - 7 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var439 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='439. X. PLAN DE ATENCION INTEGRAL - Elaborado - 8 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var440 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='440. X. PLAN DE ATENCION INTEGRAL - Elaborado - 9 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var441 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='441. X. PLAN DE ATENCION INTEGRAL - Elaborado - 10 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var442 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='442. X. PLAN DE ATENCION INTEGRAL - Elaborado - 11 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var443 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='443. X. PLAN DE ATENCION INTEGRAL - Ejecutado - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var444 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='444. X. PLAN DE ATENCION INTEGRAL - Ejecutado - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var445 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='445. X. PLAN DE ATENCION INTEGRAL - Ejecutado - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var446 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='446. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var447 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='447. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var448 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='448. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var449 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='449. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 5 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var450 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='450. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 6 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var451 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='451. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 7 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var452 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='452. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 8 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var453 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='453. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 9 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var454 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='454. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 10 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var455 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='455. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 11 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var456 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='456. XI. CONSEJERiA - Nutricional por Suplementacion - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var457 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='457. XI. CONSEJERiA - Nutricional por Suplementacion - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var458 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='458. XI. CONSEJERiA - Nutricional por Suplementacion - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var459 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='459. XI. CONSEJERiA - Nutricional por Suplementacion - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var460 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='460. XI. CONSEJERiA - Nutricional por Suplementacion - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var461 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='461. XI. CONSEJERiA - Nutricional por Suplementacion - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var462 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='462. XI. CONSEJERiA - Nutricional por Suplementacion - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var463 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='463. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var464 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='464. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var465 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='465. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var466 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='466. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var467 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='467. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var468 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='468. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var469 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='469. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var470 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='470. XI. CONSEJERiA - Integral por Eval. del Desarrollo - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var471 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='471. XI. CONSEJERiA - Integral por Eval. del Desarrollo - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var472 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='472. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var473 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='473. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var474 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='474. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var475 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='475. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var476 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='476. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var477 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='477. XI. CONSEJERiA - Integral por Aliment. Complement - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var478 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='478. XI. CONSEJERiA - Integral por Aliment. Complement - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var479 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='479. XI. CONSEJERiA - Integral por Aliment. Complement - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var480 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='480. XI. CONSEJERiA - Integral por Aliment. Complement - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var481 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='481. XI. CONSEJERiA - Integral por Aliment. Complement - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var482 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='482. XI. CONSEJERiA - Integral por Aliment. Complement - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var483 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='483. XI. CONSEJERiA - Integral por Aliment. Complement - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var484 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='484. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var485 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='485. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var486 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='486. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var487 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='487. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var488 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='488. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var489 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='489. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var490 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='490. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var491 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='491. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var492 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='492. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var493 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='493. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var494 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='494. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var495 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='495. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var496 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='496. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var497 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='497. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var498 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='498. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var499 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='499. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var500 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='500. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var501 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='501. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var502 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='502. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var503 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='503. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var504 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='504. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var505 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='505. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var506 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='506. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var507 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='507. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var508 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='508. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var509 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='509. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var510 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='510. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var511 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='511. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var512 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='512. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var513 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='513. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var514 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='514. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var515 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='515. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var516 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='516. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var517 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='517. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var518 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='518. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var519 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='519. XII. VISITA DOMICILIARIA - Seguimiento de IRA - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var520 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='520. XII. VISITA DOMICILIARIA - Seguimiento de IRA - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var521 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='521. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var522 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='522. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var523 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='523. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var524 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='524. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var525 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='525. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var526 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='526. XII. VISITA DOMICILIARIA - Seguimiento de EDA - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var527 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='527. XII. VISITA DOMICILIARIA - Seguimiento de EDA - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var528 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='528. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var529 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='529. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var530 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='530. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var531 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='531. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var532 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='532. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var533 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='533. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - RN' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var534 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='534. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - <1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var535 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='535. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 1 ano' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var536 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='536. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 2 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var537 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='537. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 3 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var538 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='538. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 4 anos' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var539 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='539. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 05 - 11 a' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var540 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='540. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 1ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var541 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='541. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 1ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var542 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='542. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 1ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var543 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='543. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 1ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var544 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='544. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 1ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var545 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='545. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 2da.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var546 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='546. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 2da.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var547 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='547. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 2da.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var548 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='548. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 2da.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var549 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='549. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 2da.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var550 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='550. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 3ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var551 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='551. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 3ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var552 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='552. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 3ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var553 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='553. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 3ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var554 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='554. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 3ra.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var555 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='555. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 4ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var556 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='556. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 4ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var557 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='557. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 4ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var558 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='558. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 4ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var559 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='559. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 4ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var560 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='560. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 5ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var561 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='561. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 5ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var562 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='562. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 5ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var563 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='563. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 5ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var564 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='564. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 5ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var565 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='565. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 6ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var566 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='566. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 6ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var567 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='567. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 6ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var568 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='568. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 6ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var569 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='569. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 6ta.'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var570 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='570. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Demostrativas - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var571 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='571. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Demostrativas - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var572 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='572. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Educativas - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var573 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='573. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Educativas - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var574 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='574. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Evaluacion - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var575 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='575. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Evaluacion - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var576 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='576. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Supervision - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var577 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='577. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Supervision - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var578 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='578. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Asitencia Tecnica - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var579 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='579. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Asitencia Tecnica - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var580 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='580. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Personal de Salud - Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var581 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='581. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Personal de Salud - Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var582 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='582. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Agente Com. de Salud- Actividades'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var583 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='583. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Agente Com. de Salud- Participantes'    and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var584 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='584.%'  and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var585 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='585.%' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var586 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='586.%'   and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var587 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='587.%'  and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var588 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='588.%' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var589 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='589.%'   and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var590 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='590.%' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var591 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='591.%'and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var592 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='592.%'and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var593 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='593.%'and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var594 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='594.%'  and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var595 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='595.%' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var596 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='596.%' and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var597 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='597.%'     and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var598 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='598.%'  and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var599 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='599.%'  and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-		update tmp_nino_2016_1 set var600 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_1.cod_2000 and nino_tmp.actividad='600.%'     and  tmp_nino_2016_1.mes=@mes and tmp_nino_2016_1.anio=@anio;          
-     	update tmp_nino_2016_2 set var601 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='601.%'     and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var602 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='602.%'     and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
+		update tmp_nino_2022 set var401 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='401. IX. EVALUACION DEL DESARROLLO - Coordinacion - < 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var402 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='402. IX. EVALUACION DEL DESARROLLO - Normal - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var403 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='403. IX. EVALUACION DEL DESARROLLO - Normal - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var404 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='404. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var405 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='405. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 4 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var406 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='406. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var407 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='407. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Lenguaje - 4 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var408 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='408. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var409 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='409. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var410 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='410. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var411 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='411. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Motora - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var412 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='412. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var413 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='413. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var414 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='414. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var415 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='415. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Social - 4 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var416 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='416. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var417 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='417. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 2 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var418 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='418. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var419 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='419. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Coordinacion - 2 anos - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var420 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='420. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var421 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='421. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var422 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='422. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var423 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='423. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo- Cognitiva - 4 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var424 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='424. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 3 ano - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var425 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='425. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 4 anos - Dx.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var426 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='426. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 3 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var427 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='427. IX. EVALUACION DEL DESARROLLO - Deficit del Desarrollo - Con + de 1 Trastorno - 4 ano - Recup.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var428 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='428. IX. EVALUACION DEL DESARROLLO - Normal - 3 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var429 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='429. IX. EVALUACION DEL DESARROLLO - Normal - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var430 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='430. X. PLAN DE ATENCION INTEGRAL - Elaborado - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var431 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='431. X. PLAN DE ATENCION INTEGRAL - Elaborado - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var432 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='432. X. PLAN DE ATENCION INTEGRAL - Elaborado - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var433 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='433. X. PLAN DE ATENCION INTEGRAL - Elaborado - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var434 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='434. X. PLAN DE ATENCION INTEGRAL - Elaborado - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var435 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='435. X. PLAN DE ATENCION INTEGRAL - Elaborado - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var436 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='436. X. PLAN DE ATENCION INTEGRAL - Elaborado - 5 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var437 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='437. X. PLAN DE ATENCION INTEGRAL - Elaborado - 6 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var438 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='438. X. PLAN DE ATENCION INTEGRAL - Elaborado - 7 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var439 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='439. X. PLAN DE ATENCION INTEGRAL - Elaborado - 8 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var440 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='440. X. PLAN DE ATENCION INTEGRAL - Elaborado - 9 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var441 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='441. X. PLAN DE ATENCION INTEGRAL - Elaborado - 10 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var442 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='442. X. PLAN DE ATENCION INTEGRAL - Elaborado - 11 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var443 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='443. X. PLAN DE ATENCION INTEGRAL - Ejecutado - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var444 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='444. X. PLAN DE ATENCION INTEGRAL - Ejecutado - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var445 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='445. X. PLAN DE ATENCION INTEGRAL - Ejecutado - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var446 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='446. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var447 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='447. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var448 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='448. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var449 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='449. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 5 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var450 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='450. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 6 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var451 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='451. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 7 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var452 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='452. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 8 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var453 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='453. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 9 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var454 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='454. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 10 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var455 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='455. X. PLAN DE ATENCION INTEGRAL - Ejecutado - 11 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var456 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='456. XI. CONSEJERiA - Nutricional por Suplementacion - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var457 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='457. XI. CONSEJERiA - Nutricional por Suplementacion - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var458 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='458. XI. CONSEJERiA - Nutricional por Suplementacion - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var459 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='459. XI. CONSEJERiA - Nutricional por Suplementacion - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var460 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='460. XI. CONSEJERiA - Nutricional por Suplementacion - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var461 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='461. XI. CONSEJERiA - Nutricional por Suplementacion - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var462 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='462. XI. CONSEJERiA - Nutricional por Suplementacion - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var463 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='463. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var464 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='464. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var465 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='465. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var466 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='466. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var467 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='467. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var468 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='468. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var469 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='469. XI. CONSEJERiA - Nutricional por Eval. PE, TP, TE, IMC - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var470 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='470. XI. CONSEJERiA - Integral por Eval. del Desarrollo - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var471 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='471. XI. CONSEJERiA - Integral por Eval. del Desarrollo - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var472 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='472. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var473 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='473. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var474 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='474. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var475 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='475. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var476 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='476. XI. CONSEJERiA - Integral por Eval. del Desarrollo - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var477 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='477. XI. CONSEJERiA - Integral por Aliment. Complement - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var478 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='478. XI. CONSEJERiA - Integral por Aliment. Complement - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var479 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='479. XI. CONSEJERiA - Integral por Aliment. Complement - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var480 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='480. XI. CONSEJERiA - Integral por Aliment. Complement - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var481 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='481. XI. CONSEJERiA - Integral por Aliment. Complement - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var482 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='482. XI. CONSEJERiA - Integral por Aliment. Complement - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var483 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='483. XI. CONSEJERiA - Integral por Aliment. Complement - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var484 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='484. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var485 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='485. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var486 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='486. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var487 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='487. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var488 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='488. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var489 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='489. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var490 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='490. XII. VISITA DOMICILIARIA - Seguimiento al Control CRED - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var491 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='491. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var492 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='492. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var493 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='493. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var494 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='494. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var495 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='495. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var496 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='496. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var497 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='497. XII. VISITA DOMICILIARIA - Seguimiento a Problemas Nutricionales - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var498 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='498. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var499 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='499. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var500 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='500. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var501 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='501. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var502 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='502. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var503 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='503. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var504 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='504. XII. VISITA DOMICILIARIA - Seguimiento a Problemas del Desarrollo - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var505 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='505. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var506 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='506. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var507 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='507. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var508 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='508. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var509 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='509. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var510 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='510. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var511 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='511. XII. VISITA DOMICILIARIA - Entrega de Suplementacion - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var512 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='512. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var513 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='513. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var514 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='514. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var515 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='515. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var516 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='516. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var517 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='517. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var518 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='518. XII. VISITA DOMICILIARIA - Seguimiento a la Suplementacion - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var519 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='519. XII. VISITA DOMICILIARIA - Seguimiento de IRA - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var520 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='520. XII. VISITA DOMICILIARIA - Seguimiento de IRA - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var521 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='521. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var522 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='522. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var523 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='523. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var524 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='524. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var525 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='525. XII. VISITA DOMICILIARIA - Seguimiento de IRA - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var526 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='526. XII. VISITA DOMICILIARIA - Seguimiento de EDA - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var527 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='527. XII. VISITA DOMICILIARIA - Seguimiento de EDA - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var528 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='528. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var529 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='529. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var530 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='530. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var531 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='531. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var532 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='532. XII. VISITA DOMICILIARIA - Seguimiento de EDA - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var533 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='533. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - RN' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var534 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='534. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - <1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var535 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='535. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 1 ano' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var536 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='536. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 2 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var537 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='537. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 3 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var538 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='538. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 4 anos' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var539 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='539. XII. VISITA DOMICILIARIA - Seguimiento de Anemia - 05 - 11 a' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var540 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='540. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var541 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='541. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var542 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='542. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var543 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='543. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var544 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='544. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var545 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='545. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var546 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='546. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var547 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='547. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var548 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='548. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var549 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='549. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var550 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='550. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var551 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='551. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var552 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='552. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var553 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='553. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var554 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='554. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var555 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='555. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var556 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='556. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var557 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='557. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var558 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='558. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var559 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='559. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var560 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='560. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 5ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var561 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='561. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 5ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var562 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='562. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 5ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var563 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='563. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 5ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var564 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='564. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 5ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var565 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='565. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - Recien Nacido - 6ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var566 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='566. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - < 01 ano - 6ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var567 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='567. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 01 ano - 6ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var568 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='568. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 02 anos - 6ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var569 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='569. XIII. ATENCION INFANTIL TEMPRANA - EDADES / SESIONES - 03 anos - 6ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var570 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='570. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Demostrativas - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var571 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='571. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Demostrativas - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var572 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='572. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Educativas - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var573 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='573. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades Extramurales y Masivas - Sesiones Educativas - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var574 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='574. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Evaluacion - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var575 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='575. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Evaluacion - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var576 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='576. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Supervision - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var577 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='577. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Supervision - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var578 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='578. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Asitencia Tecnica - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var579 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='579. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Asitencia Tecnica - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var580 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='580. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Personal de Salud - Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var581 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='581. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Personal de Salud - Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var582 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='582. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Agente Com. de Salud- Actividades'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var583 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='583. XIV. ACTIVIDADES EXTRAMURALES, MASIVAS Y DE GESTIoN - Actividades de Gestion - Reu.Tec: Agente Com. de Salud- Participantes'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var584 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='584.%'  and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var585 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='585.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var586 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='586.%'   and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var587 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='587.%'  and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var588 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='588.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var589 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='589.%'   and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var590 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='590.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var591 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='591.%'and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var592 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='592.%'and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var593 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='593.%'and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var594 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='594.%'  and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var595 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='595.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var596 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='596.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var597 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='597.%'     and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var598 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='598.%'  and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var599 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='599.%'  and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var600 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='600.%'     and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+     	update tmp_nino_2022 set var601 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='601.%'     and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var602 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='602.%'     and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
 
 		DELETE FROM nino_tmp;     
      
@@ -20529,189 +20246,189 @@ and h.mes=@mes
      --766. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 1a-6m
 		
 		
-		update tmp_nino_2016_2 set var601 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='601. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 1.2. Nro. Casos de IRA no Complicada (A+B+C) - a. Nro. casos de faringo amigdalitis  aguda purulenta - 2 - 11  M'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var602 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='602. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 1.2. Nro. Casos de IRA no Complicada (A+B+C) - a. Nro. casos de faringo amigdalitis  aguda purulenta - 1 - 4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var603 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '603.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var604 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '604.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var605 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '605.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var606 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '606.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var607 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '607.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var608 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '608.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var609 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '609.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var610 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '610.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var611 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '611.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var612 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '612.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
+		update tmp_nino_2022 set var601 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='601. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 1.2. Nro. Casos de IRA no Complicada (A+B+C) - a. Nro. casos de faringo amigdalitis  aguda purulenta - 2 - 11  M'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var602 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='602. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 1.2. Nro. Casos de IRA no Complicada (A+B+C) - a. Nro. casos de faringo amigdalitis  aguda purulenta - 1 - 4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var603 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '603.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var604 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '604.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var605 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '605.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var606 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '606.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var607 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '607.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var608 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '608.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var609 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '609.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var610 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '610.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var611 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '611.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var612 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '612.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
 		
-		update tmp_nino_2016 set var133 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '133.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var134 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '134.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var135 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '135.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var136 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '136.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var137 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '137.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var138 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '138.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var139 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '139.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var140 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '140.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var141 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '141.%.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var142 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '142.%.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var143 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '143.%.' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var144 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016.cod_2000 and nino_tmp.actividad LIKE '144.%' and  tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;        
-		
-		
+		update tmp_nino_2022 set var133 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '133.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var134 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '134.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var135 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '135.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var136 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '136.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var137 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '137.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var138 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '138.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var139 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '139.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var140 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '140.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var141 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '141.%.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var142 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '142.%.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var143 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '143.%.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var144 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '144.%' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;        
 		
 		
 		
 		
 		
-		update tmp_nino_2016_2 set var613 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad LIKE '613.%'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var614 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='614. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - < 29 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var615 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='615. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 29 d a 59 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var616 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='616. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 02 - 11 Meses'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var617 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='617. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 01 - 04 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var618 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='618. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 05 - 11 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var619 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='619. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos - 3. Nro. de casos de IRA complicada referidos - < 29 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var620 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='620. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 29 d a 59 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var621 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='621. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 02 - 11 Meses'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var622 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='622. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 01 - 04 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var623 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='623. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 05 - 11 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var624 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='624. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas - 4. Control de seguimiento de neumonia a las 48 horas - < 29 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var625 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='625. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 29 d a 59 Dias'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var626 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='626. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 02 - 11 Meses'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var627 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='627. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 01 - 04 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var628 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='628. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 05 - 11 A?os'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var629 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='629. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS  - Fuentes Externas - Fuentes Externas' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var630 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='630. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var631 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='631. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var632 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='632. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var633 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='633. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var634 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='634. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var635 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='635. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var636 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='636. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var637 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='637. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var638 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='638. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var639 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='639. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var640 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='640. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var641 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='641. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var642 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='642. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var643 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='643. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var644 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='644. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var645 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='645. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var646 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='646. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var647 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='647. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var648 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='648. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var649 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='649. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var650 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='650. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var651 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='651. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var652 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='652. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var653 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='653. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var654 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='654. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var655 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='655. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var656 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='656. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var657 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='657. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - < 1 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var658 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='658. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var659 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='659. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var660 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='660. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - RN'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var661 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='661. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - RN'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var662 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='662. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - < 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var663 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='663. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - < 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var664 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='664. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var665 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='665. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var666 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='666. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 02 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var667 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='667. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 02 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var668 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='668. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 03 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var669 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='669. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 03 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var670 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='670. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 04 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var671 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='671. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 04 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var672 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='672. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 05 - 11 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var673 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='673. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 05 - 11 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var674 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='674. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - RN'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var675 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='675. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - RN'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var676 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='676. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - < 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var677 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='677. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - < 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var678 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='678. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var679 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='679. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 01 ano'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var680 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='680. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 02 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var681 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='681. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 02 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var682 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='682. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 03 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var683 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='683. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 03 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var684 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='684. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 04 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var685 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='685. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 04 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var686 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='686. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 05 - 11 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var687 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='687. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 05 - 11 anos'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var688 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='688.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var689 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='689.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var690 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='690.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var691 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='691.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var692 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='692.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var693 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='693.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var694 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='694.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var695 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='695.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var696 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='696.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var697 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='697.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var698 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='698.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var699 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='699.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var700 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='700.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var701 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='701.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var702 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='702.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var703 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='703.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var704 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='704.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var705 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='705.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var706 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='706.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var707 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='707.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var708 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='708.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var709 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='709.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var710 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='710.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var711 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='711.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var712 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='712.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var713 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='713.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var714 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='714.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var715 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='715.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var716 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='716.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var717 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='717.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var718 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='718.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var719 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='719.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var720 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='720.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var721 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='721.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var722 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='722.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var723 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='723.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var724 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='724.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var725 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='725.' and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var726 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='726. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Suficiente - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var727 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='727. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Suficiente - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var728 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='728. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Suficiente - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var729 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='729. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Suficiente - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var730 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='730. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Suficiente - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var731 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='731. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Suficiente - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var732 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='732. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Poco - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var733 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='733. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Poco - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var734 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='734. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Poco - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var735 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='735. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Poco - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var736 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='736. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Poco - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var737 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='737. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Poco - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var738 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='738. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Negativo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var739 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='739. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Negativo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var740 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='740. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Negativo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var741 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='741. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Negativo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var742 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='742. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Negativo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var743 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='743. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Negativo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var744 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='744. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal <= 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var745 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='745. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal <= 15 Ppm de Yodo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var746 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='746. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal <= 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var747 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='747. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal <= 15 Ppm de Yodo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var748 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='748. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal > 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var749 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='749. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal > 15 Ppm de Yodo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var750 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='750. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal > 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var751 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='751. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal > 15 Ppm de Yodo - Muestras'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;        
-		update tmp_nino_2016_2 set var752 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='752. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 04m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var753 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='753. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 09m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var754 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='754. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 04m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var755 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='755. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 09m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var756 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='756. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 1ra.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var757 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='757. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 2da.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var758 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='758. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 3ra.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var759 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='759. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 4ta.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var760 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='760. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - TA'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var761 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='761. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - 1ra.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var762 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='762. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - 2da.'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
-		update tmp_nino_2016_2 set var763 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='763. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - TA'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
+		
+		
+		update tmp_nino_2022 set var613 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad LIKE '613.%'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var614 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='614. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - < 29 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var615 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='615. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 29 d a 59 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var616 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='616. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 02 - 11 Meses'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var617 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='617. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 01 - 04 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var618 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='618. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 2. Total de casos IRA complicadas hospitalizadas - 2. Total de casos IRA complicadas hospitalizadas - 05 - 11 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var619 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='619. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos - 3. Nro. de casos de IRA complicada referidos - < 29 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var620 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='620. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 29 d a 59 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var621 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='621. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 02 - 11 Meses'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var622 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='622. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 01 - 04 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var623 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='623. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 3. Nro. de casos de IRA complicada referidos- 3. Nro. de casos de IRA complicada referidos- 05 - 11 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var624 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='624. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas - 4. Control de seguimiento de neumonia a las 48 horas - < 29 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var625 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='625. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 29 d a 59 Dias'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var626 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='626. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 02 - 11 Meses'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var627 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='627. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 01 - 04 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var628 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='628. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS - 4. Control de seguimiento de neumonia a las 48 horas- 4. Control de seguimiento de neumonia a las 48 horas- 05 - 11 A?os'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var629 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='629. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - INFECCIONES RESPIRATORIAS AGUDAS  - Fuentes Externas - Fuentes Externas' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var630 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='630. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var631 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='631. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var632 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='632. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - a. Acuosa Aguda sin deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var633 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='633. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var634 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='634. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var635 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='635. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - b. Sospechoso de colera sin deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var636 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='636. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var637 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='637. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var638 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='638. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - c. Disenteria sin deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var639 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='639. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var640 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='640. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var641 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='641. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 1. EDA sin complicacion - d. Diarrea persistente - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var642 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='642. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var643 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='643. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var644 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='644. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - a. Acuosa Aguda con deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var645 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='645. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var646 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='646. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var647 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='647. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - b. Sospechoso de colera con deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var648 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='648. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var649 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='649. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var650 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='650. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - c. Disenteria con deshidratacion - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var651 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='651. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var652 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='652. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var653 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='653. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - d. Acuosa Aguda con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var654 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='654. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var655 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='655. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var656 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='656. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - e. Sospechoso de colera con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var657 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='657. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - < 1 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var658 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='658. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - 1 -  4 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var659 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='659. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - B. ENFERMEDAD DIARREICA AGUDA - 2.  EDA Complicada - f. Disenteria con deshidratacion con shock - 5 - 11 A'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var660 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='660. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - RN'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var661 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='661. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - RN'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var662 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='662. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - < 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var663 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='663. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - < 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var664 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='664. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var665 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='665. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var666 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='666. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 02 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var667 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='667. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 02 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var668 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='668. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 03 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var669 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='669. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 03 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var670 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='670. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 04 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var671 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='671. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 04 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var672 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='672. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Diagnostico - 05 - 11 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var673 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='673. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - 1. Anemia por deficiencia de   Hierro (D509) - Recuperado - 05 - 11 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var674 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='674. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - RN'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var675 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='675. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - RN'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var676 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='676. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - < 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var677 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='677. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - < 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var678 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='678. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var679 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='679. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 01 ano'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var680 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='680. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 02 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var681 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='681. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 02 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var682 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='682. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 03 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var683 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='683. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 03 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var684 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='684. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 04 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var685 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='685. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 04 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var686 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='686. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Diagnostico - 05 - 11 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var687 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='687. XV.  ATENCION DE LAS ENFERMEDADES PREVALENTES DE LA INFANCIA - C. ANEMIA Y PARASITOSIS - Parasitosis Intestinal - Recuperado - 05 - 11 anos'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var688 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='688.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var689 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='689.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var690 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='690.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var691 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='691.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var692 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='692.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var693 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='693.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var694 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='694.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var695 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='695.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var696 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='696.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var697 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='697.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var698 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='698.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var699 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='699.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var700 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='700.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var701 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='701.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var702 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='702.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var703 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='703.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var704 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='704.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var705 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='705.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var706 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='706.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var707 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='707.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var708 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='708.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var709 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='709.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var710 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='710.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var711 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='711.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var712 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='712.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var713 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='713.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var714 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='714.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var715 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='715.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var716 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='716.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var717 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='717.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var718 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='718.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var719 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='719.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var720 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='720.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var721 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='721.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var722 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='722.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var723 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='723.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var724 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='724.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var725 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='725.' and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var726 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='726. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Suficiente - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var727 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='727. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Suficiente - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var728 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='728. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Suficiente - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var729 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='729. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Suficiente - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var730 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='730. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Suficiente - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var731 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='731. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Suficiente - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var732 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='732. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Poco - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var733 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='733. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Poco - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var734 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='734. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Poco - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var735 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='735. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Poco - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var736 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='736. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Poco - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var737 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='737. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Poco - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var738 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='738. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Negativo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var739 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='739. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Vivienda - Negativo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var740 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='740. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Negativo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var741 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='741. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Mercado - Negativo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var742 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='742. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Negativo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var743 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='743. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 1.  CONTROL CUALITATIVO DE SAL YODADA - Planta Procesadora - Negativo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var744 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='744. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal <= 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var745 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='745. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal <= 15 Ppm de Yodo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var746 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='746. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal <= 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var747 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='747. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal <= 15 Ppm de Yodo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var748 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='748. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal > 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var749 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='749. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Mercado - Muestra de Sal > 15 Ppm de Yodo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var750 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='750. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal > 15 Ppm de Yodo - Nro. Activ.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var751 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='751. XVI. VIGILANCIA DEL CONSUMO DE SAL YODADA - 2.CONTROL CUANTITATIVO DE SAL YODADA POR RESULTADO - Planta Procesadora - Muestra de Sal > 15 Ppm de Yodo - Muestras'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;        
+		update tmp_nino_2022 set var752 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='752. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 04m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var753 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='753. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Solicitud de Dosaje de Hb - 09m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var754 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='754. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 04m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var755 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='755. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 09m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var756 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='756. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var757 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='757. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var758 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='758. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 3ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var759 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='759. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - 4ta.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var760 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='760. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - < 06 meses (BPN y Prematuros (P0)) - TA'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var761 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='761. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - 1ra.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var762 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='762. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - 2da.'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
+		update tmp_nino_2022 set var763 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='763. V. ADMINISTRACION DE MICRONUTRIENTES - C) Hierro Polimaltosado - De 4 y 5 meses - TA'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
     
 		DELETE FROM nino_tmp;     
       
@@ -20721,82 +20438,82 @@ and h.mes=@mes
 
 		SELECT vartemp.*,e.Codigo_Unico,a.observaciones INTO varmes1 FROM vartemp, establecimiento as e, activid as a WHERE vartemp.cod_2000=e.Codigo_Unico and vartemp.idactividad=a.idactividad and a.idestrategia=200 and valor>0 and mes=@mes and anio=@anio;
 		     
-		update tmp_nino_2016 set var15= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var15' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var16= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var16' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;          
-		update tmp_nino_2016 set var17= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var17' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var18= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var18' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var19= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var19' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var20= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var20' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var30= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var30' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var31= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var31' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var32= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var32' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var33= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var33' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var34= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var34' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var35= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var35' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var36= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var36' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var37= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var37' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var38= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var38' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var39= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var39' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var40= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var40' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var41= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var41' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var42= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var42' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var43= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var43' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var44= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var44' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var45= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var45' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016 set var46= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016.cod_2000 and a.observaciones='var46' and v.mes=@mes and v.anio=@anio and tmp_nino_2016.mes=@mes and tmp_nino_2016.anio=@anio;       
-		update tmp_nino_2016_2 set var614= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var614' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var615= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var615' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;             
-		update tmp_nino_2016_2 set var616= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var616' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var617= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var617' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var618= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var618' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var619= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var619' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var620= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var620' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var621= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var621' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var622= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var622' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var623= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var623' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var624= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var624' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var625= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var625' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var626= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var626' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var627= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var627' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var628= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var628' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var688= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var688' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var689= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var689' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var690= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var690' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var691= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var691' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var692= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var692' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var693= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var693' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var694= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var694' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var695= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var695' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var696= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var696' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var697= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var697' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var698= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var698' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var699= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var699' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var700= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var700' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var701= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var701' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var702= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var702' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var703= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var703' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var704= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var704' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var705= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var705' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var706= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var706' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;             
-		update tmp_nino_2016_2 set var707= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var707' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var708= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var708' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var709= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var709' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var710= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var710' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var711= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var711' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var712= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var712' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var713= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var713' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var714= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var714' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var715= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var715' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var716= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var716' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var717= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var717' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var718= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var718' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var719= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var719' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var720= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var720' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var721= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var721' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var722= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var722' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var723= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var723' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var724= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var724' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
-		update tmp_nino_2016_2 set var725= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2016_2.cod_2000 and a.observaciones='var725' and v.mes=@mes and v.anio=@anio and tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;          
+		update tmp_nino_2022 set var15= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var15' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var16= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var16' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var17= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var17' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var18= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var18' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var19= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var19' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var20= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var20' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var30= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var30' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var31= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var31' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var32= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var32' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var33= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var33' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var34= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var34' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var35= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var35' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var36= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var36' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var37= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var37' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var38= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var38' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var39= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var39' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var40= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var40' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var41= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var41' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var42= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var42' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var43= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var43' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var44= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var44' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var45= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var45' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var46= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var46' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;       
+		update tmp_nino_2022 set var614= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var614' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var615= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var615' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;             
+		update tmp_nino_2022 set var616= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var616' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var617= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var617' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var618= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var618' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var619= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var619' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var620= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var620' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var621= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var621' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var622= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var622' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var623= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var623' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var624= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var624' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var625= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var625' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var626= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var626' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var627= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var627' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var628= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var628' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var688= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var688' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var689= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var689' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var690= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var690' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var691= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var691' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var692= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var692' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var693= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var693' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var694= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var694' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var695= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var695' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var696= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var696' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var697= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var697' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var698= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var698' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var699= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var699' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var700= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var700' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var701= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var701' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var702= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var702' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var703= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var703' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var704= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var704' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var705= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var705' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var706= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var706' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;             
+		update tmp_nino_2022 set var707= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var707' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var708= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var708' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var709= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var709' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var710= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var710' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var711= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var711' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var712= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var712' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var713= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var713' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var714= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var714' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var715= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var715' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var716= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var716' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var717= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var717' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var718= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var718' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var719= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var719' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var720= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var720' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var721= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var721' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var722= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var722' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var723= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var723' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var724= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var724' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
+		update tmp_nino_2022 set var725= cast(v.valor as varchar) from varmes1 as v,activid as a, establecimiento as e where v.idestrategia=600 and a.idactividad=v.idactividad and e.codigo_unico = v.cod_2000 and e.codigo_unico=tmp_nino_2022.cod_2000 and a.observaciones='var725' and v.mes=@mes and v.anio=@anio and tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;          
           
 		--
 		DROP TABLE varmes1;  
@@ -20830,7 +20547,7 @@ and h.mes=@mes
 		group by h.codigo_unico,              
 		h.nombre_establecimiento;
 
-		update tmp_nino_2016_2 set var766 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='766. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 1a-6m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio; 
+		update tmp_nino_2022 set var766 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='766. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 1a-6m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio; 
 	
 	insert into nino_tmp
 		select '767. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 4m' Actividad,              
@@ -20850,7 +20567,7 @@ and h.mes=@mes
 		group by h.codigo_unico,              
 		h.nombre_establecimiento;
 
-		update tmp_nino_2016_2 set var767 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='767. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 4m'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio; 
+		update tmp_nino_2022 set var767 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='767. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 4m'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio; 
 	
 	select '767. III. TAMIZAJE - ACTIVIDADES - 1. Deteccion de Anemia - Resultados Evaluados - 4m' Actividad,              
 			h.codigo_unico,              
@@ -20905,11 +20622,11 @@ and h.mes=@mes
 		
 
 		
-		update tmp_nino_2016_2 set var764 = nino_tmp.cantidad 
+		update tmp_nino_2022 set var764 = nino_tmp.cantidad 
 		from nino_tmp
-		where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and
+		where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and
 		nino_tmp.actividad='764. III. SEGUIMIENTO VISITA TELEORIENTACION Y TELEMONITOREO'
-		and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio;            
+		and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio;            
      
 	 	---AGREGAR VARIABLE  DE DOSAJE DE HEMOGLOBINA DE ANIO 6 MESES
 
@@ -20931,7 +20648,7 @@ and h.mes=@mes
 		group by h.codigo_unico,              
 		h.nombre_establecimiento;
 
-		update tmp_nino_2016_2 set var768 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2016_2.cod_2000 and nino_tmp.actividad='768. TERCER CONTROL CRED > 14 d'    and  tmp_nino_2016_2.mes=@mes and tmp_nino_2016_2.anio=@anio; 
+		update tmp_nino_2022 set var768 = nino_tmp.cantidad from nino_tmp where nino_tmp.cod_estab=tmp_nino_2022.cod_2000 and nino_tmp.actividad='768. TERCER CONTROL CRED > 14 d'    and  tmp_nino_2022.mes=@mes and tmp_nino_2022.anio=@anio; 
 	
 
 
