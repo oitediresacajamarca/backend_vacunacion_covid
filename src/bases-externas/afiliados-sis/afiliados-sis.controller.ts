@@ -35,13 +35,25 @@ export class AfiliadosSisController {
     return resp;
   }
   @Post('padrones/:renipress')
-  async devolver_padron_filtro(@Param('renipress') renipress: string ,@Body('filtro') filtro:any) {
-    
-    let resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
+  async devolver_padron_filtro(@Param('renipress') renipress: string ,@Body() filtro:any) {
+
+
+
+    let resp=[]
+    if(filtro.hoy){
+     resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
       Fec_Min_2:MoreThan(new Date()),Dosis_2:0,Dosis_3:0},
       { Renipress_Padron: renipress ,
         Fec_Min_3:MoreThan(new Date()),Dosis_3:0}
     ] })
+  
+
+  }
+  else{
+
+    resp = await this.padronrep.find({ where: { Renipress_Padron: renipress } })
+
+  }
     return resp;
   }
 
