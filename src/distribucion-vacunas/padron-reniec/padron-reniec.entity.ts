@@ -3,83 +3,89 @@ import { Column, Entity, ViewEntity } from "typeorm";
 @ViewEntity('PADRON_RENIEC_VIEW')
 export class PadronReniecEntity {
     @Column()
-    Tipo_Doc:              number;
+    Tipo_Doc: number;
     @Column()
-    Documento:             string;
+    Documento: string;
     @Column()
-    Numero_Doc:            string;
+    Numero_Doc: string;
     @Column()
-    Nombres:               string;
+    Nombres: string;
     @Column()
-    Apellido_Paterno:      string;
+    Apellido_Paterno: string;
     @Column()
-    Apellido_Materno:      string;
+    Apellido_Materno: string;
     @Column()
-    Edad:                  number;
+    Edad: number;
     @Column()
-    Sexo:                  string;
+    Sexo: string;
     @Column()
-    Fecha_Nac_:            Date;
+    Fecha_Nac_: Date;
     @Column()
-    Celular:               string;
+    Celular: string;
     @Column()
-    UBIGEO_RENIEC:         string;
+    UBIGEO_RENIEC: string;
     @Column()
-    DISA:                  string;
+    DISA: string;
     @Column()
-    Departamento:          string;
+    Departamento: string;
     @Column()
-    Provincia:             string;
+    Provincia: string;
     @Column()
-    Distrito:              string;
+    Distrito: string;
     @Column()
-    Dosis_1:               number;
+    Dosis_1: number;
     @Column()
-    Fecha_Dosis_1:         string;
+    Fecha_Dosis_1: string;
     @Column()
-    Fabricante_1:          string;
+    Fabricante_1: string;
     @Column()
-    Lote_1:                string;
+    Lote_1: string;
     @Column()
-    Renaes_Dosis_1:        string;
+    Renaes_Dosis_1: string;
     @Column()
-    Dosis_2:               number;
+    Fec_Min_2:Date;
     @Column()
-    Fecha_Dosis_2:         string;
+    Dosis_2: number;
     @Column()
-    Fabricante_2:          string;
+    Fecha_Dosis_2: string;
     @Column()
-    Lote_2:                string;
+    Fabricante_2: string;
     @Column()
-    Renaes_Dosis_2:        string;
+    Lote_2: string;
     @Column()
-    Dosis_3:               number;
+    Renaes_Dosis_2: string;
     @Column()
-    Fecha_Dosis_3:         string;
+    Dosis_3: number;
     @Column()
-    Fabricante_3:          string;
+    Fecha_Dosis_3: string;
     @Column()
-    Lote_3:                string;
+    Fabricante_3: string;
     @Column()
-    Renaes_Dosis_3:        string;
+    Lote_3: string;
     @Column()
-    Dosis_4:               string;
+    Renaes_Dosis_3: string;
     @Column()
-    Fecha_Dosis_4:         string;
+    Fec_Min_3:Date;
     @Column()
-    Fabricante_4:          string;
+    Dosis_4: string;
     @Column()
-    Lote_4:                string;
+    Fecha_Dosis_4: string;
     @Column()
-    Renaes_Dosis_4:        string;
+    Fabricante_4: string;
     @Column()
-    ubigeo_inei:           string;
+    Lote_4: string;
     @Column()
-    Padron:                string;
+    Renaes_Dosis_4: string;
     @Column()
-    Renipress_Padron:      string;
+    ubigeo_inei: string;
+    @Column()
+    Padron: string;
+    @Column()
+    Renipress_Padron: string;
     @Column()
     Usuario_Actualizacion: string;
+    @Column()
+    Direccion: string;
 
 }
 function ViewEntityEntity(arg0: string) {

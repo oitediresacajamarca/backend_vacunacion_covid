@@ -19,6 +19,7 @@ export interface PadronReniec {
     Fabricante_1:          string;
     Lote_1:                string;
     Renaes_Dosis_1:        string;
+    Fec_Min_2:Date;
     Dosis_2:               number;
     Fecha_Dosis_2:         string;
     Fabricante_2:          string;
@@ -29,6 +30,7 @@ export interface PadronReniec {
     Fabricante_3:          string;
     Lote_3:                string;
     Renaes_Dosis_3:        string;
+    Fec_Min_3:Date;
     Dosis_4:               string;
     Fecha_Dosis_4:         string;
     Fabricante_4:          string;

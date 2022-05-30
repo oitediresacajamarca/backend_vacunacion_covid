@@ -1,8 +1,8 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PadronReniecEntity } from 'src/distribucion-vacunas/padron-reniec/padron-reniec.entity';
 import { PadronReniec } from 'src/distribucion-vacunas/padron-reniec/padron-reniec.interface';
-import { Repository } from 'typeorm';
+import { MoreThan, Repository } from 'typeorm';
 import { AfiliadosSisEntity } from '../afiliados-sis.entity';
 import { RenaesEntity } from '../renaes.entity';
 
@@ -30,8 +30,18 @@ export class AfiliadosSisController {
   }
   @Get('padrones/:renipress')
   async devolver_padron(@Param('renipress') renipress: string) {
-    console.log(renipress)
+    
     let resp = await this.padronrep.find({ where: { Renipress_Padron: renipress } })
+    return resp;
+  }
+  @Post('padrones/:renipress')
+  async devolver_padron_filtro(@Param('renipress') renipress: string ,@Body('filtro') filtro:any) {
+    
+    let resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
+      Fec_Min_2:MoreThan(new Date()),Dosis_2:0,Dosis_3:0},
+      { Renipress_Padron: renipress ,
+        Fec_Min_3:MoreThan(new Date()),Dosis_3:0}
+    ] })
     return resp;
   }
 

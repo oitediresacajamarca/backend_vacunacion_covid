@@ -42,6 +42,9 @@ import { PadronReniecEntity } from './distribucion-vacunas/padron-reniec/padron-
 import { PadronReniecService } from './bases-externas/actualizaciones/padron-reniec/padron-reniec.service';
 import { AfiliadosSisRepository } from './bases-externas/afiliados-sis.repository';
 import { ActualizacionesModule } from './bases-externas/actualizaciones/actualizaciones.module';
+import { SeguimientoVacunacionController } from './seguimiento-vacunacion/seguimiento-vacunacion/seguimiento-vacunacion.controller';
+import { SeguimientoVacunacionEntity } from './seguimiento-vacunacion/seguimiento-vacunacion.entity';
+import { SeguimientoVacunacionModule } from './seguimiento-vacunacion/seguimiento-vacunacion.module';
 
 const defaultOptions = {
   type: 'mssql',
@@ -69,7 +72,7 @@ const defaultOptions = {
         EnviosIpressyEntity,EnviosRedEntity,StockIpressEntity,LoteVacunaEntity,
         DistribucionEstrategiaRedEntity,CuadroAlmacenRedEntity,VacunadosCovidEntity,RecepcionAnexosEntity,
         RegistroCentroVacunacionEntity,CentroVacunacionEntity,MovimientoVacunasComplEntity,
-        VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity,PadronReniecEntity
+        VacunadosCovidFastEntity,RegistrosConProblemasDigitacionEntity,PadronReniecEntity,SeguimientoVacunacionEntity
       ],
       "extra": {
         "validateConnection": false,
@@ -173,7 +176,8 @@ const defaultOptions = {
     MaestrosModule,
     UsuarioModule,
     AfiliadosSisModule,
-    ActualizacionesModule
+    ActualizacionesModule,
+    SeguimientoVacunacionModule
 
 
   ],
