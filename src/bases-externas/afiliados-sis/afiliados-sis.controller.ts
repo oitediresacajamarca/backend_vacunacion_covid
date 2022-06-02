@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PadronReniecEntity } from 'src/distribucion-vacunas/padron-reniec/padron-reniec.entity';
 import { PadronReniec } from 'src/distribucion-vacunas/padron-reniec/padron-reniec.interface';
-import { MoreThan, Repository } from 'typeorm';
+import { Equal, LessThanOrEqual, MoreThan, MoreThanOrEqual, Repository } from 'typeorm';
 import { AfiliadosSisEntity } from '../afiliados-sis.entity';
 import { RenaesEntity } from '../renaes.entity';
 
@@ -40,16 +40,18 @@ export class AfiliadosSisController {
 
 
     let resp=[]
-    if(filtro.hoy){
+    if(filtro.hoy==true){
      resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
-      Fec_Min_2:MoreThan(new Date()),Dosis_2:0,Dosis_3:0},
-      { Renipress_Padron: renipress ,
-        Fec_Min_3:MoreThan(new Date()),Dosis_3:0}
-    ] })
-  
+      Fec_Min_2:MoreThanOrEqual(new Date()),Dosis_2:0,Dosis_3:0},
+      { Renipress_Padron: renipress ,        Fec_Min_3:MoreThanOrEqual(new Date()),Dosis_3:0},
+      { Renipress_Padron: renipress,Dosis_1:0}
+       
+    ] }) 
 
   }
   else{
+
+    
 
     resp = await this.padronrep.find({ where: { Renipress_Padron: renipress } })
 
@@ -82,7 +84,7 @@ export class AfiliadosSisController {
 
     })
 
-    console.log('termino')
+ 
   }
 
 }
