@@ -42,8 +42,8 @@ export class AfiliadosSisController {
     let resp=[]
     if(filtro.hoy==true){
      resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
-      Fec_Min_2:MoreThanOrEqual(new Date()),Dosis_2:0,Dosis_3:0},
-      { Renipress_Padron: renipress ,        Fec_Min_3:MoreThanOrEqual(new Date()),Dosis_3:0},
+      Fec_Min_2:LessThanOrEqual(new Date()),Dosis_2:0,Dosis_3:0},
+      { Renipress_Padron: renipress ,        Fec_Min_3:LessThanOrEqual(new Date()),Dosis_3:0},
       { Renipress_Padron: renipress,Dosis_1:0}
        
     ] }) 
