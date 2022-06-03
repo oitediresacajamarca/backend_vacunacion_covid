@@ -86,6 +86,8 @@ export class PadronReniecEntity {
     Usuario_Actualizacion: string;
     @Column()
     Direccion: string;
+    @Column()
+    dias_retraso:Number
 
 }
 function ViewEntityEntity(arg0: string) {

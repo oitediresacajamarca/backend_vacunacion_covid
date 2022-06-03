@@ -30,32 +30,81 @@ export class AfiliadosSisController {
   }
   @Get('padrones/:renipress')
   async devolver_padron(@Param('renipress') renipress: string) {
-    
+
     let resp = await this.padronrep.find({ where: { Renipress_Padron: renipress } })
     return resp;
   }
   @Post('padrones/:renipress')
-  async devolver_padron_filtro(@Param('renipress') renipress: string ,@Body() filtro:any) {
+  async devolver_padron_filtro(@Param('renipress') renipress: string, @Body() filtro: any) {
+
+    console.log(filtro)
+    console.log(renipress)
+
+    let resp = []
+    if (filtro.hoy == true) {
+      resp = await this.devolver_por_vacunar_total(renipress)
+
+    } else {
+      resp = await this.devolver_total(renipress)
+    }
+    let dosis: any[] = filtro.dosis_seleccionadas
+    let dosis1=[], dosis2=[], dosis3=[], dosis4=[]
+
+  
+
+  if (dosis.findIndex(data => { return data == 1 }) >= 0) {
+      dosis1 =  resp.filter(dat => {
+        return dat.Dosis_1 == 0
+      })
+    }
+
+    if (dosis.findIndex(data => { return data == 2 }) >= 0) {
+      dosis2 = resp.filter(dat => {
+        return dat.Dosis_2 == 0 &&dat.Dosis_1 == 1
+      })
+    }
+    if (dosis.findIndex(data => { return data == 3 }) >= 0) {
+      dosis3 = resp.filter(dat => {
+        return dat.Dosis_3 == 0&&dat.Dosis_1 == 1 &&dat.Dosis_2 == 1
+      })
+    }
+    if (dosis.findIndex(data => { return data == 4 }) >= 0) {
+      dosis4 = resp.filter(dat => {
+        return dat.Dosis_4 == 0&&dat.Dosis_1 == 1 &&dat.Dosis_2 == 1&&dat.Dosis_3==1
+      })
+    }
+    resp=[...dosis1,...dosis2,...dosis3,...dosis4]
+    let resa=[]
 
 
+    if(filtro.incluye_rezagados==2){
+      resa= resp.filter(re=>{
+        return re.dias_retraso==0
+      })
+    }else{
+      resa=resp
+    }
 
-    let resp=[]
-    if(filtro.hoy==true){
-     resp = await this.padronrep.find({ where: [{ Renipress_Padron: renipress ,
-      Fec_Min_2:LessThanOrEqual(new Date()),Dosis_2:0,Dosis_3:0},
-      { Renipress_Padron: renipress ,        Fec_Min_3:LessThanOrEqual(new Date()),Dosis_3:0},
-      { Renipress_Padron: renipress,Dosis_1:0}
-       
-    ] }) 
-
+    return resa;
   }
-  else{
 
-    
+  async devolver_por_vacunar_total(renipress: string) {
+    let resp: any[] = [];
+    resp = await this.padronrep.find({
+      where: [{
+        Renipress_Padron: renipress,
+        Fec_Min_2: LessThanOrEqual(new Date()), Dosis_2: 0, Dosis_3: 0
+      },
+      { Renipress_Padron: renipress, Fec_Min_3: LessThanOrEqual(new Date()), Dosis_3: 0 },
+      { Renipress_Padron: renipress, Dosis_1: 0 }
+      ]
+    })
+    return resp;
+  }
 
+  async devolver_total(renipress: string) {
+    let resp: any[] = [];
     resp = await this.padronrep.find({ where: { Renipress_Padron: renipress } })
-
-  }
     return resp;
   }
 
@@ -70,12 +119,12 @@ export class AfiliadosSisController {
             res.Renipress_Padron = enc.afi_idEESSAdscripcion
             await this.padronrep.save({}, { data: res });
           } else {
-            console.log(count)
+
           }
 
         }).catch((err) => { })
         count = count + 1
-        console.log(count)
+
         //  res.Renipress_Padron=enc.afi_idEESSAdscripcion
       } catch (e) {
 
@@ -84,7 +133,7 @@ export class AfiliadosSisController {
 
     })
 
- 
+
   }
 
 }
