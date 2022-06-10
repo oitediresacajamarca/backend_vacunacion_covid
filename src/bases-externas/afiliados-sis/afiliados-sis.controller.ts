@@ -37,8 +37,8 @@ export class AfiliadosSisController {
   @Post('padrones/:renipress')
   async devolver_padron_filtro(@Param('renipress') renipress: string, @Body() filtro: any) {
 
-    console.log(filtro)
-    console.log(renipress)
+   /* console.log(filtro)
+    console.log(renipress)*/
 
     let resp = []
     if (filtro.hoy == true) {
@@ -47,14 +47,12 @@ export class AfiliadosSisController {
     } else {
       resp = await this.devolver_total(renipress)
     }
-    let dosis: any[] = filtro.dosis_seleccionadas
+    let dosis: any[] = [1,2,3,4]
     let dosis1=[], dosis2=[], dosis3=[], dosis4=[]
 
-  
-
-  if (dosis.findIndex(data => { return data == 1 }) >= 0) {
-      dosis1 =  resp.filter(dat => {
-        return dat.Dosis_1 == 0
+    if (dosis.findIndex(data => { return data == 3 }) >= 0) {
+      dosis3 = resp.filter(dat => {
+        return dat.Dosis_3 == 0&&dat.Dosis_1 == 1 &&dat.Dosis_2 == 1
       })
     }
 
@@ -63,17 +61,21 @@ export class AfiliadosSisController {
         return dat.Dosis_2 == 0 &&dat.Dosis_1 == 1
       })
     }
-    if (dosis.findIndex(data => { return data == 3 }) >= 0) {
-      dosis3 = resp.filter(dat => {
-        return dat.Dosis_3 == 0&&dat.Dosis_1 == 1 &&dat.Dosis_2 == 1
+
+  if (dosis.findIndex(data => { return data == 1 }) >= 0) {
+      dosis1 =  resp.filter(dat => {
+        return dat.Dosis_1 == 0
       })
     }
+
+
+
     if (dosis.findIndex(data => { return data == 4 }) >= 0) {
       dosis4 = resp.filter(dat => {
         return dat.Dosis_4 == 0&&dat.Dosis_1 == 1 &&dat.Dosis_2 == 1&&dat.Dosis_3==1
       })
     }
-    resp=[...dosis1,...dosis2,...dosis3,...dosis4]
+    resp=[...dosis2,...dosis3,...dosis4,...dosis1]
     let resa=[]
 
 
